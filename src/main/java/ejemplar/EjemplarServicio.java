@@ -1,4 +1,4 @@
-package Ejemplar;
+package ejemplar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

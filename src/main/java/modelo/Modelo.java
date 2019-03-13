@@ -1,12 +1,12 @@
-package Modelo;
+package modelo;
 
-import Ejemplar.Ejemplar;
+import ejemplar.Ejemplar;
 
 import javax.persistence.*;
 import java.util.LinkedHashSet;
 
 @Entity
-@Table(name="Modelo")
+@Table(name= "modelo")
 public class Modelo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

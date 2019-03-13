@@ -1,10 +1,12 @@
-package Ejemplar;
+package ejemplar;
+
+import modelo.Modelo;
 
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name="Ejemplar")
+@Table(name= "ejemplar")
 public class Ejemplar {
 
     public interface BasicInfo{}
