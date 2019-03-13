@@ -154,5 +154,26 @@
         </div>
     </form>
 </div>
+<div class="modal fade" id="borrarModelo{{id}}" tabindex="-1" role="dialog" aria-labelledby="borrarModelo{{id}}"
+     aria-hidden="true" align="center" data-backdrop="static" data-keyboard="true">
+    <form action="/Inicio/borrarModelo{{id}}" method="post">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="card card-plain">
+                    <div class="modal-header card-header card-header-primary">
+                        <h4 class="card-title">Confirmar eliminación</h4>
+                    </div>
+                </div>
+                <div class="modal-body" align="left">
+                    <p> ¿Está seguro de eliminar el modelo?</p>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" id="submit1" value="Accept" class="btn btn-primary"/>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
 </body>
 </html>
