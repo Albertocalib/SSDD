@@ -25,23 +25,23 @@ public class Ejemplar {
     @Column(name = "anyo")
     private int anyo;
 
-    @ManyToOne
-    private Modelo modelo;
-
     @Column(name="Estado")
     private String estado;
+
+    @ManyToOne
+    private Modelo modelo;
 
     @ManyToOne
     private Proveedor proveedor;
 
     public Ejemplar(){}
 
-    public Ejemplar(Date fecha_adquisicion, String ciudad_acu, int anyo, Modelo modelo, String estado, Proveedor proveedor) {
+    public Ejemplar(Date fecha_adquisicion, String ciudad_acu, int anyo, String estado, Modelo modelo, Proveedor proveedor) {
         this.fecha_adquisicion = fecha_adquisicion;
         this.ciudad_acu = ciudad_acu;
         this.anyo = anyo;
-        this.modelo = modelo;
         this.estado = estado;
+        this.modelo = modelo;
         this.proveedor = proveedor;
     }
 
