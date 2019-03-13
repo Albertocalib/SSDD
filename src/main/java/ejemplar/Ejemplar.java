@@ -10,13 +10,12 @@ import java.sql.Date;
 @Table(name= "ejemplar")
 public class Ejemplar {
 
-    public interface BasicInfo{}
-    public interface ObjectLists{}
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="Id")
     private int id;
+
     @Column(name="Fecha_adquisicion")
     private Date fecha_adquisicion;
 
@@ -24,7 +23,7 @@ public class Ejemplar {
     private String ciudad_acu;
 
     @Column(name = "anyo")
-    private Date anyo;
+    private int anyo;
 
     @ManyToOne
     private Modelo modelo;
@@ -37,7 +36,7 @@ public class Ejemplar {
 
     public Ejemplar(){}
 
-    public Ejemplar(Date fecha_adquisicion, String ciudad_acu, Date anyo, Modelo modelo, String estado, Proveedor proveedor) {
+    public Ejemplar(Date fecha_adquisicion, String ciudad_acu, int anyo, Modelo modelo, String estado, Proveedor proveedor) {
         this.fecha_adquisicion = fecha_adquisicion;
         this.ciudad_acu = ciudad_acu;
         this.anyo = anyo;
@@ -70,11 +69,11 @@ public class Ejemplar {
         this.ciudad_acu = ciudad_acu;
     }
 
-    public Date getAnyo() {
+    public int getAnyo() {
         return anyo;
     }
 
-    public void setAnyo(Date anyo) {
+    public void setAnyo(int anyo) {
         this.anyo = anyo;
     }
 

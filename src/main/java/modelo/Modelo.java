@@ -13,6 +13,9 @@ public class Modelo {
     @Column(name="Id")
     private int id;
 
+    @Column(name = "NombreModelo")
+    private String nombreModelo;
+
     @Column(name = "valorFacial")
     private int valorFacial;
 
@@ -47,6 +50,9 @@ public class Modelo {
         this.descripcion = descripcion;
         listaEjemplares=new LinkedHashSet<Ejemplar>();
         metales=new LinkedHashSet<String>();
+
+        this.nombreModelo = unidadMonetaria + valorFacial;
+
     }
 
     public int getId() {
@@ -114,9 +120,12 @@ public class Modelo {
     public void setEjemplar(Ejemplar ejemplar) {
         this.listaEjemplares.add(ejemplar);
     }
+
     public void setEjemplares(LinkedHashSet<Ejemplar> ejemplares) {
         this.listaEjemplares=ejemplares;
     }
+
+
 }
 
 
