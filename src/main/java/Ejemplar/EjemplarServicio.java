@@ -8,19 +8,19 @@ public class EjemplarServicio {
     @Autowired
     private EjemplarRepositorio repositorio;
 
-    public void delete(int id) {
+    public void borrar(int id) {
         repositorio.deleteById(id);
     }
-    public Ejemplar findById(int id){
+    public Ejemplar buscarPorId(int id){
        return repositorio.findById(id);
     }
-    public void delete(Ejemplar e) {
+    public void borrar(Ejemplar e) {
         repositorio.delete(e);
     }
-    public void save(Ejemplar ejemplar) {
+    public void guardar(Ejemplar ejemplar) {
         repositorio.save(ejemplar);
     }
-    public List<Ejemplar> findAll() {
+    public List<Ejemplar> buscarTodos() {
         return repositorio.findAll();
     }
 

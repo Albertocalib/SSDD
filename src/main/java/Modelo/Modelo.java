@@ -1,5 +1,7 @@
 package Modelo;
 
+import Ejemplar.Ejemplar;
+
 import javax.persistence.*;
 import java.util.LinkedHashSet;
 
@@ -37,7 +39,7 @@ public class Modelo {
         listaEjemplares=new LinkedHashSet<Ejemplar>();
     }
 
-    public Modelo(int valorFacial, String unidadMonetaria, double diametro, double peso, String descripcion {
+    public Modelo(int valorFacial, String unidadMonetaria, double diametro, double peso, String descripcion) {
         this.valorFacial = valorFacial;
         this.unidadMonetaria = unidadMonetaria;
         this.diametro = diametro;

@@ -10,18 +10,18 @@ public class ModeloServicio {
     @Autowired
     private ModeloRepositorio repositorio;
 
-    public Modelo findOne(int id) {
+    public Modelo buscarPorId(int id) {
         return repositorio.findById(id);
     }
-    public List<Modelo> findAll (){
+    public List<Modelo> buscarTodos (){
         return repositorio.findAll();
     }
 
-    public void save(Modelo modelo) {
+    public void guardar(Modelo modelo) {
         repositorio.save(modelo);
     }
 
-    public void delete(int id) {
+    public void borrar(int id) {
         repositorio.deleteById(id);
     }
 
