@@ -1,7 +1,9 @@
 package proveedor;
 
-import javax.persistence.*;
+import ejemplar.Ejemplar;
 
+import javax.persistence.*;
+import java.util.LinkedHashSet;
 
 
 @Entity
@@ -26,8 +28,10 @@ public class Proveedor {
 
     @Column(name = "telefono")
     private int telefono;
-
+    @OneToMany (cascade=CascadeType.ALL ,mappedBy = "proveedor")
+    private LinkedHashSet<Ejemplar> listaEjemplares;
     public Proveedor(){
+        listaEjemplares=new LinkedHashSet<Ejemplar>();
     }
 
     public Proveedor(String codigoIdFiscal, String nombre, String dirPostal, String email, int telefono) {
@@ -36,6 +40,7 @@ public class Proveedor {
         this.dirPostal = dirPostal;
         this.email = email;
         this.telefono = telefono;
+        listaEjemplares=new LinkedHashSet<Ejemplar>();
     }
 
     //Zona de Sets
@@ -86,5 +91,16 @@ public class Proveedor {
 
     public int getTelefono() {
         return telefono;
+    }
+
+    public LinkedHashSet<Ejemplar> getListaEjemplares() {
+        return listaEjemplares;
+    }
+
+    public void setListaEjemplares(LinkedHashSet<Ejemplar> listaEjemplares) {
+        this.listaEjemplares = listaEjemplares;
+    }
+    public void addEjemplar(Ejemplar ejemplar){
+        listaEjemplares.add(ejemplar);
     }
 }

@@ -1,6 +1,7 @@
 package ejemplar;
 
 import modelo.Modelo;
+import proveedor.Proveedor;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -31,12 +32,12 @@ public class Ejemplar {
     @Column(name="Estado")
     private String estado;
 
-    @Column(name="proveedor")
-    private String proveedor;
+    @ManyToOne
+    private Proveedor proveedor;
 
     public Ejemplar(){}
 
-    public Ejemplar(Date fecha_adquisicion, String ciudad_acu, Date anyo, Modelo modelo, String estado, String proveedor) {
+    public Ejemplar(Date fecha_adquisicion, String ciudad_acu, Date anyo, Modelo modelo, String estado, Proveedor proveedor) {
         this.fecha_adquisicion = fecha_adquisicion;
         this.ciudad_acu = ciudad_acu;
         this.anyo = anyo;
@@ -93,11 +94,11 @@ public class Ejemplar {
         this.estado = estado;
     }
 
-    public String getProveedor() {
+    public Proveedor getProveedor() {
         return proveedor;
     }
 
-    public void setProveedor(String proveedor) {
+    public void setProveedor(Proveedor proveedor) {
         this.proveedor = proveedor;
     }
 }
