@@ -10,9 +10,6 @@ import java.sql.Date;
 @Table(name= "ejemplar")
 public class Ejemplar {
 
-    public interface BasicInfo{}
-    public interface ObjectLists{}
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="Id")

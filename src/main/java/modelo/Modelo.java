@@ -30,6 +30,8 @@ public class Modelo {
 
     @Column(name = "descripcion")
     private String descripcion;
+    @Column(name = "imagen")
+    private String imagenCodificada;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "modelo")
     private LinkedHashSet<Ejemplar> listaEjemplares;
@@ -39,12 +41,13 @@ public class Modelo {
         listaEjemplares=new LinkedHashSet<Ejemplar>();
     }
 
-    public Modelo(int valorFacial, String unidadMonetaria, double diametro, double peso, String descripcion) {
+    public Modelo(int valorFacial, String unidadMonetaria, double diametro, double peso, String descripcion,String imagen) {
         this.valorFacial = valorFacial;
         this.unidadMonetaria = unidadMonetaria;
         this.diametro = diametro;
         this.peso = peso;
         this.descripcion = descripcion;
+        this.imagenCodificada=imagen;
         listaEjemplares=new LinkedHashSet<Ejemplar>();
         metales=new LinkedHashSet<String>();
     }
@@ -116,6 +119,14 @@ public class Modelo {
     }
     public void setEjemplares(LinkedHashSet<Ejemplar> ejemplares) {
         this.listaEjemplares=ejemplares;
+    }
+
+    public String getImagenCodificada() {
+        return imagenCodificada;
+    }
+
+    public void setImagenCodificada(String imagenCodificada) {
+        this.imagenCodificada = imagenCodificada;
     }
 }
 
