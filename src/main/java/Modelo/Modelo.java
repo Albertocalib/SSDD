@@ -29,20 +29,21 @@ public class Modelo {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @ManyToOne
-    private Ejemplar ejemplar;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "modelo")
+    private LinkedHashSet<Ejemplar> listaEjemplares;
 
     public Modelo() {
         metales=new LinkedHashSet<String>();
+        listaEjemplares=new LinkedHashSet<Ejemplar>();
     }
 
-    public Modelo(int valorFacial, String unidadMonetaria, double diametro, double peso, String descripcion, Ejemplar ejemplar) {
+    public Modelo(int valorFacial, String unidadMonetaria, double diametro, double peso, String descripcion {
         this.valorFacial = valorFacial;
         this.unidadMonetaria = unidadMonetaria;
         this.diametro = diametro;
         this.peso = peso;
         this.descripcion = descripcion;
-        this.ejemplar = ejemplar;
+        listaEjemplares=new LinkedHashSet<Ejemplar>();
         metales=new LinkedHashSet<String>();
     }
 
@@ -104,12 +105,15 @@ public class Modelo {
         this.descripcion = descripcion;
     }
 
-    public Ejemplar getEjemplar() {
-        return ejemplar;
+    public LinkedHashSet<Ejemplar> getEjemplares() {
+        return listaEjemplares;
     }
 
     public void setEjemplar(Ejemplar ejemplar) {
-        this.ejemplar = ejemplar;
+        this.listaEjemplares.add(ejemplar);
+    }
+    public void setEjemplares(LinkedHashSet<Ejemplar> ejemplares) {
+        this.listaEjemplares=ejemplares;
     }
 }
 
