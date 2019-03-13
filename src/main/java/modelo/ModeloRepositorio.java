@@ -6,6 +6,7 @@ import java.util.List;
 public interface ModeloRepositorio extends JpaRepository<Modelo,Integer> {
     List<Modelo> findAll();
     Modelo findById(int id);
+    Modelo findByNommbreModelo(String nombreModelo);
 }
 
 

@@ -13,6 +13,9 @@ public class ModeloServicio {
     public Modelo buscarPorId(int id) {
         return repositorio.findById(id);
     }
+
+    public Modelo buscarPorNombreModelo(String nombreModelo){return repositorio.findByNommbreModelo(nombreModelo);}
+
     public List<Modelo> buscarTodos (){
         return repositorio.findAll();
     }

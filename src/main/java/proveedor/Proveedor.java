@@ -28,8 +28,10 @@ public class Proveedor {
 
     @Column(name = "telefono")
     private int telefono;
+    
     @OneToMany (cascade=CascadeType.ALL ,mappedBy = "proveedor")
     private LinkedHashSet<Ejemplar> listaEjemplares;
+    
     public Proveedor(){
         listaEjemplares=new LinkedHashSet<Ejemplar>();
     }
