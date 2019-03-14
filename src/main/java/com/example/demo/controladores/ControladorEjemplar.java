@@ -8,6 +8,7 @@ import com.example.demo.modelo.ModeloServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +16,7 @@ import com.example.demo.proveedor.Proveedor;
 import com.example.demo.proveedor.ProveedorServicio;
 
 import java.sql.Date;
+import java.util.List;
 
 @Controller
 public class ControladorEjemplar {
@@ -46,7 +48,10 @@ public class ControladorEjemplar {
 
 
     }
-
-
-
+    @GetMapping(path = "/Inicio/Ejemplares")
+    public String mostrarEjemplares(Model model){
+        List<Ejemplar> lista = ejemplarServicio.buscarTodos();
+        model.addAttribute("elementos",lista);
+        return "Inicio";
+    }
 }

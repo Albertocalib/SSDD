@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.LinkedHashSet;
+import java.util.List;
 
 
 @Controller
@@ -30,5 +31,11 @@ public class ControladorModelo {
     public String eliminarModelo(Model model, @PathVariable int id){
         modeloServicio.borrar(id);
         return "Inicio";
+    }
+    @GetMapping(path = "/Inicio/Modelos")
+    public String mostrarModelos(Model model){
+        List<Modelo> lista = modeloServicio.buscarTodos();
+        model.addAttribute("listaModelos",lista);
+        return "BusquedaModelo";
     }
 }
