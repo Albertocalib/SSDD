@@ -1,16 +1,204 @@
-    <div class="col-md-4" th:each="modelo: ${listaModelos}">
-        <div class="card card-chart">
-            <div class="card-header card-header-success"
-                 style="width: 100%; margin-left: 0;opacity:0.9;background: #c27400!important;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
-                <span th:text='${modelo.getValorFacial()}'></span>
-            </div>
-            <div class="card-body">
-
-            </div>
-            <div class="card-footer">
-                <div class="stats" style="margin-left: 90%;">
-                    <i class="material-icons" style="float: right">add</i> info
+<div class="col-md-4" th:each="modelo: ${listaModelos}">
+    <div class="card card-chart">
+        <div class="card-header card-header-success"
+             style="width: 100%; margin-left: 0;opacity:0.9;background: #c27400!important;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
+            <div class="row">
+                <div class="col-9">
+                    <span th:text='${modelo.getValorFacial()}'></span>
+                </div>
+                <div class="col-1">
+                    <button class="btn btn-primary btn-fab btn-fab-mini btn-round"
+                            data-toggle="modal"
+                            data-target="#crearModelo"
+                    >
+                        <i class="material-icons">add</i>
+                    </button>
+                </div>
+                <div class="col-1">
+                    <button class="btn btn-primary btn-fab btn-fab-mini btn-round"
+                            data-toggle="modal"
+                            th:data-target="'#eliminarModelo' + ${modelo.id}"
+                    >
+                        <i class="material-icons">delete</i>
+                    </button>
+                </div>
+                <div class="col-1">
+                    <button class="btn btn-primary btn-fab btn-fab-mini btn-round"
+                            data-toggle="modal"
+                            th:data-target="'#modificarModelo' + ${modelo.id}"
+                    >
+                        <i class="material-icons">edit</i>
+                    </button>
                 </div>
             </div>
         </div>
+        <div class="card-body">
+
+        </div>
+        <div class="card-footer">
+            <div class="stats" style="margin-left: 90%;">
+                <i class="material-icons" style="float: right">add</i> info
+            </div>
+        </div>
     </div>
+    <div class="modal fade" th:id="'eliminarModelo' + ${modelo.id}"  tabindex="-1" role="dialog" th:aria-labelledby="'eliminarModelo' + ${modelo.id}"
+         aria-hidden="true" align="center" data-backdrop="static" data-keyboard="true">
+        <form action="#" th:action="@{'/Inicio/borrarModelo' + ${modelo.id}}" method="post">
+            <div class="modal-dialog " role="document">
+                <div class="modal-content">
+                    <div class="card card-plain">
+                        <div class="modal-header card-header card-header-primary">
+                            <h4 class="card-title">Confirmar eliminación</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body" align="left">
+                        <p> ¿Está seguro de eliminar el com.example.demo.modelo?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" id="submit1" value="Accept" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="modal fade" th:id="'modificarModelo' + ${modelo.id}"  tabindex="-1" role="dialog" th:aria-labelledby="'modificarModelo' + ${modelo.id}"
+         aria-hidden="true" align="center" >
+        <form action="/Inicio/modificarModelo" method="post" enctype='multipart/form-data'>>
+            <div class="modal-dialog " role="document">
+                <div class="modal-content">
+                    <div class="card card-plain">
+                        <div class="modal-header card-header card-header-primary">
+                            <h4 class="card-title">Introduzca nuevo com.example.demo.modelo</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body" align="left">
+                        <p>
+                            <label>Image file:</label><input type="file" required name="file"/>
+                        </p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                    <label class="bmd-label-floating">Inserte valor facial</label>
+                                    <input name="valorFacial" required type="number"  min="1" step="1" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                    <label class="bmd-label-floating">Inserte unidad monetaria</label>
+                                    <input name="unidadMonetaria" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group">
+                                    <label class="bmd-label-floating">Inserte diametro</label>
+                                    <input name="diametro" required type="number" min="0.1" step="0.01" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group">
+                                    <label class="bmd-label-floating">Inserte peso</label>
+                                    <input name="peso" required type="number" min="0.1" step="0.01" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                    <label class="bmd-label-floating">Inserte la descripción</label>
+                                    <input  name="descripcion" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                    <label class="bmd-label-floating">Inserte los metales que la componen(separados por "," )</label>
+                                    <input name="metales" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" id="submit" value="Aceptar" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="modal fade" id="crearModelo" tabindex="-1" role="dialog" aria-labelledby="crearModelo "
+     aria-hidden="true" align="center" >
+    <form action="/Inicio/crearModelo" method="post" enctype='multipart/form-data'>>
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="card card-plain">
+                    <div class="modal-header card-header card-header-primary">
+                        <h4 class="card-title">Introduzca nuevo modelo</h4>
+                    </div>
+                </div>
+                <div class="modal-body" align="left">
+                    <p>
+                        <label>Image file:</label><input type="file" required name="file"/>
+                    </p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte valor facial</label>
+                                <input name="valorFacial" required type="number"  min="1" step="1" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte unidad monetaria</label>
+                                <input name="unidadMonetaria" required type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte diametro</label>
+                                <input name="diametro" required type="number" min="0.1" step="0.01" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte peso</label>
+                                <input name="peso" required type="number" min="0.1" step="0.01" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte la descripción</label>
+                                <input  name="descripcion" required type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte los metales que la componen(separados por "," )</label>
+                                <input name="metales" required type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" id="submit" value="Aceptar" class="btn btn-primary"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
