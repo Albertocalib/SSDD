@@ -1,0 +1,16 @@
+    <div class="col-md-4" th:each="modelo: ${listaModelos}">
+        <div class="card card-chart">
+            <div class="card-header card-header-success"
+                 style="width: 100%; margin-left: 0;opacity:0.9;background: #c27400!important;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
+                <span th:text='${modelo.getValorFacial()}'></span>
+            </div>
+            <div class="card-body">
+
+            </div>
+            <div class="card-footer">
+                <div class="stats" style="margin-left: 90%;">
+                    <i class="material-icons" style="float: right">add</i> info
+                </div>
+            </div>
+        </div>
+    </div>
