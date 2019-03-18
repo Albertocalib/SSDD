@@ -68,20 +68,15 @@
                     </button>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-primary btn-fab btn-fab-mini btn-round"
-                            data-toggle="modal"
-                            th:data-target="'#eliminarEjemplar' + ${ejemplar.id}"
-                    >
-                        <i class="material-icons">delete</i>
-                    </button>
+                    <a th:href="'#eliminarEjemplar' + ${ejemplar.id}" data-toggle="modal" th:name="'#eliminarEjemplar' + ${ejemplar.id}">
+                        <i class="material-icons" style="color: white">delete</i>
+                    </a>
+
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-primary btn-fab btn-fab-mini btn-round"
-                            data-toggle="modal"
-                            th:data-target="'#modificarEjemplar' + ${ejemplar.id}"
-                    >
-                        <i class="material-icons">edit</i>
-                    </button>
+                    <a th:href="'#modificarEjemplar' + ${ejemplar.id}" data-toggle="modal" th:name="'#modificarEjemplar' + ${ejemplar.id}">
+                        <i class="material-icons" style="color: white">edit</i>
+                    </a>
                 </div>
                 </div>
             <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Fechas adquisición:</b>

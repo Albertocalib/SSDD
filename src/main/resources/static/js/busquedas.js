@@ -21,7 +21,7 @@ function busquedaModelos() {
         document.getElementById("ordenarPorId").appendChild(node3);
         document.getElementById("ordenarPorId").appendChild(node4);
         document.getElementById("ordenarPorId").appendChild(node5);
-        $("#botonCrear").replaceWith("<button id = \"botonCrear\"class=\"btn btn-primary btn-fab btn-fab-mini btn-round\"\n" +
+        $("#botonCrear").replaceWith("<button id = \"botonCrear\" class=\"btn btn-fab btn-round btn-color\"\n" +
             "                data-toggle=\"modal\"\n" +
             "                data-target=\"#crearModelo\"\n" +
             "        ><i class=\"material-icons\">add</i>\n" +
@@ -56,7 +56,7 @@ function busquedaEjemplares() {
         document.getElementById("ordenarPorId").appendChild(node3);
         document.getElementById("ordenarPorId").appendChild(node4);
         document.getElementById("ordenarPorId").appendChild(node5);
-        $("#botonCrear").replaceWith("<button id = \"botonCrear\"class=\"btn btn-primary btn-fab btn-fab-mini btn-round\"\n" +
+        $("#botonCrear").replaceWith("<button id = \"botonCrear\" class=\"btn btn-fab btn-round btn-color\"\n" +
             "                data-toggle=\"modal\"\n" +
             "                data-target=\"#crearEjemplar\"\n" +
             "        ><i class=\"material-icons\">add</i>\n" +
@@ -85,7 +85,7 @@ function busquedaProveedores() {
         document.getElementById("ordenarPorId").appendChild(node2);
         document.getElementById("ordenarPorId").appendChild(node3);
         document.getElementById("ordenarPorId").appendChild(node4);
-        $("#botonCrear").replaceWith("<button id = \"botonCrear\"class=\"btn btn-primary btn-fab btn-fab-mini btn-round\"\n" +
+        $("#botonCrear").replaceWith("<button id = \"botonCrear\" class=\"btn btn-fab btn-round btn-color\"\n" +
             "                data-toggle=\"modal\"\n" +
             "                data-target=\"#crearProveedor\"\n" +
             "        ><i class=\"material-icons\">add</i>\n" +

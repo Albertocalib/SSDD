@@ -7,20 +7,14 @@
                     <span th:text='${modelo.getValorFacial()}'></span>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-primary btn-fab btn-fab-mini btn-round"
-                            data-toggle="modal"
-                            th:data-target="'#eliminarModelo' + ${modelo.id}"
-                    >
-                        <i class="material-icons">delete</i>
-                    </button>
+                    <a th:href="'#eliminarModelo' + ${modelo.id}" data-toggle="modal" th:name="'#eliminarModelo' + ${modelo.id}">
+                        <i class="material-icons" style="color: white">delete</i>
+                    </a>
                 </div>
                 <div class="col-1">
-                    <button class="btn btn-primary btn-fab btn-fab-mini btn-round"
-                            data-toggle="modal"
-                            th:data-target="'#modificarModelo' + ${modelo.id}"
-                    >
-                        <i class="material-icons">edit</i>
-                    </button>
+                    <a th:href="'#modificarModelo' + ${modelo.id}" data-toggle="modal" th:name="'#modificarModelo' + ${modelo.id}">
+                        <i class="material-icons" style="color: white">edit</i>
+                    </a>
                 </div>
             </div>
         </div>
