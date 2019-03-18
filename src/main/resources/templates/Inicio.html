@@ -112,6 +112,15 @@
         .card-description {
             color: black;
         }
+        #botonCrear{
+            position: relative;
+            text-align: center;
+            left: 50%;
+
+        }
+        .btn-color{
+            background-color: #c27400;
+        }
     </style>
     <script src="/js/busquedas.js"></script>
 </head>
@@ -242,7 +251,7 @@
         <div class="sidebar-background" style="background-image: url(/img/sidebar-1.jpg) "></div>
     </div>
     <div style=" width: 84%; float: right; margin-right: 1%;">
-        <div id = "listaElementos" class="row" >
+        <div id="listaElementos" class="row">
             <div class="col-md-4">
                 <div class="card card-profile" style="border: 2px solid #c27400">
                     <div class="container">
@@ -251,7 +260,8 @@
                             <div class="albery-wrapper" style="width: 2400px; left: -1800px;">
 
                                 <div class="albery-item" style="width: 600px;">
-                                    <img src="/img/DoblonEspanol.png" alt="" style="align-content: center;align-self: center;align-items: center;">
+                                    <img src="/img/DoblonEspanol.png" alt=""
+                                         style="align-content: center;align-self: center;align-items: center;">
                                 </div>
                                 <div class="albery-item" style="width: 600px;">
                                     <img src="/img/DoblonEspanol.png" alt="">
@@ -302,19 +312,230 @@
                     </script>
                     <div class="card-body" style="background-color: #c27400">
                         <h3 class="card-title"><b>Modelo: 1 doblon Español</b></h3>
-                        <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Fechas adquisición:</b>
+                        <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Fechas
+                        adquisición:</b>
                         19/4/1998</h4>
-                        <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Ciudad de acuñáción:</b>
+                        <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Ciudad de
+                        acuñáción:</b>
                         Mostoles</h4>
-                        <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Fechas acuñacion:</b> 1997
+                        <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Fechas
+                        acuñacion:</b> 1997
                     </h4>
-                        <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Estado:</b> Descripción del
+                        <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Estado:</b>
+                        Descripción del
                         coso este va aqui, y para que sea largo le pongo esta mierda.</h4>
                     </div>
                 </div>
             </div>
         </div>
+        <button id="botonCrear" class="btn btn-fab btn-round btn-color"
+                data-toggle="modal"
+                data-target="#crearModelo"
+        >
+            <i class="material-icons">add</i>
+        </button>
     </div>
+</div>
+
+<div class="modal fade" id="crearProveedor" tabindex="-1" role="dialog" aria-labelledby="crearProveedor "
+     aria-hidden="true" align="center">
+    <form action="/Inicio/crearProveedor" method="post" enctype='multipart/form-data'>>
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="card card-plain">
+                    <div class="modal-header card-header card-header-primary">
+                        <h4 class="card-title">Introduzca nuevo com.example.demo.proveedor</h4>
+                    </div>
+                </div>
+                <div class="modal-body" align="left">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte el codigo de identificacion fiscal del
+                                    proveedor</label>
+                                <input name="codigoIdFiscal" required type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte el nombre del proveedor</label>
+                                <input name="nombreProveedor" required type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte la direccion postal del proveedor</label>
+                                <input name="dirPostal" required type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte email del proveedor</label>
+                                <input name="email" required type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte telefono del proveedor</label>
+                                <input name="telefono" required type="number" min="600000000" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" id="submit" value="Aceptar" class="btn btn-primary"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal fade" id="crearModelo" tabindex="-1" role="dialog" aria-labelledby="crearModelo "
+     aria-hidden="true" align="center">
+    <form action="/Inicio/crearModelo" method="post" enctype='multipart/form-data'>>
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="card card-plain">
+                    <div class="modal-header card-header card-header-primary">
+                        <h4 class="card-title">Introduzca nuevo modelo</h4>
+                    </div>
+                </div>
+                <div class="modal-body" align="left">
+                    <p>
+                        <label>Image file:</label><input type="file" required name="file"/>
+                    </p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte valor facial</label>
+                                <input name="valorFacial" required type="number" min="1" step="1"
+                                       class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte unidad monetaria</label>
+                                <input name="unidadMonetaria" required type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte diametro</label>
+                                <input name="diametro" required type="number" min="0.1" step="0.01"
+                                       class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte peso</label>
+                                <input name="peso" required type="number" min="0.1" step="0.01"
+                                       class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte la descripción</label>
+                                <input name="descripcion" required type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte los metales que la componen(separados por
+                                    "," )</label>
+                                <input name="metales" required type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" id="submit" value="Aceptar" class="btn btn-primary"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal fade" id="crearEjemplar" tabindex="-1" role="dialog" aria-labelledby="crearEjemplar"
+     aria-hidden="true" align="center">
+    <form action="/Inicio/crearEjemplar" method="post" enctype='multipart/form-data'>>
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="card card-plain">
+                    <div class="modal-header card-header card-header-primary">
+                        <h4 class="card-title">Introduzca nuevo Ejemplar</h4>
+                    </div>
+                </div>
+                <div class="modal-body" align="left">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte Nombre del Modelo del Ejemplar</label>
+                                <input name="nombreModelo" required type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte fecha de adquisicion</label>
+                                <input name="fechaAdquisicion" required type="date" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte Ciudad de acuñacion</label>
+                                <input name="ciudadAcunyacion" required type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte Año de acuñacion</label>
+                                <input name="anyo" required type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte el estado</label>
+                                <input name="estado" required type="number" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte el codigo de identificacion fiscal del
+                                    proveedor</label>
+                                <input name="codigoIdFiscal" required type="String" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" id="submit" value="Aceptar" class="btn btn-primary"/>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 <footer class="footer" style="width: 85%;
     position: absolute;
@@ -346,6 +567,8 @@
             ©MuseoDeLaMoneda
         </div>
     </div>
+
+
 </footer>
 </body>
 

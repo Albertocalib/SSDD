@@ -21,6 +21,12 @@ function busquedaModelos() {
         document.getElementById("ordenarPorId").appendChild(node3);
         document.getElementById("ordenarPorId").appendChild(node4);
         document.getElementById("ordenarPorId").appendChild(node5);
+        $("#botonCrear").replaceWith("<button id = \"botonCrear\"class=\"btn btn-primary btn-fab btn-fab-mini btn-round\"\n" +
+            "                data-toggle=\"modal\"\n" +
+            "                data-target=\"#crearModelo\"\n" +
+            "        ><i class=\"material-icons\">add</i>\n" +
+            "            </button>");
+
     })
 
 }
@@ -50,6 +56,11 @@ function busquedaEjemplares() {
         document.getElementById("ordenarPorId").appendChild(node3);
         document.getElementById("ordenarPorId").appendChild(node4);
         document.getElementById("ordenarPorId").appendChild(node5);
+        $("#botonCrear").replaceWith("<button id = \"botonCrear\"class=\"btn btn-primary btn-fab btn-fab-mini btn-round\"\n" +
+            "                data-toggle=\"modal\"\n" +
+            "                data-target=\"#crearEjemplar\"\n" +
+            "        ><i class=\"material-icons\">add</i>\n" +
+            "            </button>");
     })
 }
 
@@ -74,5 +85,10 @@ function busquedaProveedores() {
         document.getElementById("ordenarPorId").appendChild(node2);
         document.getElementById("ordenarPorId").appendChild(node3);
         document.getElementById("ordenarPorId").appendChild(node4);
+        $("#botonCrear").replaceWith("<button id = \"botonCrear\"class=\"btn btn-primary btn-fab btn-fab-mini btn-round\"\n" +
+            "                data-toggle=\"modal\"\n" +
+            "                data-target=\"#crearProveedor\"\n" +
+            "        ><i class=\"material-icons\">add</i>\n" +
+            "            </button>");
     })
 }

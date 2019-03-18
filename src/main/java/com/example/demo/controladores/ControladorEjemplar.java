@@ -51,7 +51,7 @@ public class ControladorEjemplar {
         model.addAttribute("elementos",lista);
         return "Inicio";
     }
-    @RequestMapping (value= "/Inicio/borrarModelo{id}",method = RequestMethod.POST)
+    @RequestMapping (value= "/Inicio/borrarEjemplar{id}",method = RequestMethod.POST)
     public String eliminarEjemplar (Model model, @PathVariable int id){
         ejemplarServicio.borrar(id);
         return "Inicio";
