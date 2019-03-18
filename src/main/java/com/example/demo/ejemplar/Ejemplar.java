@@ -5,6 +5,8 @@ import com.example.demo.proveedor.Proveedor;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Table(name= "ejemplar")
@@ -28,13 +30,18 @@ public class Ejemplar {
     @Column(name="Estado")
     private String estado;
 
+    @Column(name = "imagenes")
+    private LinkedHashSet<String> listaImagenes;
+
     @ManyToOne
     private Modelo modelo;
 
     @ManyToOne
     private Proveedor proveedor;
 
-    public Ejemplar(){}
+    public Ejemplar(){
+        listaImagenes = new LinkedHashSet<>();
+    }
 
     public Ejemplar(Date fecha_adquisicion, String ciudad_acu, int anyo, String estado, Modelo modelo, Proveedor proveedor) {
         this.fecha_adquisicion = fecha_adquisicion;
@@ -43,6 +50,26 @@ public class Ejemplar {
         this.estado = estado;
         this.modelo = modelo;
         this.proveedor = proveedor;
+        listaImagenes = new LinkedHashSet<>();
+    }
+
+    public Ejemplar(Date fecha_adquisicion, String ciudad_acu, int anyo, String estado) {
+        this.fecha_adquisicion = fecha_adquisicion;
+        this.ciudad_acu = ciudad_acu;
+        this.anyo = anyo;
+        this.estado = estado;
+        listaImagenes = new LinkedHashSet<>();
+    }
+
+    public Set<String> getListaImagenes() {
+        return listaImagenes;
+    }
+
+    public void setListaImagenes(LinkedHashSet<String> listaImagenes) {
+        this.listaImagenes = listaImagenes;
+    }
+    public void addImagen(String img){
+        this.listaImagenes.add(img);
     }
 
     public int getId() {

@@ -37,7 +37,7 @@ public class Modelo {
     @Column(name = "imagen")
     private String imagenCodificada;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "modelo")
+    @OneToMany(cascade = {CascadeType.ALL},mappedBy = "modelo")
     private Set<Ejemplar> listaEjemplares;
 
     public Modelo() {
@@ -54,11 +54,13 @@ public class Modelo {
         this.imagenCodificada=imagen;
         listaEjemplares=new LinkedHashSet<>();
         metales=new LinkedHashSet<>();
-
         this.nombreModelo = unidadMonetaria + valorFacial;
 
     }
 
+    public void addEjemplar(Ejemplar e){
+        this.listaEjemplares.add(e);
+    }
     public int getId() {
         return id;
     }

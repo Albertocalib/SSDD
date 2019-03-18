@@ -51,7 +51,7 @@ public class ControladorEjemplar {
     @GetMapping(path = "/Inicio/Ejemplares")
     public String mostrarEjemplares(Model model){
         List<Ejemplar> lista = ejemplarServicio.buscarTodos();
-        model.addAttribute("elementos",lista);
-        return "Inicio";
+        model.addAttribute("listaEjemplares",lista);
+        return "BusquedaEjemplares";
     }
 }

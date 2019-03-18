@@ -26,7 +26,6 @@ function busquedaModelos() {
 }
 
 function busquedaEjemplares() {
-
     var urlPage = "/Inicio/Ejemplares";
     $.ajax({
         url: urlPage
