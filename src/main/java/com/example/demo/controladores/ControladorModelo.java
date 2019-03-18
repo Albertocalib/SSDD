@@ -27,7 +27,7 @@ public class ControladorModelo {
         modeloServicio.guardar(m);
         return "Inicio";
     }
-    @GetMapping (value = "/Inicio/borrarModelo{id}")
+    @RequestMapping (value= "/Inicio/borrarModelo{id}",method = RequestMethod.POST)
     public String eliminarModelo(Model model, @PathVariable int id){
         modeloServicio.borrar(id);
         return "Inicio";

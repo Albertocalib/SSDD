@@ -12,7 +12,6 @@
                         </div>
 
 
-
                     </div>
 
                     <div class="move-right">
@@ -24,7 +23,8 @@
 
                 </div>
 
-                <div class="pagination-container" style="width: 600px;" th:each="imagen: ${ejemplar.getListaImagenes()}">
+                <div class="pagination-container" style="width: 600px;"
+                     th:each="imagen: ${ejemplar.getListaImagenes()}">
                     <div class="pagination-wrapper" style="width: 484px; left: -363px;">
                         <div class="pagination-item" data-item="1" style="width: 116px; margin-right: 5px;">
                             <img th:src="${imagen}" alt="">
@@ -33,13 +33,7 @@
                 </div>
                 <div style="border: 2px solid gray;margin-left: -18px;width: 118px;min-height: 114px;position: absolute;bottom: -4px;"></div>
             </div>
-            <script src="/js/albery.js"></script>
-            <script>
-                $(".albery-container").albery({
-                    speed: 500,
-                    imgWidth: 600,
-                });
-            </script>
+
             <div class="card-body" style="background-color: #c27400">
                 <h3 class="card-title"><b>Modelo:</b> <span
                         th:text="' ' + ${ejemplar.getModelo().getValorFacial()}+ ' ' +${ejemplar.getModelo().getUnidadMonetaria()}"></span>
@@ -49,11 +43,17 @@
                 <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Ciudad de
                 acuñación:</b><span th:text="' ' + ${ejemplar.getCiudad_acu()}"></span></h4>
                 <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Fechas acuñacion:</b> <span
-                    th:text="' ' + ${ejemplar.getAnyo()}"></span>
-            </h4>
+                    th:text="' ' + ${ejemplar.getAnyo()}"></span></h4>
                 <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Estado:</b><span
                     th:text="' ' + ${ejemplar.getEstado()}"></span></h4>
             </div>
         </div>
+        <script src="/js/albery.js"></script>
+        <script>
+            $(".albery-container").albery({
+                speed: 500,
+                imgWidth: 600,
+            });
+        </script>
     </div>
 </div>
