@@ -1,13 +1,13 @@
 <div id="listaElementos" class="row">
-    <div class="col-md-4" th:each="ejemplar: ${listaEjemplares}">
+    <div class="col-md-4" th:each="ejemplar,ind : ${listaEjemplares}">
         <div class="card card-profile" style="border: 2px solid #c27400">
             <div class="container">
                 <div class="albery-container">
 
-                    <div class="albery-wrapper" style="width: 2400px; margin-left: -14%;">
+                    <div th:id="'albery-wrapper' + ${ind.index}"class="albery-wrapper" style="width: 2400px; margin-left: -14%;">
 
                         <div class="albery-item" style="width: 600px;" th:each="imagen: ${ejemplar.getListaImagenes()}">
-                            <img th:src="${imagen}" alt=""
+                            <img class="img" th:src="${imagen}" alt=""
                                  style="align-content: center;align-self: center;align-items: center;">
                         </div>
 
@@ -15,10 +15,10 @@
                     </div>
 
                     <div class="move-right">
-                        <a href="#" id="rightArrow"></a>
+                        <a href="#" th:id="'rightArrow' + ${ind.index}"></a>
                     </div>
                     <div class="move-left">
-                        <a href="#" id="leftArrow"></a>
+                        <a href="#" th:id="'leftArrow' + ${ind.index}"></a>
                     </div>
 
                 </div>

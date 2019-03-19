@@ -14,9 +14,6 @@ public class Modelo {
     @Column(name="Id")
     private int id;
 
-    @Column(name = "NombreModelo")
-    private String nombreModelo;
-
     @Column(name = "valorFacial")
     private int valorFacial;
 
@@ -34,7 +31,7 @@ public class Modelo {
 
     @Column(name = "descripcion")
     private String descripcion;
-    @Column(name = "imagen")
+    @Column(name = "imagen",columnDefinition="LONGTEXT")
     private String imagenCodificada;
 
     @OneToMany(cascade = {CascadeType.ALL},mappedBy = "modelo")
@@ -54,10 +51,17 @@ public class Modelo {
         this.imagenCodificada=imagen;
         listaEjemplares=new LinkedHashSet<>();
         metales=new LinkedHashSet<>();
-        this.nombreModelo = unidadMonetaria + valorFacial;
 
     }
 
+    public String metalesToString (){
+        String resul="";
+        for (String s:metales){
+            resul+=(s+",");
+        }
+        resul=resul.substring(0,resul.length()-1);
+        return resul;
+    }
     public void addEjemplar(Ejemplar e){
         this.listaEjemplares.add(e);
     }
@@ -139,6 +143,13 @@ public class Modelo {
 
     public void setImagenCodificada(String imagenCodificada) {
         this.imagenCodificada = imagenCodificada;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Modelo modelo = (Modelo) obj;
+        return (modelo.getValorFacial() == this.valorFacial) && (modelo.getUnidadMonetaria().equals(this.unidadMonetaria));
+
     }
 }
 

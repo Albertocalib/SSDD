@@ -1,16 +1,4 @@
-/*!
- * Albery
- * by Albert Mendes
- *
- * Copyright 2018 Albert Mendes
- * Released under the MIT license
- * https://github.com/albertmendes/Albery/blob/master/LICENSE
- *
- * @preserve
- */
-
 (function ($) {
-
   $.fn.albery = function(options) {
     var settings = $.extend({
       speed: 500,
@@ -18,17 +6,12 @@
       paginationBorder: 5,
       paginationItemWidth: 116,
     }, options);
-
-
-    /* Fit to screen */
     function checkIfFits() {
       if(window.innerWidth < settings.imgWidth) {
         settings.imgWidth = window.innerWidth - 42;
       }
     }
     checkIfFits();
-    /***************************/
-
     var childrenImg = $(".albery-wrapper div").length;
     var maxLength = childrenImg * settings.imgWidth;
     var myleft = 0;
@@ -43,29 +26,33 @@
     $(".albery-wrapper").css("width", maxLength);
     $(".pagination-wrapper").css("width", ((settings.paginationItemWidth + settings.paginationBorder) * childrenImg));
 
-    function moveNext() {
+    function moveNext(num) {
       // Move left
       myleft -= settings.imgWidth;
       myleftPagination -= onePagination;
+      var idWrapper =  "#albery-wrapper" + num;
+      var idPWrapper =  "#pagination-wrapper" + num;
       if(myleft <= -maxLength) {
-        $(".albery-wrapper").animate({left: 0}, settings.speed);
-        $(".pagination-wrapper").animate({left: 0}, settings.speed);
+        $(idWrapper).animate({left: 0}, settings.speed);
+        $(idPWrapper).animate({left: 0}, settings.speed);
         // Reset
         myleft = 0;
         myleftPagination = 0;
         console.log(myleft);
       }
       else {
-        $(".albery-wrapper").animate({left: myleft}, settings.speed);
-        $(".pagination-wrapper").animate({left: myleftPagination}, settings.speed);
+        $(idWrapper).animate({left: myleft}, settings.speed);
+        $(idPWrapper).animate({left: myleftPagination}, settings.speed);
         console.log(myleft);
       }
     }
 
-    function movePrev() {
+    function movePrev(num) {
+      var idWrapper =  "#albery-wrapper" + num;
+      var idPWrapper =  "#pagination-wrapper" + num;
       if(myleft == 0) {
-        $(".albery-wrapper").animate({left: -maxLength + settings.imgWidth}, settings.speed);
-        $(".pagination-wrapper").animate({left: -allPagination + onePagination}, settings.speed);
+        $(idWrapper).animate({left: -maxLength + settings.imgWidth}, settings.speed);
+        $(idPWrapper).animate({left: -allPagination + onePagination}, settings.speed);
         // Reset
         myleft = -maxLength + settings.imgWidth;
         myleftPagination = -allPagination + onePagination;
@@ -75,8 +62,8 @@
         // Move right
         myleft += settings.imgWidth;
         myleftPagination += onePagination;
-        $(".albery-wrapper").animate({left: myleft}, settings.speed);
-        $(".pagination-wrapper").animate({left: myleftPagination}, settings.speed);
+        $(idWrapper).animate({left: myleft}, settings.speed);
+        $(idPWrapper).animate({left: myleftPagination}, settings.speed);
         console.log(myleft);
       }
     }
@@ -91,12 +78,20 @@
       console.log(itemNum);
     });
 
-    $("#rightArrow").on("click", function(e) {
+    $("#rightArrow0").on("click", function(e) {
       e.preventDefault();
-      moveNext();
+      moveNext(0);
     });
-    $("#leftArrow").on("click", function(e) {
+    $("#leftArrow0").on("click", function(e) {
       e.preventDefault();
+      movePrev(0);
+    });
+    $("#rightArrow1").on("click", function(e) {
+      e.preventDefault();
+      moveNext(1);
+    });
+    $("#leftArrow1").on("click", function(e) {
+      e.preventDefault(1);
       movePrev();
     });
 
@@ -136,8 +131,5 @@
         console.log("startY: " + touchstartY + " endY: " + touchendY);
       }
     }
-
-
   };
-
 }(jQuery));

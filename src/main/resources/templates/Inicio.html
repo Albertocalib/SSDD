@@ -8,23 +8,12 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <!-- including ECharts file -->
-    <script src="/js/echarts.min.js"></script>
-    <!-- CSS Files  -->
-    <link rel="stylesheet" href="/css/mainPageStyle.css">
 
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
-
-    <!-- including ECharts file -->
-    <script src="/js/echarts.min.js"></script>
-    <!-- CSS Files  -->
-    <link rel="stylesheet" href="/css/mainPageStyle.css">
-    <link rel="stylesheet" href="/css/commonCss.css">
     <!-- Material Dashboard CSS -->
-
     <link rel="stylesheet" href="/css/material-dashboard.css">
 
 
@@ -78,9 +67,6 @@
     <!-- Library for adding dinamically elements -->
     <script src="/js/plugins/arrive.min.js"></script>
 
-    <!--  Google Maps Plugin    -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-
     <!-- Chartist JS -->
     <script src="/js/plugins/chartist.min.js"></script>
 
@@ -100,6 +86,7 @@
             margin-bottom: 2%;
             position: relative;
             min-width: 100%;
+            height: 400px;
         }
         .albery-container{
             width: auto!important;
@@ -119,6 +106,7 @@
             position: relative;
             text-align: center;
             left: 50%;
+            margin-bottom: 30px;
 
         }
         .btn-color{
@@ -132,6 +120,10 @@
         .form-check .form-check-input:checked ~ .circle {
 
             border-color: #a1887f;
+        }
+        .img {
+            width: 330px!important;
+            height: 300px;
         }
     </style>
     <script src="/js/busquedas.js"></script>
@@ -154,10 +146,11 @@
 
 </script>
 <body style="overflow-x:hidden">
+
 <header class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row bd-navbar"
         style="background: #8d6e63!important;box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 5px rgba(0, 0, 0, 0)!important;">
     <a class="navbar-brand mr-0 mr-md-2" href="#" target="_blank">
-        <img class="img" src="/img/logoPractica.png" style="max-width: 75px;margin-top: -12%;">
+        <img src="/img/logoPractica.png" style="max-width: 75px;margin-top: -12%;">
     </a>
 
     <div class="navbar-nav-scroll ml-md-auto ">
@@ -253,10 +246,7 @@
                                 <option value="D">Diametro</option>
                                 <option value="P">Peso</option>
                             </select>
-
                         </label>
-Inserte el codigo de identificacion fiscal del proveedor
-
                     </a>
 
                 </li>
@@ -419,11 +409,20 @@ Inserte el codigo de identificacion fiscal del proveedor
                     </div>
                 </div>
                 <div class="modal-body" align="left">
+                    <p>
+                        <label>Image file:</label><input type="file" required name="file"/>
+                    </p>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group bmd-form-group">
-                                <label class="bmd-label-floating">Inserte Nombre del Modelo del Ejemplar</label>
-                                <input name="nombreModelo" required type="text" class="form-control">
+                                <label class="bmd-label-floating">Inserte el valor facial del modelo</label>
+                                <input name="valorFacial" required type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Inserte la unidad monetaria del modelo</label>
+                                <input name="unidadMonetaria" required type="text" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -447,7 +446,7 @@ Inserte el codigo de identificacion fiscal del proveedor
                         <div class="col-md-6">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">Inserte Año de acuñacion</label>
-                                <input name="anyo" required type="text" class="form-control">
+                                <input name="anyo" required type="number" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -455,7 +454,7 @@ Inserte el codigo de identificacion fiscal del proveedor
                         <div class="col-md-6">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">Inserte el estado</label>
-                                <input name="estado" required type="number" class="form-control">
+                                <input name="estado" required type="text" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -464,7 +463,7 @@ Inserte el codigo de identificacion fiscal del proveedor
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">Inserte el codigo de identificacion fiscal del
                                     proveedor</label>
-                                <input name="codigoIdFiscal" required type="String" class="form-control">
+                                <input name="codigoIdFiscal" required type="text" class="form-control">
                             </div>
                         </div>
                     </div>

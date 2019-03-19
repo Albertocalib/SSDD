@@ -30,7 +30,7 @@ public class Ejemplar {
     @Column(name="Estado")
     private String estado;
 
-    @Column(name = "imagenes")
+    @Column(name = "imagenes",columnDefinition="LONGTEXT")
     private LinkedHashSet<String> listaImagenes;
 
     @ManyToOne

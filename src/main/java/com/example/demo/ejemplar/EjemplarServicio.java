@@ -24,5 +24,6 @@ public class EjemplarServicio {
     public List<Ejemplar> buscarTodos() {
         return repositorio.findAll();
     }
+    public List<Ejemplar> buscarPorModelos(int valorFacial, String unidadMonetaria){return repositorio.findByModelo_ValorFacialAndModelo_UnidadMonetaria(valorFacial,unidadMonetaria); }
 
 }

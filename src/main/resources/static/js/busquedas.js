@@ -90,4 +90,16 @@ function busquedaProveedores() {
             "        ><i class=\"material-icons\">add</i>\n" +
             "            </button>");
     })
+
+}
+
+function buscarEjemplaresModelos(valorFacial,unidadMonetaria){
+
+    var urlPage = "/Inicio/EjemplaresModelos/"+valorFacial+"/"+unidadMonetaria;
+    console.log(urlPage);
+    $.ajax({
+        url: urlPage
+    }).done(function (data) {
+        $("#listaElementos").replaceWith(data);
+    })
 }

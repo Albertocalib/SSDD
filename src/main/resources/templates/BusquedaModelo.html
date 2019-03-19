@@ -23,11 +23,15 @@
 
             </div>
             <div class="card-body">
-                <img th:src="${modelo.getImagenCodificada()}" alt="" style="margin-left: 23%">
+                <img class="img" th:src="${modelo.getImagenCodificada()}" alt="" style="margin-left: 18%">
             </div>
             <div class="card-footer">
+
                 <div class="stats" style="margin-left: 90%;">
-                    <i class="material-icons" style="float: right">add</i> info
+                    <a th:href="'#masInfo' + ${modelo.id}" data-toggle="modal"
+                       th:name="'#masInfo' + ${modelo.id}">
+                        <i class="material-icons" style="float: right">add</i> info
+                    </a>
                 </div>
             </div>
         </div>
@@ -61,7 +65,7 @@
                     <div class="modal-content">
                         <div class="card card-plain">
                             <div class="modal-header card-header card-header-primary">
-                                <h4 class="card-title">Introduzca nuevo com.example.demo.modelo</h4>
+                                <h4 class="card-title">Modificar modelo</h4>
                             </div>
                         </div>
                         <div class="modal-body" align="left">
@@ -73,7 +77,7 @@
                                     <div class="form-group bmd-form-group">
                                         <label class="bmd-label-floating">Inserte valor facial</label>
                                         <input name="valorFacial" required type="number" min="1" step="1"
-                                               class="form-control">
+                                               class="form-control" th:value="${modelo.getValorFacial()}">
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +85,8 @@
                                 <div class="col-md-12">
                                     <div class="form-group bmd-form-group">
                                         <label class="bmd-label-floating">Inserte unidad monetaria</label>
-                                        <input name="unidadMonetaria" required type="text" class="form-control">
+                                        <input name="unidadMonetaria" required type="text" class="form-control"
+                                               th:value="${modelo.getUnidadMonetaria()}">
                                     </div>
                                 </div>
                             </div>
@@ -90,14 +95,14 @@
                                     <div class="form-group bmd-form-group">
                                         <label class="bmd-label-floating">Inserte diametro</label>
                                         <input name="diametro" required type="number" min="0.1" step="0.01"
-                                               class="form-control">
+                                               class="form-control" th:value="${modelo.getDiametro()}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group bmd-form-group">
                                         <label class="bmd-label-floating">Inserte peso</label>
                                         <input name="peso" required type="number" min="0.1" step="0.01"
-                                               class="form-control">
+                                               class="form-control" th:value="${modelo.getPeso()}">
                                     </div>
                                 </div>
                             </div>
@@ -105,16 +110,19 @@
                                 <div class="col-md-12">
                                     <div class="form-group bmd-form-group">
                                         <label class="bmd-label-floating">Inserte la descripción</label>
-                                        <input name="descripcion" required type="text" class="form-control">
+                                        <input name="descripcion" required type="text" class="form-control"
+                                               th:value="${modelo.getDescripcion()}">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group bmd-form-group">
-                                        <label class="bmd-label-floating">Inserte los metales que la componen(separados por
+                                        <label class="bmd-label-floating">Inserte los metales que la componen(separados
+                                            por
                                             "," )</label>
-                                        <input name="metales" required type="text" class="form-control">
+                                        <input name="metales" required type="text" class="form-control"
+                                               th:value="${modelo.metalesToString()}">
                                     </div>
                                 </div>
                             </div>
@@ -126,8 +134,53 @@
                 </div>
             </form>
         </div>
+        <div class="modal" th:id="'masInfo' + ${modelo.id}" tabindex="-1" role="dialog"
+             th:aria-labelledby="'masInfo' + ${modelo.id}"
+             aria-hidden="true" align="center">
+            <div class="modal-dialog " role="document">
+                <div class="modal-content">
+                    <div class="card card-plain">
+                        <div class="modal-header card-header card-header-primary">
+                            <h4 class="card-title">Información del modelo: <span
+                                    th:text="' ' + ${modelo.getValorFacial()}+ ' ' + ${modelo.getUnidadMonetaria()}"></span>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="modal-body" align="left">
+                        <div class="card-body">
+                            <img class = "img" th:src="${modelo.getImagenCodificada()}" alt="" style="margin-left: 12%;margin-top: -7%;">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5 class="class-title">Diametro: <span th:text="' '+ ${modelo.getDiametro()}"></span>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5 class="class-title">Peso: <span th:text="' '+ ${modelo.getPeso()}"></span></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5 class="class-title">Descripción: <span
+                                        th:text="' '+ ${modelo.getDescripcion()}"></span></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5 class="class-title">Metales: <span
+                                        th:text="' '+ ${modelo.metalesToString()}"></span></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-dismiss="modal" id = "botonMasEjemplares"  th:data1 ='${modelo.getValorFacial()}' th:data2 ='${modelo.getUnidadMonetaria()}' onclick="buscarEjemplaresModelos(this.getAttribute('data1'), this.getAttribute('data2'))"> Ver Ejemplares </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
 </div>
 
 

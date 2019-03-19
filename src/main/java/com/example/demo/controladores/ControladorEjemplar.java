@@ -11,8 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.proveedor.Proveedor;
 import com.example.demo.proveedor.ProveedorServicio;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.sql.Date;
+import java.util.Base64;
 import java.util.List;
 
 @Controller
@@ -24,24 +27,24 @@ public class ControladorEjemplar {
     private ModeloServicio modeloServicio;
     @Autowired
     private ProveedorServicio proveedorServicio;
-
     @RequestMapping(value = "/Inicio/crearEjemplar", method = RequestMethod.POST)
-    public String crearEjemplar(Model model, @RequestParam String nombreModelo, @RequestParam String codigoIdFiscal, @RequestParam Date fechaAdquisicion, @RequestParam String ciudadAcunyacion, @RequestParam int anyo, @RequestParam String estado){
+    public String crearEjemplar(Model model,@RequestParam MultipartFile file,@RequestParam int valorFacial, @RequestParam String unidadMonetaria, @RequestParam String codigoIdFiscal, @RequestParam Date fechaAdquisicion, @RequestParam String ciudadAcunyacion, @RequestParam int anyo, @RequestParam String estado) throws IOException {
 
 
-        Modelo modelo = modeloServicio.buscarPorNombreModelo(nombreModelo);
+        Modelo modelo = modeloServicio.buscarPorValorFacialyUnidadMonetaria(valorFacial,unidadMonetaria);
         if(modelo == null){
-            return "inicio"; //Aqui hay que mostrar un error: El com.example.demo.modelo no existe.
+            return "nicio"; //Aqui hay que mostrar un error: El com.example.demo.modelo no existe.
         }
         Proveedor proveedor = proveedorServicio.buscarPorCodigoIdFiscal(codigoIdFiscal);
         if(proveedor == null){
-             return "inicio"; //Aqui hay que mostrar un error: El com.example.demo.proveedor no existe.
+             return "Inico"; //Aqui hay que mostrar un error: El com.example.demo.proveedor no existe.
         }
 
         Ejemplar ejemplar = new Ejemplar(fechaAdquisicion, ciudadAcunyacion, anyo, estado, modelo, proveedor);
+        ejemplar.addImagen("data:image/png;base64,"+ Base64.getEncoder().encodeToString(file.getBytes()));
         ejemplarServicio.guardar(ejemplar);
         proveedor.addEjemplar(ejemplar);
-        return "inicio";
+        return "Inicio";
 
 
     }
@@ -55,5 +58,12 @@ public class ControladorEjemplar {
     public String eliminarEjemplar (Model model, @PathVariable int id){
         ejemplarServicio.borrar(id);
         return "Inicio";
+    }
+    @GetMapping(path = "/Inicio/EjemplaresModelos/{valorFacial}/{unidadMonetaria}")
+    public String buscarEjemplaresModelo(Model model, @PathVariable int valorFacial,@PathVariable String unidadMonetaria){
+        List<Ejemplar> lista = ejemplarServicio.buscarPorModelos(valorFacial,unidadMonetaria);
+        model.addAttribute("listaEjemplares", lista);
+        System.out.println("skdjfsdkjfnsdkjfn");
+        return "BusquedaEjemplares";
     }
 }
