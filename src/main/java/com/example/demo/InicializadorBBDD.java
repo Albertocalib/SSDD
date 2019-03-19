@@ -43,6 +43,7 @@ public class InicializadorBBDD {
 		Date date = new Date(1998,6,13);
 		Ejemplar ejemplar = new Ejemplar(date,"mostoles",2005,"Corroido");
 		ejemplar.addImagen("/img/ejemplo.png");
+		ejemplar.addImagen("/img/moneda.jpg");
 		modeloRepositorio.save(modelo);
 		proveedorRepositorio.save(proveedor);
 		modelo.addEjemplar(ejemplar);

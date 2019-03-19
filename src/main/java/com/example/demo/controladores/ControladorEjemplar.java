@@ -63,7 +63,13 @@ public class ControladorEjemplar {
     public String buscarEjemplaresModelo(Model model, @PathVariable int valorFacial,@PathVariable String unidadMonetaria){
         List<Ejemplar> lista = ejemplarServicio.buscarPorModelos(valorFacial,unidadMonetaria);
         model.addAttribute("listaEjemplares", lista);
-        System.out.println("skdjfsdkjfnsdkjfn");
+        return "BusquedaEjemplares";
+    }
+
+    @GetMapping(path = "/Inicio/Ejemplares/FechaAdquisicion")
+    public String EjemplaresFechasAdquisicion(Model model){
+        List<Ejemplar> lista = ejemplarServicio.buscarTodosOrdenadosFechasAdquisicion();
+        model.addAttribute("listaEjemplares", lista);
         return "BusquedaEjemplares";
     }
 }

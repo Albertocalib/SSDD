@@ -18,8 +18,8 @@ public class Ejemplar {
     @Column(name="Id")
     private int id;
 
-    @Column(name="Fecha_adquisicion")
-    private Date fecha_adquisicion;
+    @Column(name="FechaAdquisicion")
+    private Date fechaAdquisicion;
 
     @Column(name="Ciudad_acu")
     private String ciudad_acu;
@@ -43,8 +43,8 @@ public class Ejemplar {
         listaImagenes = new LinkedHashSet<>();
     }
 
-    public Ejemplar(Date fecha_adquisicion, String ciudad_acu, int anyo, String estado, Modelo modelo, Proveedor proveedor) {
-        this.fecha_adquisicion = fecha_adquisicion;
+    public Ejemplar(Date fechaAdquisicion, String ciudad_acu, int anyo, String estado, Modelo modelo, Proveedor proveedor) {
+        this.fechaAdquisicion = fechaAdquisicion;
         this.ciudad_acu = ciudad_acu;
         this.anyo = anyo;
         this.estado = estado;
@@ -53,8 +53,8 @@ public class Ejemplar {
         listaImagenes = new LinkedHashSet<>();
     }
 
-    public Ejemplar(Date fecha_adquisicion, String ciudad_acu, int anyo, String estado) {
-        this.fecha_adquisicion = fecha_adquisicion;
+    public Ejemplar(Date fechaAdquisicion, String ciudad_acu, int anyo, String estado) {
+        this.fechaAdquisicion = fechaAdquisicion;
         this.ciudad_acu = ciudad_acu;
         this.anyo = anyo;
         this.estado = estado;
@@ -80,12 +80,12 @@ public class Ejemplar {
         this.id = id;
     }
 
-    public Date getFecha_adquisicion() {
-        return fecha_adquisicion;
+    public Date getFechaAdquisicion() {
+        return fechaAdquisicion;
     }
 
-    public void setFecha_adquisicion(Date fecha_adquisicion) {
-        this.fecha_adquisicion = fecha_adquisicion;
+    public void setFechaAdquisicion(Date fechaAdquisicion) {
+        this.fechaAdquisicion = fechaAdquisicion;
     }
 
     public String getCiudad_acu() {

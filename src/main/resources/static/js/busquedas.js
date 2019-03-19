@@ -43,6 +43,7 @@ function busquedaEjemplares() {
         var textnode = document.createTextNode("Elige una opción");
         node.appendChild(textnode);
         var node2 = document.createElement("option");
+        node2.addEventListener('click',function (ev) {ordenarEjemplaresFechasAdquisicion()},false);
         node2.value = node2.text = "Fecha de adquisición";
         var node3 = document.createElement("option");
         node3.value = node3.text = "Ciudad de acuñación";
@@ -96,6 +97,16 @@ function busquedaProveedores() {
 function buscarEjemplaresModelos(valorFacial,unidadMonetaria){
 
     var urlPage = "/Inicio/EjemplaresModelos/"+valorFacial+"/"+unidadMonetaria;
+    console.log(urlPage);
+    $.ajax({
+        url: urlPage
+    }).done(function (data) {
+        $("#listaElementos").replaceWith(data);
+    })
+}
+
+function ordenarEjemplaresFechasAdquisicion(){
+    var urlPage = "/Inicio/Ejemplares/FechaAdquisicion";
     console.log(urlPage);
     $.ajax({
         url: urlPage
