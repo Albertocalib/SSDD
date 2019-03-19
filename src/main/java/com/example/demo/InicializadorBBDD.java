@@ -8,19 +8,9 @@ import com.example.demo.modelo.Modelo;
 import com.example.demo.modelo.ModeloRepositorio;
 import com.example.demo.proveedor.Proveedor;
 import com.example.demo.proveedor.ProveedorRepositorio;
-import org.apache.commons.io.IOUtils;
-import org.apache.tomcat.jni.File;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.Date;
-import java.util.Base64;
 
 
 @Component
@@ -34,7 +24,7 @@ public class InicializadorBBDD {
 	private ProveedorRepositorio proveedorRepositorio;
 
 	@PostConstruct
-	public void init() throws IOException {
+	public void init()  {
 		Modelo modelo = new Modelo(1,"Doblón Español",2.5,6.77,"Doblón de oro español","/img/ejemplo.png");
 		modelo.addMetal("oro");
 		Modelo modelo2 = new Modelo(5,"Doblón Español",2.5,6.77,"Doblón de oro español","/img/ejemplo.png");
