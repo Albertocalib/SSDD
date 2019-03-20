@@ -26,5 +26,10 @@ public class EjemplarServicio {
     }
     public List<Ejemplar> buscarPorModelos(int valorFacial, String unidadMonetaria){return repositorio.findByModelo_ValorFacialAndModelo_UnidadMonetaria(valorFacial,unidadMonetaria); }
     public List<Ejemplar> buscarTodosOrdenadosFechasAdquisicion(){return repositorio.findAllByOrderByFechaAdquisicionAsc();}
+    public List<Ejemplar> buscarTodosOrdenadosFechasAdquisicionDes(){return repositorio.findAllByOrderByFechaAdquisicionDesc();}
+    public List<Ejemplar> buscarTodosOrdenadosCiudadAcunacion(){return repositorio.findAllByOrderByCiudadAcuAsc();}
+    public List<Ejemplar> buscarTodosOrdenadosAnoAcunacion(){return repositorio.findAllByOrderByAnyoAsc();}
+    public List<Ejemplar> buscarTodosOrdenadosAnoAcunacionDes(){return repositorio.findAllByOrderByAnyoDesc();}
+
 
 }

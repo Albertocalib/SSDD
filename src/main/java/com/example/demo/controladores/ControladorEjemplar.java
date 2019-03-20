@@ -72,4 +72,29 @@ public class ControladorEjemplar {
         model.addAttribute("listaEjemplares", lista);
         return "BusquedaEjemplares";
     }
+    @GetMapping(path = "/Inicio/Ejemplares/FechaAdquisicionDes")
+    public String EjemplaresFechasAdquisicionDes(Model model){
+        List<Ejemplar> lista = ejemplarServicio.buscarTodosOrdenadosFechasAdquisicionDes();
+        model.addAttribute("listaEjemplares", lista);
+        return "BusquedaEjemplares";
+    }
+    @GetMapping(path = "/Inicio/Ejemplares/CiudadAcunacion")
+    public String EjemplaresCiudadAcunacion(Model model){
+        List<Ejemplar> lista = ejemplarServicio.buscarTodosOrdenadosCiudadAcunacion();
+        model.addAttribute("listaEjemplares", lista);
+        return "BusquedaEjemplares";
+    }
+    @GetMapping(path = "/Inicio/Ejemplares/AnoAcunacion")
+    public String EjemplaresAnoAcunacion(Model model){
+        List<Ejemplar> lista = ejemplarServicio.buscarTodosOrdenadosAnoAcunacion();
+        model.addAttribute("listaEjemplares", lista);
+        return "BusquedaEjemplares";
+    }
+    @GetMapping(path = "/Inicio/Ejemplares/AnoAcunacionDes")
+    public String EjemplaresAnoAcunacionDes(Model model){
+        List<Ejemplar> lista = ejemplarServicio.buscarTodosOrdenadosAnoAcunacionDes();
+        model.addAttribute("listaEjemplares", lista);
+        return "BusquedaEjemplares";
+    }
+
 }

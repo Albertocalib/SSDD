@@ -40,7 +40,7 @@ public class InicializadorBBDD {
 		Modelo modelo2 = new Modelo(5,"Doblón Español",2.5,6.77,"Doblón de oro español","/img/ejemplo.png");
 		modelo.addMetal("oro");
 		Proveedor proveedor = new Proveedor("05200","Samuel","arevalo","sss@gmail.com",685270766);
-		Date date = new Date(1998,6,13);
+		Date date = new Date(1998,02,25);
 		Ejemplar ejemplar = new Ejemplar(date,"mostoles",2005,"Corroido");
 		ejemplar.addImagen("/img/ejemplo.png");
 		ejemplar.addImagen("/img/moneda.jpg");

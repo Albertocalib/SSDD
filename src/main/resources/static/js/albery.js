@@ -91,10 +91,89 @@
       moveNext(1);
     });
     $("#leftArrow1").on("click", function(e) {
-      e.preventDefault(1);
-      movePrev();
+      e.preventDefault();
+      movePrev(1);
     });
-
+    $("#rightArrow2").on("click", function(e) {
+      e.preventDefault();
+      moveNext(2);
+    });
+    $("#leftArrow2").on("click", function(e) {
+      e.preventDefault();
+      movePrev(2);
+    });
+    $("#rightArrow3").on("click", function(e) {
+      e.preventDefault();
+      moveNext(3);
+    });
+    $("#leftArrow3").on("click", function(e) {
+      e.preventDefault();
+      movePrev(3);
+    });
+    $("#rightArrow4").on("click", function(e) {
+      e.preventDefault();
+      moveNext(4);
+    });
+    $("#leftArrow4").on("click", function(e) {
+      e.preventDefault();
+      movePrev(4);
+    });
+    $("#rightArrow5").on("click", function(e) {
+      e.preventDefault();
+      moveNext(5);
+    });
+    $("#leftArrow5").on("click", function(e) {
+      e.preventDefault();
+      movePrev(5);
+    });
+    $("#rightArrow6").on("click", function(e) {
+      e.preventDefault();
+      moveNext(6);
+    });
+    $("#leftArrow6").on("click", function(e) {
+      e.preventDefault();
+      movePrev(6);
+    });
+    $("#rightArrow7").on("click", function(e) {
+      e.preventDefault();
+      moveNext(7);
+    });
+    $("#leftArrow7").on("click", function(e) {
+      e.preventDefault();
+      movePrev(7);
+    });
+    $("#rightArrow8").on("click", function(e) {
+      e.preventDefault();
+      moveNext(8);
+    });
+    $("#leftArrow8").on("click", function(e) {
+      e.preventDefault();
+      movePrev(8);
+    });
+    $("#rightArrow9").on("click", function(e) {
+      e.preventDefault();
+      moveNext(9);
+    });
+    $("#leftArrow9").on("click", function(e) {
+      e.preventDefault();
+      movePrev(9);
+    });
+    $("#rightArrow10").on("click", function(e) {
+      e.preventDefault();
+      moveNext(10);
+    });
+    $("#leftArrow10").on("click", function(e) {
+      e.preventDefault();
+      movePrev(10);
+    });
+    $("#rightArrow11").on("click", function(e) {
+      e.preventDefault();
+      moveNext(11);
+    });
+    $("#leftArrow11").on("click", function(e) {
+      e.preventDefault();
+      movePrev(11);
+    });
 
     /* Swipe functionality */
 

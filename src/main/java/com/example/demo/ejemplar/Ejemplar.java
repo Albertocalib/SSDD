@@ -21,8 +21,8 @@ public class Ejemplar {
     @Column(name="FechaAdquisicion")
     private Date fechaAdquisicion;
 
-    @Column(name="Ciudad_acu")
-    private String ciudad_acu;
+    @Column(name="CiudadAcu")
+    private String ciudadAcu;
 
     @Column(name = "anyo")
     private int anyo;
@@ -43,9 +43,9 @@ public class Ejemplar {
         listaImagenes = new LinkedHashSet<>();
     }
 
-    public Ejemplar(Date fechaAdquisicion, String ciudad_acu, int anyo, String estado, Modelo modelo, Proveedor proveedor) {
+    public Ejemplar(Date fechaAdquisicion, String ciudadAcu, int anyo, String estado, Modelo modelo, Proveedor proveedor) {
         this.fechaAdquisicion = fechaAdquisicion;
-        this.ciudad_acu = ciudad_acu;
+        this.ciudadAcu = ciudadAcu;
         this.anyo = anyo;
         this.estado = estado;
         this.modelo = modelo;
@@ -53,9 +53,9 @@ public class Ejemplar {
         listaImagenes = new LinkedHashSet<>();
     }
 
-    public Ejemplar(Date fechaAdquisicion, String ciudad_acu, int anyo, String estado) {
+    public Ejemplar(Date fechaAdquisicion, String ciudadAcu, int anyo, String estado) {
         this.fechaAdquisicion = fechaAdquisicion;
-        this.ciudad_acu = ciudad_acu;
+        this.ciudadAcu = ciudadAcu;
         this.anyo = anyo;
         this.estado = estado;
         listaImagenes = new LinkedHashSet<>();
@@ -88,12 +88,12 @@ public class Ejemplar {
         this.fechaAdquisicion = fechaAdquisicion;
     }
 
-    public String getCiudad_acu() {
-        return ciudad_acu;
+    public String getCiudadAcu() {
+        return ciudadAcu;
     }
 
-    public void setCiudad_acu(String ciudad_acu) {
-        this.ciudad_acu = ciudad_acu;
+    public void setCiudadAcu(String ciudadAcu) {
+        this.ciudadAcu = ciudadAcu;
     }
 
     public int getAnyo() {
