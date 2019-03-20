@@ -88,9 +88,11 @@
             min-width: 100%;
             height: 400px;
         }
-        .albery-container{
-            width: auto!important;
+
+        .albery-container {
+            width: auto !important;
         }
+
         h1 {
             text-align: center;
         }
@@ -102,27 +104,32 @@
         .card-description {
             color: black;
         }
-        #botonCrear{
+
+        #botonCrear {
             position: relative;
             text-align: center;
             left: 50%;
             margin-bottom: 100px;
 
         }
-        .btn-color{
+
+        .btn-color {
             background-color: #c27400;
         }
+
         .form-check .form-check-input:checked ~ .circle .check {
 
             background-color: #a1887f;
 
         }
+
         .form-check .form-check-input:checked ~ .circle {
 
             border-color: #a1887f;
         }
+
         .img {
-            width: 330px!important;
+            width: 330px !important;
             height: 300px;
         }
     </style>
@@ -146,368 +153,366 @@
 
 </script>
 <body style="overflow-x:hidden">
+<div class="wrapper-full-page">
+    <header class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row bd-navbar"
+            style="background: #8d6e63!important;box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 5px rgba(0, 0, 0, 0)!important;">
+        <a class="navbar-brand mr-0 mr-md-2" href="#" target="_blank">
+            <img src="/img/logoPractica.png" style="max-width: 75px;margin-top: -12%;">
+        </a>
 
-<header class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row bd-navbar"
-        style="background: #8d6e63!important;box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 5px rgba(0, 0, 0, 0)!important;">
-    <a class="navbar-brand mr-0 mr-md-2" href="#" target="_blank">
-        <img src="/img/logoPractica.png" style="max-width: 75px;margin-top: -12%;">
-    </a>
-
-    <div class="navbar-nav-scroll ml-md-auto ">
-        <ul class="navbar-nav bd-navbar-nav flex-row">
-            <li class="nav-item">
-                <a class="nav-link" href="#"> <i
-                        class="material-icons">today</i>NEXT EVENT</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i
-                        class="material-icons">search</i>SEARCH</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" target="_blank"
-                   rel="noopener"><i class="material-icons">help_outline</i>help</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="_blank" rel="noopener"></a>
-            </li>
+        <div class="navbar-nav-scroll ml-md-auto ">
+            <ul class="navbar-nav bd-navbar-nav flex-row">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> <i
+                            class="material-icons">today</i>NEXT EVENT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i
+                            class="material-icons">search</i>SEARCH</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" target="_blank"
+                       rel="noopener"><i class="material-icons">help_outline</i>help</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="_blank" rel="noopener"></a>
+                </li>
 
 
-        </ul>
-    </div>
+            </ul>
+        </div>
 
-</header>
-<div>
-    <div class="sidebar" data-color="purple" data-background-color="white" data-image="/img/sidebar-1.jpg"
-         style=" max-height: 96.2%;
+    </header>
+    <div class="wrapper">
+        <div class="sidebar" data-color="purple" data-background-color="white" data-image="/img/sidebar-1.jpg"
+             style=" max-height: 96.2%;
     bottom: 0;
     margin-bottom: 0;
     margin-top: 3.8%;">
-        <div class="logo">
-            <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                BÚSQUEDA
-            </a>
-        </div>
-        <div class="sidebar-wrapper">
-            <ul class="nav">
-                <li class="nav-item active  ">
-                    <a class="nav-link"
-                       style="background: #a1887f;color: black; margin-bottom: -6%;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
-                        <p>¿Qué desea buscar?</p>
-                    </a>
-                    <div style="margin: 10%">
-                        <div class="form-check form-check-radio">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="check" id="exampleRadios1"
-                                       onclick="busquedaModelos()"
-                                       value="option1">
-                                Modelo
-                                <span class="circle">
+            <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                    BÚSQUEDA
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item active  ">
+                        <a class="nav-link"
+                           style="background: #a1887f;color: black; margin-bottom: -6%;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
+                            <p>¿Qué desea buscar?</p>
+                        </a>
+                        <div style="margin: 10%">
+                            <div class="form-check form-check-radio">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="check" id="exampleRadios1"
+                                           onclick="busquedaModelos()"
+                                           value="option1">
+                                    Modelo
+                                    <span class="circle">
             <span class="check"></span>
         </span>
-                            </label>
-                        </div>
-                        <div class="form-check form-check-radio">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="check" id="exampleRadios2"
-                                       onclick="busquedaEjemplares()"
-                                       value="option2" checked>
-                                Ejemplar
-                                <span class="circle">
+                                </label>
+                            </div>
+                            <div class="form-check form-check-radio">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="check" id="exampleRadios2"
+                                           onclick="busquedaEjemplares()"
+                                           value="option2" checked>
+                                    Ejemplar
+                                    <span class="circle">
                                     <span class="check"></span>
                                 </span>
-                            </label>
-                        </div>
+                                </label>
+                            </div>
 
-                        <div class="form-check form-check-radio">
-                            <label class="form-check-label">
-                                <input onclick="busquedaProveedores()" class="form-check-input" type="radio"
-                                       name="check" id="exampleRadios3"
-                                       value="option3">
-                                Proveedor
-                                <span class="circle">
+                            <div class="form-check form-check-radio">
+                                <label class="form-check-label">
+                                    <input onclick="busquedaProveedores()" class="form-check-input" type="radio"
+                                           name="check" id="exampleRadios3"
+                                           value="option3">
+                                    Proveedor
+                                    <span class="circle">
             <span class="check"></span>
         </span>
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link"
+                           style="background: #a1887f;color: black; margin-bottom: -6%;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
+                            <p>Ordenar por:</p>
+                            <label>
+                                <i class="material-icons"
+                                   style="position: absolute;color: black; margin-left: 39%;margin-top: -1%">
+                                    expand_more </i>
+                                <select id="ordenarPorId" name="ordenarPor" style="width:150px">
+                                    <option selected value="0"> Elige una opción</option>
+                                    <option value="VF">Valor facial</option>
+                                    <option value="UM">Unidad Monetaria</option>
+                                    <option value="D">Diametro</option>
+                                    <option value="P">Peso</option>
+                                </select>
                             </label>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link"
-                       style="background: #a1887f;color: black; margin-bottom: -6%;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
-                        <p>Ordenar por:</p>
-                        <label>
-                            <i class="material-icons"
-                               style="position: absolute;color: black; margin-left: 39%;margin-top: -1%">
-                                expand_more </i>
-                            <select id="ordenarPorId" name="ordenarPor" style="width:150px">
-                                <option selected value="0"> Elige una opción</option>
-                                <option value="VF">Valor facial</option>
-                                <option value="UM">Unidad Monetaria</option>
-                                <option value="D">Diametro</option>
-                                <option value="P">Peso</option>
-                            </select>
-                        </label>
-                    </a>
+                        </a>
 
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-background" style="background-image: url(/img/sidebar-1.jpg) "></div>
         </div>
-        <div class="sidebar-background" style="background-image: url(/img/sidebar-1.jpg) "></div>
-    </div>
-    <div style=" width: 84%; float: right; margin-right: 1%;">
-        <div id = "listaElementos" class="row" >
-        </div>
-        <button id="botonCrear" class="btn btn-fab btn-round btn-color"
-                data-toggle="modal"
-                data-target="#crearModelo"
-        >
-            <i class="material-icons">add</i>
-        </button>
-    </div>
-</div>
+        <div class="main-panel">
+            <div class="content">
+                <div class="container-fluid">
+                    <div id="listaElementos" class="row">
+                    </div>
+                    <button id="botonCrear" class="btn btn-fab btn-round btn-color" data-toggle="modal"
+                            data-target="#crearModelo">
+                        <i class="material-icons">add</i>
+                    </button>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="float-left">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Contacta con nosotros
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Avisos legales
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Acerca de nosotros
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="copyright float-right">
+                        ©MuseoDeLaMoneda
+                    </div>
+                </div>
 
-<div class="modal fade" id="crearProveedor" tabindex="-1" role="dialog" aria-labelledby="crearProveedor "
-     aria-hidden="true" align="center">
-    <form action="/Inicio/crearProveedor" method="post" enctype='multipart/form-data'>>
-        <div class="modal-dialog " role="document">
-            <div class="modal-content">
-                <div class="card card-plain">
-                    <div class="modal-header card-header card-header-primary">
-                        <h4 class="card-title">Introduzca nuevo com.example.demo.proveedor</h4>
-                    </div>
-                </div>
-                <div class="modal-body" align="left">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte el codigo de identificacion fiscal del
-                                    proveedor</label>
-                                <input name="codigoIdFiscal" required type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte el nombre del proveedor</label>
-                                <input name="nombreProveedor" required type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte la direccion postal del proveedor</label>
-                                <input name="dirPostal" required type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte email del proveedor</label>
-                                <input name="email" required type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte telefono del proveedor</label>
-                                <input name="telefono" required type="number" min="600000000" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <input type="submit" id="submit3" value="Aceptar" class="btn btn-primary"/>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
-<div class="modal fade" id="crearModelo" tabindex="-1" role="dialog" aria-labelledby="crearModelo "
-     aria-hidden="true" align="center">
-    <form action="/Inicio/crearModelo" method="post" enctype='multipart/form-data'>>
-        <div class="modal-dialog " role="document">
-            <div class="modal-content">
-                <div class="card card-plain">
-                    <div class="modal-header card-header card-header-primary">
-                        <h4 class="card-title">Introduzca nuevo modelo</h4>
-                    </div>
-                </div>
-                <div class="modal-body" align="left">
-                    <p>
-                        <label>Image file:</label><input type="file" required name="file"/>
-                    </p>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte valor facial</label>
-                                <input name="valorFacial" required type="number" min="1" step="1"
-                                       class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte unidad monetaria</label>
-                                <input name="unidadMonetaria" required type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte diametro</label>
-                                <input name="diametro" required type="number" min="0.1" step="0.01"
-                                       class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte peso</label>
-                                <input name="peso" required type="number" min="0.1" step="0.01"
-                                       class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte la descripción</label>
-                                <input name="descripcion" required type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte los metales que la componen(separados por
-                                    "," )</label>
-                                <input name="metales" required type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <input type="submit" id="submit2" value="Aceptar" class="btn btn-primary"/>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
-<div class="modal fade" id="crearEjemplar" tabindex="-1" role="dialog" aria-labelledby="crearEjemplar"
-     aria-hidden="true" align="center">
-    <form action="/Inicio/crearEjemplar" method="post" enctype='multipart/form-data'>>
-        <div class="modal-dialog " role="document">
-            <div class="modal-content">
-                <div class="card card-plain">
-                    <div class="modal-header card-header card-header-primary">
-                        <h4 class="card-title">Introduzca nuevo Ejemplar</h4>
-                    </div>
-                </div>
-                <div class="modal-body" align="left">
-                    <p>
-                        <label>Image file:</label><input type="file" required name="file"/>
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte el valor facial del modelo</label>
-                                <input name="valorFacial" required type="number" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte la unidad monetaria del modelo</label>
-                                <input name="unidadMonetaria" required type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte fecha de adquisicion</label>
-                                <input name="fechaAdquisicion" required type="date" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte Ciudad de acuñacion</label>
-                                <input name="ciudadAcunyacion" required type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte Año de acuñacion</label>
-                                <input name="anyo" required type="number" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte el estado</label>
-                                <input name="estado" required type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group bmd-form-group">
-                                <label>Inserte el codigo de identificacion fiscal del
-                                    proveedor</label>
-                                <input name="codigoIdFiscal" required type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <input type="submit" id="submit" value="Aceptar" class="btn btn-primary"/>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
-<footer class="footer" style="width: 85%;
-    position: relative;
-    bottom: 0px;
-    right: 0;
-    float: right;
-    margin-right: 1%;">
-    <div class="container-fluid">
-        <nav class="float-left">
-            <ul>
-                <li>
-                    <a href="#">
-                        Contacta con nosotros
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Avisos legales
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Acerca de nosotros
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="copyright float-right">
-            ©MuseoDeLaMoneda
+
+            </footer>
         </div>
     </div>
 
-
-</footer>
+    <div class="modal fade" id="crearProveedor" tabindex="-1" role="dialog" aria-labelledby="crearProveedor "
+         aria-hidden="true" align="center">
+        <form action="/Inicio/crearProveedor" method="post" enctype='multipart/form-data'>>
+            <div class="modal-dialog " role="document">
+                <div class="modal-content">
+                    <div class="card card-plain">
+                        <div class="modal-header card-header card-header-primary">
+                            <h4 class="card-title">Introduzca nuevo com.example.demo.proveedor</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body" align="left">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte el codigo de identificacion fiscal del
+                                        proveedor</label>
+                                    <input name="codigoIdFiscal" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte el nombre del proveedor</label>
+                                    <input name="nombreProveedor" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte la direccion postal del proveedor</label>
+                                    <input name="dirPostal" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte email del proveedor</label>
+                                    <input name="email" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte telefono del proveedor</label>
+                                    <input name="telefono" required type="number" min="600000000" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" id="submit3" value="Aceptar" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal fade" id="crearModelo" tabindex="-1" role="dialog" aria-labelledby="crearModelo "
+         aria-hidden="true" align="center">
+        <form action="/Inicio/crearModelo" method="post" enctype='multipart/form-data'>>
+            <div class="modal-dialog " role="document">
+                <div class="modal-content">
+                    <div class="card card-plain">
+                        <div class="modal-header card-header card-header-primary">
+                            <h4 class="card-title">Introduzca nuevo modelo</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body" align="left">
+                        <p>
+                            <label>Image file:</label><input type="file" required name="file"/>
+                        </p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte valor facial</label>
+                                    <input name="valorFacial" required type="number" min="1" step="1"
+                                           class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte unidad monetaria</label>
+                                    <input name="unidadMonetaria" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte diametro</label>
+                                    <input name="diametro" required type="number" min="0.1" step="0.01"
+                                           class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte peso</label>
+                                    <input name="peso" required type="number" min="0.1" step="0.01"
+                                           class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte la descripción</label>
+                                    <input name="descripcion" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte los metales que la componen(separados por
+                                        "," )</label>
+                                    <input name="metales" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" id="submit2" value="Aceptar" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal fade" id="crearEjemplar" tabindex="-1" role="dialog" aria-labelledby="crearEjemplar"
+         aria-hidden="true" align="center">
+        <form action="/Inicio/crearEjemplar" method="post" enctype='multipart/form-data'>>
+            <div class="modal-dialog " role="document">
+                <div class="modal-content">
+                    <div class="card card-plain">
+                        <div class="modal-header card-header card-header-primary">
+                            <h4 class="card-title">Introduzca nuevo Ejemplar</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body" align="left">
+                        <p>
+                            <label>Image file:</label><input type="file" required name="file"/>
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte el valor facial del modelo</label>
+                                    <input name="valorFacial" required type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte la unidad monetaria del modelo</label>
+                                    <input name="unidadMonetaria" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte fecha de adquisicion</label>
+                                    <input name="fechaAdquisicion" required type="date" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte Ciudad de acuñacion</label>
+                                    <input name="ciudadAcunyacion" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte Año de acuñacion</label>
+                                    <input name="anyo" required type="number" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte el estado</label>
+                                    <input name="estado" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group">
+                                    <label>Inserte el codigo de identificacion fiscal del
+                                        proveedor</label>
+                                    <input name="codigoIdFiscal" required type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" id="submit" value="Aceptar" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 </body>
 
 </html>
