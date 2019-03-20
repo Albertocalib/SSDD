@@ -38,4 +38,52 @@ public class ControladorModelo {
         model.addAttribute("listaModelos",lista);
         return "BusquedaModelo";
     }
+    @GetMapping(path = "/Inicio/Modelos/PesoAsc")
+    public String EjemplaresPesoAsc(Model model){
+        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorPesoAsc();
+        model.addAttribute("listaModelos", lista);
+        return "BusquedaModelo";
+    }
+    @GetMapping(path = "/Inicio/Modelos/PesoDes")
+    public String EjemplaresPesoDes(Model model){
+        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorPesoDesc();
+        model.addAttribute("listaModelos", lista);
+        return "BusquedaModelo";
+    }
+    @GetMapping(path = "/Inicio/Modelos/DiametroDes")
+    public String EjemplaresDiametroDes(Model model){
+        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorDiametroDesc();
+        model.addAttribute("listaModelos", lista);
+        return "BusquedaModelo";
+    }
+    @GetMapping(path = "/Inicio/Modelos/DiametroAsc")
+    public String EjemplaresDiametroAsc(Model model){
+        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorDiametroAsc();
+        model.addAttribute("listaModelos", lista);
+        return "BusquedaModelo";
+    }
+    @GetMapping(path = "/Inicio/Modelos/UnidadMonetariaAsc")
+    public String EjemplaresUnidadMonetariaAsc(Model model){
+        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorUnidadMonetariaAsc();
+        model.addAttribute("listaModelos", lista);
+        return "BusquedaModelo";
+    }
+    @GetMapping(path = "/Inicio/Modelos/UnidadMonetariaDes")
+    public String EjemplaresUnidadMonetariaDes(Model model){
+        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorUnidadMonetariaDesc();
+        model.addAttribute("listaModelos", lista);
+        return "BusquedaModelo";
+    }
+    @GetMapping(path = "/Inicio/Modelos/ValorFacialAsc")
+    public String EjemplaresValorFacialAsc(Model model){
+        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorValorFacialAsc();
+        model.addAttribute("listaModelos", lista);
+        return "BusquedaModelo";
+    }
+    @GetMapping(path = "/Inicio/Modelos/ValorFacialDes")
+    public String EjemplaresValorFacialDes(Model model){
+        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorValorFacialDes();
+        model.addAttribute("listaModelos", lista);
+        return "BusquedaModelo";
+    }
 }
