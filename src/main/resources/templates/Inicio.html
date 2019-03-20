@@ -80,6 +80,9 @@
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/albery.css" type="text/css">
     <style>
+        .content{
+            margin-top: 0!important;
+        }
         .container {
             margin-top: 5%;
             margin-left: 2%;
@@ -109,8 +112,6 @@
             position: relative;
             text-align: center;
             left: 50%;
-            margin-bottom: 100px;
-
         }
 
         .btn-color {
@@ -154,43 +155,10 @@
 </script>
 <body style="overflow-x:hidden">
 <div class="wrapper-full-page">
-    <header class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row bd-navbar"
-            style="background: #8d6e63!important;box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 5px rgba(0, 0, 0, 0)!important;">
-        <a class="navbar-brand mr-0 mr-md-2" href="#" target="_blank">
-            <img src="/img/logoPractica.png" style="max-width: 75px;margin-top: -12%;">
-        </a>
-
-        <div class="navbar-nav-scroll ml-md-auto ">
-            <ul class="navbar-nav bd-navbar-nav flex-row">
-                <li class="nav-item">
-                    <a class="nav-link" href="#"> <i
-                            class="material-icons">today</i>NEXT EVENT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i
-                            class="material-icons">search</i>SEARCH</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" target="_blank"
-                       rel="noopener"><i class="material-icons">help_outline</i>help</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="_blank" rel="noopener"></a>
-                </li>
-
-
-            </ul>
-        </div>
-
-    </header>
     <div class="wrapper">
-        <div class="sidebar" data-color="purple" data-background-color="white" data-image="/img/sidebar-1.jpg"
-             style=" max-height: 96.2%;
-    bottom: 0;
-    margin-bottom: 0;
-    margin-top: 3.8%;">
-            <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <div class="sidebar" data-color="#8d6e63" data-background-color="white" data-image="/img/sidebar-1.jpg">
+            <div class="logo" style="background-color: #8d6e63">
+                <a class="simple-text logo-normal" style="color: white">
                     BÚSQUEDA
                 </a>
             </div>
@@ -262,16 +230,45 @@
             <div class="sidebar-background" style="background-image: url(/img/sidebar-1.jpg) "></div>
         </div>
         <div class="main-panel">
+            <header class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row bd-navbar"
+                    style="background: #8d6e63!important;box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 5px rgba(0, 0, 0, 0)!important; border-radius: 0!important;">
+                <a class="navbar-brand mr-0 mr-md-2" href="#" target="_blank">
+                    <img src="/img/logoPractica.png" style="max-width: 75px;margin-top: -12%;">
+                </a>
+
+                <div class="navbar-nav-scroll ml-md-auto ">
+                    <ul class="navbar-nav bd-navbar-nav flex-row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> <i
+                                    class="material-icons">today</i>NEXT EVENT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i
+                                    class="material-icons">search</i>SEARCH</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" target="_blank"
+                               rel="noopener"><i class="material-icons">help_outline</i>help</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="_blank" rel="noopener"></a>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+            </header>
             <div class="content">
                 <div class="container-fluid">
                     <div id="listaElementos" class="row">
                     </div>
-                    <button id="botonCrear" class="btn btn-fab btn-round btn-color" data-toggle="modal"
-                            data-target="#crearModelo">
-                        <i class="material-icons">add</i>
-                    </button>
                 </div>
             </div>
+            <button id="botonCrear" class="btn btn-fab btn-round btn-color" data-toggle="modal"
+                    data-target="#crearModelo">
+                <i class="material-icons">add</i>
+            </button>
             <footer class="footer">
                 <div class="container-fluid">
                     <nav class="float-left">
