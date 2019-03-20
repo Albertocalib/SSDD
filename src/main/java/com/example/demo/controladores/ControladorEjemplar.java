@@ -33,11 +33,11 @@ public class ControladorEjemplar {
 
         Modelo modelo = modeloServicio.buscarPorValorFacialyUnidadMonetaria(valorFacial,unidadMonetaria);
         if(modelo == null){
-            return "nicio"; //Aqui hay que mostrar un error: El com.example.demo.modelo no existe.
+            return "Inicio"; //Aqui hay que mostrar un error: El com.example.demo.modelo no existe.
         }
         Proveedor proveedor = proveedorServicio.buscarPorCodigoIdFiscal(codigoIdFiscal);
         if(proveedor == null){
-             return "Inico"; //Aqui hay que mostrar un error: El com.example.demo.proveedor no existe.
+             return "InicIo"; //Aqui hay que mostrar un error: El com.example.demo.proveedor no existe.
         }
 
         Ejemplar ejemplar = new Ejemplar(fechaAdquisicion, ciudadAcunyacion, anyo, estado, modelo, proveedor);
@@ -93,6 +93,24 @@ public class ControladorEjemplar {
     @GetMapping(path = "/Inicio/Ejemplares/AnoAcunacionDes")
     public String EjemplaresAnoAcunacionDes(Model model){
         List<Ejemplar> lista = ejemplarServicio.buscarTodosOrdenadosAnoAcunacionDes();
+        model.addAttribute("listaEjemplares", lista);
+        return "BusquedaEjemplares";
+    }
+    @GetMapping(path = "/Inicio/Ejemplares/CiudadAcunacionDes")
+    public String EjemplaresCiudadAcunacionDes(Model model){
+        List<Ejemplar> lista = ejemplarServicio.buscarTodosOrdenadosCiudadAcunacionDes();
+        model.addAttribute("listaEjemplares", lista);
+        return "BusquedaEjemplares";
+    }
+    @GetMapping(path = "/Inicio/Ejemplares/NombreProveedor")
+    public String EjemplaresNombreProveedor(Model model){
+        List<Ejemplar> lista = ejemplarServicio.buscarTodosOrdenadosNombreProveedor();
+        model.addAttribute("listaEjemplares", lista);
+        return "BusquedaEjemplares";
+    }
+    @GetMapping(path = "/Inicio/Ejemplares/NombreProveedorDes")
+    public String EjemplaresNombreProveedorDes(Model model){
+        List<Ejemplar> lista = ejemplarServicio.buscarTodosOrdenadosNombreProveedorDes();
         model.addAttribute("listaEjemplares", lista);
         return "BusquedaEjemplares";
     }

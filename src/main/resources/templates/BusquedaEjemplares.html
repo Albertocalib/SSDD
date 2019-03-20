@@ -1,4 +1,4 @@
-<div id="listaElementos" class="row">
+<div id="listaElementos" class="row" xmlns:th="http://www.w3.org/1999/xhtml">
     <div class="col-md-4" th:each="ejemplar,ind : ${listaEjemplares}">
         <div class="card card-profile" style="border: 2px solid #c27400">
             <div class="container">
@@ -34,8 +34,24 @@
                 acuñación:</b><span th:text="' ' + ${ejemplar.getCiudadAcu()}"></span></h4>
                 <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Fechas acuñacion:</b> <span
                     th:text="' ' + ${ejemplar.getAnyo()}"></span></h4>
+                <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Nombre proveedor:</b> <span
+                    th:text="' ' + ${ejemplar.getProveedor().getNombre()}"></span></h4>
                 <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Estado:</b><span
                     th:text="' ' + ${ejemplar.getEstado()}"></span></h4>
+                <div class="row" style="float: right">
+                    <div class="col-1">
+                        <a th:href="'#eliminarEjemplar' + ${ejemplar.id}" data-toggle="modal"
+                           th:name="'#eliminarEjemplar' + ${ejemplar.id}">
+                            <i class="material-icons" style="color: white">delete</i>
+                        </a>
+                    </div>
+                    <div class="col-1">
+                        <a th:href="'#modificarEjemplar' + ${ejemplar.id}" data-toggle="modal"
+                           th:name="'#modificarEjemplar' + ${ejemplar.id}">
+                            <i class="material-icons" style="color: white">edit</i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <script src="/js/albery.js"></script>
@@ -45,5 +61,104 @@
                 imgWidth: 600,
             });
         </script>
+        <div class="modal fade" th:id="'eliminarEjemplar' + ${ejemplar.id}" tabindex="-1" role="dialog"
+             th:aria-labelledby="'eliminarEjemplar' + ${ejemplar.id}"
+             aria-hidden="true" align="center" data-backdrop="static" data-keyboard="true">
+            <form action="#" th:action="@{'/Inicio/borrarEjemplar' + ${ejemplar.id}}" method="post">
+                <div class="modal-dialog " role="document">
+                    <div class="modal-content">
+                        <div class="card card-plain">
+                            <div class="modal-header card-header card-header-primary">
+                                <h4 class="card-title">Confirmar eliminación</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body" align="left">
+                            <p> ¿Está seguro de eliminar el Ejemplar?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" id="submit1" value="Accept" class="btn btn-color"/>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal fade" th:id="'modificarEjemplar' + ${ejemplar.id}" tabindex="-1" role="dialog" aria-labelledby="modificarEjemplar"
+             aria-hidden="true" align="center">
+            <form action="/Inicio/modificarEjemplar" method="post" enctype='multipart/form-data'>>
+                <div class="modal-dialog " role="document">
+                    <div class="modal-content">
+                        <div class="card card-plain">
+                            <div class="modal-header card-header card-header-primary">
+                                <h4 class="card-title">Introduzca nuevo Ejemplar</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body" align="left">
+                            <p>
+                                <label>Image file:</label><input type="file" required name="file"/>
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group bmd-form-group">
+                                        <label class="bmd-label-floating">Inserte el valor facial del modelo</label>
+                                        <input name="valorFacial" required type="number" class="form-control" th:value="${ejemplar.getModelo().getValorFacial()}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group bmd-form-group">
+                                        <label class="bmd-label-floating">Inserte la unidad monetaria del modelo</label>
+                                        <input name="unidadMonetaria" required type="text" class="form-control" th:value="${ejemplar.getModelo().getUnidadMonetaria()}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group bmd-form-group">
+                                        <label class="bmd-label-floating">Inserte fecha de adquisicion</label>
+                                        <input name="fechaAdquisicion" required type="date" class="form-control" th:value="${ejemplar.getFechaAdquisicion()}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group bmd-form-group">
+                                        <label class="bmd-label-floating">Inserte Ciudad de acuñacion</label>
+                                        <input name="ciudadAcunyacion" required type="text" class="form-control" th:value="${ejemplar.getCiudadAcu()}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group bmd-form-group">
+                                        <label class="bmd-label-floating">Inserte Año de acuñacion</label>
+                                        <input name="anyo" required type="number" class="form-control" th:value="${ejemplar.getAnyo()}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group bmd-form-group">
+                                        <label class="bmd-label-floating">Inserte el estado</label>
+                                        <input name="estado" required type="text" class="form-control" th:value="${ejemplar.getEstado()}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group bmd-form-group">
+                                        <label class="bmd-label-floating">Inserte el codigo de identificacion fiscal del
+                                            proveedor</label>
+                                        <input name="codigoIdFiscal" required type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" id="submit" value="Aceptar" class="btn btn-primary"/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

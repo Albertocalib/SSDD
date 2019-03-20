@@ -9,7 +9,10 @@ public interface EjemplarRepositorio extends JpaRepository<Ejemplar,Integer>  {
     List<Ejemplar> findAllByOrderByFechaAdquisicionAsc();
     List<Ejemplar> findAllByOrderByFechaAdquisicionDesc();
     List<Ejemplar> findAllByOrderByCiudadAcuAsc();
+    List<Ejemplar> findAllByOrderByCiudadAcuDesc();
     List<Ejemplar> findAllByOrderByAnyoAsc();
     List<Ejemplar> findAllByOrderByAnyoDesc();
+    List<Ejemplar> findAllByOrderByProveedorAsc();
+    List<Ejemplar> findAllByOrderByProveedorDesc();
 
 }

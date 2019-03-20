@@ -28,8 +28,11 @@ public class EjemplarServicio {
     public List<Ejemplar> buscarTodosOrdenadosFechasAdquisicion(){return repositorio.findAllByOrderByFechaAdquisicionAsc();}
     public List<Ejemplar> buscarTodosOrdenadosFechasAdquisicionDes(){return repositorio.findAllByOrderByFechaAdquisicionDesc();}
     public List<Ejemplar> buscarTodosOrdenadosCiudadAcunacion(){return repositorio.findAllByOrderByCiudadAcuAsc();}
+    public List<Ejemplar> buscarTodosOrdenadosCiudadAcunacionDes(){return repositorio.findAllByOrderByCiudadAcuDesc();}
     public List<Ejemplar> buscarTodosOrdenadosAnoAcunacion(){return repositorio.findAllByOrderByAnyoAsc();}
     public List<Ejemplar> buscarTodosOrdenadosAnoAcunacionDes(){return repositorio.findAllByOrderByAnyoDesc();}
+    public List<Ejemplar> buscarTodosOrdenadosNombreProveedor(){return repositorio.findAllByOrderByProveedorAsc();}
+    public List<Ejemplar> buscarTodosOrdenadosNombreProveedorDes(){return repositorio.findAllByOrderByProveedorDesc();}
 
 
 }
