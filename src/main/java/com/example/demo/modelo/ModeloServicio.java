@@ -28,5 +28,12 @@ public class ModeloServicio {
         repositorio.deleteById(id);
     }
 
-
+    public List<Modelo> buscarTodosOrdenadosPorValorFacialAsc(){return repositorio.findAllByOrderByValorFacialAsc();}
+    public List<Modelo> buscarTodosOrdenadosPorValorFacialDes(){return repositorio.findAllByOrderByValorFacialDesc();}
+    public List<Modelo> buscarTodosOrdenadosPorUnidadMonetariaAsc(){return repositorio.findAllByOrderByUnidadMonetariaAsc();}
+    public List<Modelo> buscarTodosOrdenadosPorUnidadMonetariaDesc(){return repositorio.findAllByOrderByUnidadMonetariaDesc();}
+    public List<Modelo> buscarTodosOrdenadosPorPesoAsc(){return repositorio.findAllByOrderByPesoAsc();}
+    public List<Modelo> buscarTodosOrdenadosPorPesoDesc(){return repositorio.findAllByOrderByPesoDesc();}
+    public List<Modelo> buscarTodosOrdenadosPorDiametroAsc(){return repositorio.findAllByOrderByDiametroAsc();}
+    public List<Modelo> buscarTodosOrdenadosPorDiametroDesc(){return repositorio.findAllByOrderByDiametroDesc();}
 }
