@@ -15,4 +15,6 @@ public interface EjemplarRepositorio extends JpaRepository<Ejemplar,Integer>  {
     List<Ejemplar> findAllByOrderByProveedorAsc();
     List<Ejemplar> findAllByOrderByProveedorDesc();
 
+    List<Ejemplar> findByProveedor_CodigoIdFiscal(String codigoIdFiscal);
+
 }

@@ -13,6 +13,7 @@ public class Proveedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "Id")
     private int id;
 
     @Column(name = "CodigoIdFiscal")

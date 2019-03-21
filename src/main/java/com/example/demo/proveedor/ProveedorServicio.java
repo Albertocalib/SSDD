@@ -33,4 +33,13 @@ public class ProveedorServicio {
     public void borrar(int id){
         proveedorRepositorio.deleteById(id);
     }
+
+    public List<Proveedor> buscarTodosOrdenadosPorCodigoIdFiscalAsc(){return proveedorRepositorio.findAllByOrderByCodigoIdFiscalAsc();}
+    public List<Proveedor> buscarTodosOrdenadosPorCodigoIdFiscalDesc(){return proveedorRepositorio.findAllByOrderByCodigoIdFiscalDesc();}
+
+    public List<Proveedor> buscarTodosOrdenadosPorNombreAsc(){return proveedorRepositorio.findAllByOrderByNombreAsc();}
+    public List<Proveedor> buscarTodosOrdenadosPorNombreDesc(){return proveedorRepositorio.findAllByOrderByNombreDesc();}
+
+    public List<Proveedor> buscarTodosOrdenadosPorDirPostalAsc(){return proveedorRepositorio.findAllByOrderByDirPostalAsc();}
+    public List<Proveedor> buscarTodosOrdenadosPorDirPostalDesc(){return proveedorRepositorio.findAllByOrderByDirPostalDesc();}
 }

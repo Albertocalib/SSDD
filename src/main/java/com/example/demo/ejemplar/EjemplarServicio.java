@@ -34,5 +34,7 @@ public class EjemplarServicio {
     public List<Ejemplar> buscarTodosOrdenadosNombreProveedor(){return repositorio.findAllByOrderByProveedorAsc();}
     public List<Ejemplar> buscarTodosOrdenadosNombreProveedorDes(){return repositorio.findAllByOrderByProveedorDesc();}
 
+    public List<Ejemplar> buscarPorProveedor(String codigoIdFiscal){return repositorio.findByProveedor_CodigoIdFiscal(codigoIdFiscal);}
+
 
 }
