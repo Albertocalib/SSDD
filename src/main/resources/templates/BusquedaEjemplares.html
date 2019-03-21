@@ -2,28 +2,33 @@
     <div class="col-md-4" th:each="ejemplar,ind : ${listaEjemplares}">
         <div class="card card-profile" style="border: 2px solid #c27400">
             <div class="container">
-                <div class="albery-container">
-
-                    <div th:id="'albery-wrapper' + ${ind.index}"class="albery-wrapper" style="width: 2400px; margin-left: -14%;">
-
-                        <div class="albery-item" style="width: 600px;" th:each="imagen: ${ejemplar.getListaImagenes()}">
-                            <img class="img" th:src="${imagen}" alt=""
-                                 style="align-content: center;align-self: center;align-items: center;">
-                        </div>
-
-
-                    </div>
-
-                    <div class="move-right">
-                        <a href="#" th:id="'rightArrow' + ${ind.index}"></a>
-                    </div>
-                    <div class="move-left">
-                        <a href="#" th:id="'leftArrow' + ${ind.index}"></a>
-                    </div>
-
+                <a th:href="'#img' + ${ind.count} + '1'">
+                    <img class="img" th:src="${ejemplar.getFirstImage()}" alt=""
+                         style="align-content: center;align-self: center;align-items: center;">
+                </a>
+                <div class="card-footer" style="margin-left: 30%">
+                    Pulsa la imagen para ver mas
                 </div>
             </div>
+            <div th:each="imagen,it: ${ejemplar.getListaImagenes()} ">
+                <div class="modal" th:id="'img'+ ${ind.count} + ${it.count}">
+                    <div class=wrapper>
+                        <div class="imagen"
+                             th:with="first = ${it.count == 1} ? ${ejemplar.getListaImagenes().size()- it.index} : ${it.count - 1},
+                         second = ${it.count == ejemplar.getListaImagenes().size()} ? ${ejemplar.getListaImagenes().size()- it.index} : ${it.count + 1}">
 
+                            <a th:href="@{#img} + ${ind.count} + @{(${first})}"> <i class="material-icons iconoCarrusel">arrow_back_ios</i> </a>
+
+                            <img class="img" th:src="${imagen}" alt=""
+                                 style="align-content: center;align-self: center;align-items: center;">
+
+                            <a th:href="@{#img} + ${ind.count} + @{(${second})}"> <i class="material-icons iconoCarrusel" >arrow_forward_ios</i></a>
+
+                        </div>
+                        <a data-dismiss="modal" href="#" onclick="busquedaEjemplares()"> <i class="material-icons iconoCarrusel cerrar" >cancel</i> </a>
+                    </div>
+                </div>
+            </div>
             <div class="card-body" style="background-color: #c27400">
                 <h3 class="card-title"><b>Modelo:</b> <span
                         th:text="' ' + ${ejemplar.getModelo().getValorFacial()}+ ' ' +${ejemplar.getModelo().getUnidadMonetaria()}"></span>
@@ -83,7 +88,8 @@
 
             </form>
         </div>
-        <div class="modal fade" th:id="'modificarEjemplar' + ${ejemplar.id}" tabindex="-1" role="dialog" aria-labelledby="modificarEjemplar"
+        <div class="modal fade" th:id="'modificarEjemplar' + ${ejemplar.id}" tabindex="-1" role="dialog"
+             aria-labelledby="modificarEjemplar"
              aria-hidden="true" align="center">
             <form action="/Inicio/modificarEjemplar" method="post" enctype='multipart/form-data'>>
                 <div class="modal-dialog " role="document">
@@ -101,13 +107,15 @@
                                 <div class="col-md-6">
                                     <div class="form-group bmd-form-group">
                                         <label>Inserte el valor facial del modelo</label>
-                                        <input name="valorFacial" required type="number" class="form-control" th:value="${ejemplar.getModelo().getValorFacial()}">
+                                        <input name="valorFacial" required type="number" class="form-control"
+                                               th:value="${ejemplar.getModelo().getValorFacial()}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group bmd-form-group">
                                         <label>Inserte la unidad monetaria del modelo</label>
-                                        <input name="unidadMonetaria" required type="text" class="form-control" th:value="${ejemplar.getModelo().getUnidadMonetaria()}">
+                                        <input name="unidadMonetaria" required type="text" class="form-control"
+                                               th:value="${ejemplar.getModelo().getUnidadMonetaria()}">
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +123,8 @@
                                 <div class="col-md-12">
                                     <div class="form-group bmd-form-group">
                                         <label>Inserte fecha de adquisicion</label>
-                                        <input name="fechaAdquisicion" required type="date" class="form-control" th:value="${ejemplar.getFechaAdquisicion()}">
+                                        <input name="fechaAdquisicion" required type="date" class="form-control"
+                                               th:value="${ejemplar.getFechaAdquisicion()}">
                                     </div>
                                 </div>
                             </div>
@@ -123,7 +132,8 @@
                                 <div class="col-md-12">
                                     <div class="form-group bmd-form-group">
                                         <label>Inserte Ciudad de acuñacion</label>
-                                        <input name="ciudadAcunyacion" required type="text" class="form-control" th:value="${ejemplar.getCiudadAcu()}">
+                                        <input name="ciudadAcunyacion" required type="text" class="form-control"
+                                               th:value="${ejemplar.getCiudadAcu()}">
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +141,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group bmd-form-group">
                                         <label>Inserte Año de acuñacion</label>
-                                        <input name="anyo" required type="number" class="form-control" th:value="${ejemplar.getAnyo()}">
+                                        <input name="anyo" required type="number" class="form-control"
+                                               th:value="${ejemplar.getAnyo()}">
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +150,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group bmd-form-group">
                                         <label>Inserte el estado</label>
-                                        <input name="estado" required type="text" class="form-control" th:value="${ejemplar.getEstado()}">
+                                        <input name="estado" required type="text" class="form-control"
+                                               th:value="${ejemplar.getEstado()}">
                                     </div>
                                 </div>
                             </div>

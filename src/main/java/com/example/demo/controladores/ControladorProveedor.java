@@ -20,7 +20,7 @@ public class ControladorProveedor {
 
         Proveedor proveedor = new Proveedor(codigoIdFiscal, nombreProveedor, dirPostal, email, telefono);
         proveedorServicio.guardar(proveedor);
-
+        model.addAttribute("elementoTipo", 3);//Cuando sea un proveedor le pasamos al javascript un 3
         return "inicio";
     }
     @GetMapping(path = "/Inicio/Proveedores")

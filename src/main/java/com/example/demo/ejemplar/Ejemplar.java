@@ -123,6 +123,9 @@ public class Ejemplar {
     public Proveedor getProveedor() {
         return proveedor;
     }
+    public String getFirstImage(){
+        return this.listaImagenes.iterator().next();
+    }
 
     public void setProveedor(Proveedor proveedor) {
         this.proveedor = proveedor;

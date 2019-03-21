@@ -27,7 +27,7 @@ public class ControladorEjemplar {
     private ModeloServicio modeloServicio;
     @Autowired
     private ProveedorServicio proveedorServicio;
-    @RequestMapping(value = "/Inicio/crearEjemplar", method = RequestMethod.POST)
+    @RequestMapping(path= "/Inicio/crearEjemplar", method = RequestMethod.POST)
     public String crearEjemplar(Model model,@RequestParam MultipartFile file,@RequestParam int valorFacial, @RequestParam String unidadMonetaria, @RequestParam String codigoIdFiscal, @RequestParam Date fechaAdquisicion, @RequestParam String ciudadAcunyacion, @RequestParam int anyo, @RequestParam String estado) throws IOException {
 
 
@@ -44,6 +44,7 @@ public class ControladorEjemplar {
         ejemplar.addImagen("data:image/png;base64,"+ Base64.getEncoder().encodeToString(file.getBytes()));
         ejemplarServicio.guardar(ejemplar);
         proveedor.addEjemplar(ejemplar);
+        model.addAttribute("elementoTipo", 2);//Cuando sea un ejemplar le pasamos al javascript un 2
         return "Inicio";
 
 
@@ -54,9 +55,10 @@ public class ControladorEjemplar {
         model.addAttribute("listaEjemplares",lista);
         return "BusquedaEjemplares";
     }
-    @RequestMapping (value= "/Inicio/borrarEjemplar{id}",method = RequestMethod.POST)
+    @RequestMapping (path= "/Inicio/borrarEjemplar{id}",method = RequestMethod.POST)
     public String eliminarEjemplar (Model model, @PathVariable int id){
         ejemplarServicio.borrar(id);
+        model.addAttribute("elementoTipo", 2);//Cuando sea un ejemplar le pasamos al javascript un 2
         return "Inicio";
     }
     @GetMapping(path = "/Inicio/EjemplaresModelos/{valorFacial}/{unidadMonetaria}")
