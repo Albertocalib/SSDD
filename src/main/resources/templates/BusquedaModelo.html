@@ -4,16 +4,16 @@
             <div class="card-header card-header-success"
                  style="width: 100%; margin-left: 0;opacity:0.9;background: #c27400!important;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-md-9">
                         <span th:text="${modelo.getValorFacial()}+ ' ' + ${modelo.getUnidadMonetaria()} "></span>
                     </div>
-                    <div class="col-1">
+                    <div class="col-md-1">
                         <a th:href="'#eliminarModelo' + ${modelo.id}" data-toggle="modal"
                            th:name="'#eliminarModelo' + ${modelo.id}">
                             <i class="material-icons" style="color: white">delete</i>
                         </a>
                     </div>
-                    <div class="col-1">
+                    <div class="col-md-1">
                         <a th:href="'#modificarModelo' + ${modelo.id}" data-toggle="modal"
                            th:name="'#modificarModelo' + ${modelo.id}">
                             <i class="material-icons" style="color: white">edit</i>
@@ -23,7 +23,7 @@
 
             </div>
             <div class="card-body">
-                <img class="img" th:src="${modelo.getImagenCodificada()}" alt="" style="margin-left: 18%">
+                <img class="img" th:src="${modelo.getImagenCodificada()}" alt="">
             </div>
             <div class="card-footer">
                 <div class="stats" style="margin-left: 90%;">
