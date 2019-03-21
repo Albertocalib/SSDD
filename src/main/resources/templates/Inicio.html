@@ -96,9 +96,9 @@
             color: black;
         }
         .ejemplarImagenTexto{
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
+            margin-left: auto!important;
+            margin-right: auto!important;
+            display: block!important;
         }
         #botonCrear {
             position: relative;
@@ -131,23 +131,6 @@
     </style>
     <script src="/js/busquedas.js"></script>
 </head>
-<script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251023-1']);
-    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
 <body style="overflow-x:hidden" th:onload="'cargarPagina(' + ${elementoTipo} + ')'">
 <div class="wrapper-full-page">
     <div class="wrapper">
@@ -180,7 +163,7 @@
                                 <label class="form-check-label">
                                     <input class="form-check-input" type="radio" name="check" id="exampleRadios2"
                                            onclick="busquedaEjemplares()"
-                                           value="option2" checked>
+                                           value="option2">
                                     Ejemplar
                                     <span class="circle">
                                     <span class="check"></span>

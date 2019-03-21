@@ -4,6 +4,9 @@ function busquedaModelos() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        document.getElementById("exampleRadios1").checked = true;
+        document.getElementById("exampleRadios2").checked = false;
+        document.getElementById("exampleRadios3").checked = false;
         document.getElementById("ordenarPorId").innerText = "";
         var node = document.createElement('option');
         node.selected = true;
@@ -57,6 +60,9 @@ function busquedaEjemplares() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        document.getElementById("exampleRadios1").checked = false;
+        document.getElementById("exampleRadios2").checked = true;
+        document.getElementById("exampleRadios3").checked = false;
         document.getElementById("ordenarPorId").innerText = "";
         var node = document.createElement("option");
         node.selected = true;
@@ -116,6 +122,9 @@ function busquedaProveedores() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        document.getElementById("exampleRadios1").checked = false;
+        document.getElementById("exampleRadios2").checked = false;
+        document.getElementById("exampleRadios3").checked = true;
         document.getElementById("ordenarPorId").innerText = "";
         var node = document.createElement("option");
         node.selected = true;
