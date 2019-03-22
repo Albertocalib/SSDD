@@ -20,6 +20,11 @@ public  interface  ProveedorRepositorio extends JpaRepository<Proveedor,Integer>
     List<Proveedor> findAllByOrderByDirPostalAsc();
     List<Proveedor> findAllByOrderByDirPostalDesc();
 
+    List<Proveedor> findByNombreContaining(String nombre);
+    List<Proveedor> findByDirPostalContaining(String direcion);
+    List<Proveedor> findByCodigoIdFiscalContaining(String codigo);
+
+
 
 
 
