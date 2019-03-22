@@ -55,50 +55,218 @@ public class ControladorModelo {
     }
     @GetMapping(path = "/Inicio/Modelos/PesoAsc")
     public String ModelosPesoAsc(Model model){
-        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorPesoAsc();
-        model.addAttribute("listaModelos", lista);
+        List<Modelo> lista;
+        switch (tipoFiltro){
+            case "NU":
+                lista = modeloServicio.buscarTodosOrdenadosPorPesoAsc();
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "UM":
+                lista = modeloServicio.buscarPorUnidadMonetariaOrdenadoPorPesoAsc(unidadMonetaria);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "VF":
+                lista = modeloServicio.buscarPorValorFacialOrdenadoPorPesoAsc(valorFacial1,valorFacial2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "PM":
+                lista = modeloServicio.buscarPorPesoOrdenadoPorPesoAsc(peso1,peso2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "DM":
+                lista = modeloServicio.buscarPorDiametroOrdenadoPorPesoAsc(diametro1,diametro2);
+                model.addAttribute("listaModelos", lista);
+                break;
+        }
         return "BusquedaModelo";
     }
     @GetMapping(path = "/Inicio/Modelos/PesoDes")
     public String ModelosPesoDes(Model model){
-        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorPesoDesc();
-        model.addAttribute("listaModelos", lista);
+        List<Modelo> lista;
+        switch (tipoFiltro){
+            case "NU":
+                lista = modeloServicio.buscarTodosOrdenadosPorPesoDesc();
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "UM":
+                lista = modeloServicio.buscarPorUnidadMonetariaOrdenadoPorPesoDesc(unidadMonetaria);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "VF":
+                lista = modeloServicio.buscarPorValorFacialOrdenadoPorPesoDesc(valorFacial1,valorFacial2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "PM":
+                lista = modeloServicio.buscarPorPesoOrdenadoPorPesoDesc(peso1,peso2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "DM":
+                lista = modeloServicio.buscarPorDiametroOrdenadoPorPesoDesc(diametro1,diametro2);
+                model.addAttribute("listaModelos", lista);
+                break;
+        }
         return "BusquedaModelo";
     }
     @GetMapping(path = "/Inicio/Modelos/DiametroDes")
     public String ModelosDiametroDes(Model model){
-        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorDiametroDesc();
-        model.addAttribute("listaModelos", lista);
+        List<Modelo> lista;
+        switch (tipoFiltro){
+            case "NU":
+                lista = modeloServicio.buscarTodosOrdenadosPorDiametroDesc();
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "UM":
+                lista = modeloServicio.buscarPorUnidadMonetariaOrdenadoPorDiametroDesc(unidadMonetaria);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "VF":
+                lista = modeloServicio.buscarPorValorFacialOrdenadoPorDiametroDesc(valorFacial1,valorFacial2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "PM":
+                lista = modeloServicio.buscarPorPesoOrdenadoPorDiametroDesc(peso1,peso2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "DM":
+                lista = modeloServicio.buscarPorDiametroOrdenadoPorDiametroDesc(diametro1,diametro2);
+                model.addAttribute("listaModelos", lista);
+                break;
+        }
         return "BusquedaModelo";
     }
     @GetMapping(path = "/Inicio/Modelos/DiametroAsc")
     public String ModelosDiametroAsc(Model model){
-        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorDiametroAsc();
-        model.addAttribute("listaModelos", lista);
+        List<Modelo> lista;
+        switch (tipoFiltro){
+            case "NU":
+                lista = modeloServicio.buscarTodosOrdenadosPorDiametroAsc();
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "UM":
+                lista = modeloServicio.buscarPorUnidadMonetariaOrdenadoPorDiametroAsc(unidadMonetaria);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "VF":
+                lista = modeloServicio.buscarPorValorFacialOrdenadoPorDiametroAsc(valorFacial1,valorFacial2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "PM":
+                lista = modeloServicio.buscarPorPesoOrdenadoPorDiametroAsc(peso1,peso2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "DM":
+                lista = modeloServicio.buscarPorDiametroOrdenadoPorDiametroAsc(diametro1,diametro2);
+                model.addAttribute("listaModelos", lista);
+                break;
+        }
         return "BusquedaModelo";
     }
     @GetMapping(path = "/Inicio/Modelos/UnidadMonetariaAsc")
     public String ModelosUnidadMonetariaAsc(Model model){
-        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorUnidadMonetariaAsc();
-        model.addAttribute("listaModelos", lista);
+        List<Modelo> lista;
+        switch (tipoFiltro){
+            case "NU":
+                lista = modeloServicio.buscarTodosOrdenadosPorUnidadMonetariaAsc();
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "UM":
+                lista = modeloServicio.buscarPorUnidadMonetariaOrdenadoPorUnidadMonetariaAsc(unidadMonetaria);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "VF":
+                lista = modeloServicio.buscarPorValorFacialOrdenadoPorUnidadMonetariaAsc(valorFacial1,valorFacial2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "PM":
+                lista = modeloServicio.buscarPorPesoOrdenadoPorUnidadMonetariaAsc(peso1,peso2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "DM":
+                lista = modeloServicio.buscarPorDiametroOrdenadoPorUnidadMonetariaAsc(diametro1,diametro2);
+                model.addAttribute("listaModelos", lista);
+                break;
+        }
         return "BusquedaModelo";
     }
     @GetMapping(path = "/Inicio/Modelos/UnidadMonetariaDes")
     public String ModelosUnidadMonetariaDes(Model model){
-        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorUnidadMonetariaDesc();
-        model.addAttribute("listaModelos", lista);
+        List<Modelo> lista;
+        switch (tipoFiltro){
+            case "NU":
+                lista = modeloServicio.buscarTodosOrdenadosPorUnidadMonetariaAsc();
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "UM":
+                lista = modeloServicio.buscarPorUnidadMonetariaOrdenadoPorUnidadMonetariaDesc(unidadMonetaria);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "VF":
+                lista = modeloServicio.buscarPorValorFacialOrdenadoPorUnidadMonetariaDesc(valorFacial1,valorFacial2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "PM":
+                lista = modeloServicio.buscarPorPesoOrdenadoPorUnidadMonetariaDesc(peso1,peso2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "DM":
+                lista = modeloServicio.buscarPorDiametroOrdenadoPorUnidadMonetariaDesc(diametro1,diametro2);
+                model.addAttribute("listaModelos", lista);
+                break;
+        }
         return "BusquedaModelo";
     }
     @GetMapping(path = "/Inicio/Modelos/ValorFacialAsc")
     public String ModelosValorFacialAsc(Model model){
-        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorValorFacialAsc();
-        model.addAttribute("listaModelos", lista);
+        List<Modelo> lista;
+        switch (tipoFiltro){
+            case "NU":
+                lista = modeloServicio.buscarTodosOrdenadosPorValorFacialAsc();
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "UM":
+                lista = modeloServicio.buscarPorUnidadMonetariaOrdenadoPorValorFacialAsc(unidadMonetaria);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "VF":
+                lista = modeloServicio.buscarPorValorFacialOrdenadoPorValorFacialAsc(valorFacial1,valorFacial2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "PM":
+                lista = modeloServicio.buscarPorPesoOrdenadoPorValorFacialAsc(peso1,peso2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "DM":
+                lista = modeloServicio.buscarPorDiametroOrdenadoPorValorFacialAsc(diametro1,diametro2);
+                model.addAttribute("listaModelos", lista);
+                break;
+        }
         return "BusquedaModelo";
     }
     @GetMapping(path = "/Inicio/Modelos/ValorFacialDes")
     public String ModelosValorFacialDes(Model model){
-        List<Modelo> lista = modeloServicio.buscarTodosOrdenadosPorValorFacialDes();
-        model.addAttribute("listaModelos", lista);
+        List<Modelo> lista;
+        switch (tipoFiltro){
+            case "NU":
+                lista = modeloServicio.buscarTodosOrdenadosPorValorFacialDes();
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "UM":
+                lista = modeloServicio.buscarPorUnidadMonetariaOrdenadoPorValorFacialDesc(unidadMonetaria);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "VF":
+                lista = modeloServicio.buscarPorValorFacialOrdenadoPorValorFacialDesc(valorFacial1,valorFacial2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "PM":
+                lista = modeloServicio.buscarPorPesoOrdenadoPorValorFacialDesc(peso1,peso2);
+                model.addAttribute("listaModelos", lista);
+                break;
+            case "DM":
+                lista = modeloServicio.buscarPorDiametroOrdenadoPorValorFacialDesc(diametro1,diametro2);
+                model.addAttribute("listaModelos", lista);
+                break;
+        }
         return "BusquedaModelo";
     }
     @RequestMapping (value= "/Inicio/modificarModelo{id}",method = RequestMethod.POST)
