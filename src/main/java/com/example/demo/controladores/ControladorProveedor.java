@@ -52,15 +52,15 @@ public class ControladorProveedor {
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "CF":
-                lista = proveedorServicio.buscarPorCodigoFiscalOrdenadoPorCodigoFiscalAsc();
+                lista = proveedorServicio.buscarPorCodigoIdFiscalOrdenadoPorCodigoFiscalAsc(codigoFiscal);
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "NP":
-                lista = proveedorServicio.buscarPorNombreProveedorOrdenadoPorCodigoFiscalAsc();
+                lista = proveedorServicio.buscarPorNombreOrdenadoPorCodigoFiscalAsc(nombre);
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "DP":
-                lista = proveedorServicio.buscarPorDireccionPostalOrdenadoPorCodigoFiscalAsc();;
+                lista = proveedorServicio.buscarPorDirPostalOrdenadoPorCodigoFiscalAsc(direccion);
                 model.addAttribute("listaProveedores", lista);
                 break;
         }
@@ -76,15 +76,15 @@ public class ControladorProveedor {
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "CF":
-                lista = proveedorServicio.buscarPorCodigoFiscalOrdenadoPorCodigoFiscalDesc();
+                lista = proveedorServicio.buscarPorCodigoIdFiscalOrdenadoPorCodigoFiscalDesc(codigoFiscal);
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "NP":
-                lista = proveedorServicio.buscarPorNombreProveedorOrdenadoPorCodigoFiscalDesc();
+                lista = proveedorServicio.buscarPorNombreOrdenadoPorCodigoFiscalDesc(nombre);
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "DP":
-                lista = proveedorServicio.buscarPorDireccionPostalOrdenadoPorCodigoFiscalDesc();;
+                lista = proveedorServicio.buscarPorDirPostalOrdenadoPorCodigoFiscalDesc(direccion);
                 model.addAttribute("listaProveedores", lista);
                 break;
         }
@@ -100,15 +100,15 @@ public class ControladorProveedor {
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "CF":
-                lista = proveedorServicio.buscarPorCodigoFiscalOrdenadoPorNombreAsc();
+                lista = proveedorServicio.buscarPorCodigoIdFiscalOrdenadoPorNombreAsc(codigoFiscal);
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "NP":
-                lista = proveedorServicio.buscarPorNombreProveedorOrdenadoPorNombreAsc();
+                lista = proveedorServicio.buscarPorNombreOrdenadoPorNombreAsc(nombre);
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "DP":
-                lista = proveedorServicio.buscarPorDireccionPostalOrdenadoPorNombreAsc();;
+                lista = proveedorServicio.buscarPorDirPostalOrdenadoPorNombreAsc(direccion);
                 model.addAttribute("listaProveedores", lista);
                 break;
         }
@@ -124,15 +124,15 @@ public class ControladorProveedor {
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "CF":
-                lista = proveedorServicio.buscarPorCodigoFiscalOrdenadoPorNombreDesc();
+                lista = proveedorServicio.buscarPorCodigoIdFiscalOrdenadoPorNombreDesc(codigoFiscal);
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "NP":
-                lista = proveedorServicio.buscarPorNombreProveedorOrdenadoPorNombreDesc();
+                lista = proveedorServicio.buscarPorNombreOrdenadoPorNombreDesc(direccion);
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "DP":
-                lista = proveedorServicio.buscarPorDireccionPostalOrdenadoPorNombreDesc();;
+                lista = proveedorServicio.buscarPorDirPostalOrdenadoPorNombreDesc(direccion);
                 model.addAttribute("listaProveedores", lista);
                 break;
         }
@@ -148,15 +148,15 @@ public class ControladorProveedor {
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "CF":
-                lista = proveedorServicio.buscarPorCodigoFiscalOrdenadoPorDireccionPostalAsc();
+                lista = proveedorServicio.buscarPorCodigoIdFiscalOrdenadoPorDireccionPostalAsc(codigoFiscal);
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "NP":
-                lista = proveedorServicio.buscarPorNombreProveedorOrdenadoPorDireccionPostalAsc();
+                lista = proveedorServicio.buscarPorNombreOrdenadoPorDireccionPostalAsc(nombre);
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "DP":
-                lista = proveedorServicio.buscarPorDireccionPostalOrdenadoPorDireccionPostalAsc();
+                lista = proveedorServicio.buscarPorDirPostalOrdenadoPorDireccionPostalAsc(direccion);
                 model.addAttribute("listaProveedores", lista);
                 break;
         }
@@ -172,15 +172,15 @@ public class ControladorProveedor {
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "CF":
-                lista = proveedorServicio.buscarPorCodigoFiscalOrdenadoPorDireccionPostalDesc();
+                lista = proveedorServicio.buscarPorCodigoIdFiscalOrdenadoPorDireccionPostalDesc(codigoFiscal);
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "NP":
-                lista = proveedorServicio.buscarPorNombreProveedorOrdenadoPorDireccionPostalDesc();
+                lista = proveedorServicio.buscarPorNombreOrdenadoPorDireccionPostalDesc(nombre);
                 model.addAttribute("listaProveedores", lista);
                 break;
             case "DP":
-                lista = proveedorServicio.buscarPorDireccionPostalOrdenadoPorDireccionPostalDesc();
+                lista = proveedorServicio.buscarPorDirPostalOrdenadoPorDireccionPostalDesc(direccion);
                 model.addAttribute("listaProveedores", lista);
                 break;
         }
