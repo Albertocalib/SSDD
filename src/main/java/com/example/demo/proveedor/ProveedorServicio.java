@@ -42,4 +42,8 @@ public class ProveedorServicio {
 
     public List<Proveedor> buscarTodosOrdenadosPorDirPostalAsc(){return proveedorRepositorio.findAllByOrderByDirPostalAsc();}
     public List<Proveedor> buscarTodosOrdenadosPorDirPostalDesc(){return proveedorRepositorio.findAllByOrderByDirPostalDesc();}
+
+    public List<Proveedor> filtrarPorNombre(String nombre){return proveedorRepositorio.findByNombreContaining(nombre);}
+    public List<Proveedor> filtrarPorDirPostal(String direcion){return proveedorRepositorio.findByDirPostalContaining(direcion);}
+    public List<Proveedor> filtrarPorCodigoFiscal(String codigo){return proveedorRepositorio.findByCodigoIdFiscalContaining(codigo);}
 }

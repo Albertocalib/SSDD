@@ -77,5 +77,22 @@ public class ControladorProveedor {
         model.addAttribute("listaProveedores", lista);
         return "BusquedaProveedores";
     }
-
+    @GetMapping(path = "/Inicio/filtroCodigoFiscal/{codigo}")
+    public String filtrarCodigoIdFiscal(Model model,@PathVariable String codigo){
+        List<Proveedor> lista = proveedorServicio.filtrarPorCodigoFiscal(codigo);
+        model.addAttribute("listaModelos",lista);
+        return "BusquedaProveedores";
+    }
+    @GetMapping(path = "/Inicio/filtroNombreProveedor/{nombre}")
+    public String filtrarNombreProveedor(Model model,@PathVariable String nombre){
+        List<Proveedor> lista = proveedorServicio.filtrarPorNombre(nombre);
+        model.addAttribute("listaModelos",lista);
+        return "BusquedaProveedores";
+    }
+    @GetMapping(path = "/Inicio/filtroDireccionFiscal/{direccion}")
+    public String filtrarDireccionFiscal(Model model,@PathVariable String direccion){
+        List<Proveedor> lista = proveedorServicio.filtrarPorDirPostal(direccion);
+        model.addAttribute("listaModelos",lista);
+        return "BusquedaProveedores";
+    }
 }
