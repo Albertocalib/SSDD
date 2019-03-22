@@ -116,5 +116,47 @@ public class ControladorEjemplar {
         model.addAttribute("listaEjemplares", lista);
         return "BusquedaEjemplares";
     }
+    @RequestMapping (path= "/Inicio/modificarEjemplar{id}",method = RequestMethod.POST)
+    public String modificarEjemplar (Model model, @PathVariable int id,@RequestParam MultipartFile file,@RequestParam int valorFacial, @RequestParam String unidadMonetaria, @RequestParam String codigoIdFiscal, @RequestParam Date fechaAdquisicion, @RequestParam String ciudadAcunyacion, @RequestParam int anyo, @RequestParam String estado) throws IOException {
+        Ejemplar e=ejemplarServicio.buscarPorId(id);
+        if (file!=null){
+            e.addImagen("data:image/png;base64,"+ Base64.getEncoder().encodeToString(file.getBytes()));
+        }
+        Proveedor proveedor = proveedorServicio.buscarPorCodigoIdFiscal(codigoIdFiscal);
+        if (proveedor!=null){
+            e.setProveedor(proveedor);
+        }
+        Modelo modelo = modeloServicio.buscarPorValorFacialyUnidadMonetaria(valorFacial,unidadMonetaria);
+        if (modelo!=null){
+            e.setModelo(modelo);
+        }
+        e.setAnyo(anyo);
+        e.setCiudadAcu(ciudadAcunyacion);
+        e.setEstado(estado);
+        e.setFechaAdquisicion(fechaAdquisicion);
+
+        model.addAttribute("elementoTipo", 2);//Cuando sea un ejemplar le pasamos al javascript un 2
+        return "Inicio";
+    }
+    @GetMapping (path= "/Inicio/filtroFechaAdq/{fechaIni}/{fechaFin}")
+    public String filtrarFecha(Model model,@PathVariable Date fechaIni,@PathVariable Date fechaFin){
+        model.addAttribute("listaEjemplares",ejemplarServicio.filtrarPorFecha(fechaIni,fechaFin));
+        return "BusquedaEjemplares";
+    }
+    @GetMapping (path= "/Inicio/filtroCiudad/{ciudad}")
+    public String filtrarCiudad(Model model,@PathVariable String ciudad){
+        model.addAttribute("listaEjemplares",ejemplarServicio.filtrarPorCiudad(ciudad));
+        return "BusquedaEjemplares";
+    }
+    @GetMapping (path= "/Inicio/filtroAno/{anoIni}/{anoFin}")
+    public String filtrarAno(Model model,@PathVariable int anoIni,@PathVariable int anoFin){
+        model.addAttribute("listaEjemplares",ejemplarServicio.filtrarPorAnyo(anoIni,anoFin));
+        return "BusquedaEjemplares";
+    }
+    @GetMapping (path= "/Inicio/filtroProveedor/{proveedor}")
+    public String filtrarProveedor(Model model,@PathVariable String proveedor){
+        model.addAttribute("listaEjemplares",ejemplarServicio.filtrarPorProveedor(proveedor));
+        return "BusquedaEjemplares";
+    }
 
 }

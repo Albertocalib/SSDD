@@ -15,6 +15,10 @@ public interface ModeloRepositorio extends JpaRepository<Modelo,Integer> {
     List<Modelo> findAllByOrderByUnidadMonetariaDesc();
     List<Modelo> findAllByOrderByValorFacialAsc();
     List<Modelo> findAllByOrderByValorFacialDesc();
+    List<Modelo> findByDiametroBetween(double min,double max);
+    List<Modelo> findByPesoBetween(double min,double max);
+    List<Modelo> findByUnidadMonetariaContaining(String unidadMonetaria);
+    List<Modelo> findByValorFacialBetween(int min,int max);
 
 
 

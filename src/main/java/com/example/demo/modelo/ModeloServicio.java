@@ -36,4 +36,8 @@ public class ModeloServicio {
     public List<Modelo> buscarTodosOrdenadosPorPesoDesc(){return repositorio.findAllByOrderByPesoDesc();}
     public List<Modelo> buscarTodosOrdenadosPorDiametroAsc(){return repositorio.findAllByOrderByDiametroAsc();}
     public List<Modelo> buscarTodosOrdenadosPorDiametroDesc(){return repositorio.findAllByOrderByDiametroDesc();}
+    public List<Modelo> filtrarPorUnidadMonetaria(String unidad){return this.repositorio.findByUnidadMonetariaContaining(unidad);}
+    public List<Modelo> filtrarPorValorFacial(int min,int max){return this.repositorio.findByValorFacialBetween(min,max);}
+    public List<Modelo> filtraPorPeso(double min,double max){return this.repositorio.findByPesoBetween(min,max);}
+    public List<Modelo> filtratPorDiametro(double min,double max){return this.repositorio.findByDiametroBetween(min,max);}
 }

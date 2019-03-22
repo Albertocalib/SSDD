@@ -3,6 +3,7 @@ package com.example.demo.ejemplar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 @Service
 public class EjemplarServicio {
@@ -33,6 +34,10 @@ public class EjemplarServicio {
     public List<Ejemplar> buscarTodosOrdenadosAnoAcunacionDes(){return repositorio.findAllByOrderByAnyoDesc();}
     public List<Ejemplar> buscarTodosOrdenadosNombreProveedor(){return repositorio.findAllByOrderByProveedorAsc();}
     public List<Ejemplar> buscarTodosOrdenadosNombreProveedorDes(){return repositorio.findAllByOrderByProveedorDesc();}
+    public List<Ejemplar> filtrarPorFecha(Date fechaIni, Date fechaFin){return repositorio.findByFechaAdquisicionBetween(fechaIni,fechaFin);}
+    public List<Ejemplar> filtrarPorAnyo(int ini, int fin){return repositorio.findByAnyoBetween(ini,fin);}
+    public List<Ejemplar> filtrarPorCiudad(String ciudad){return repositorio.findByCiudadAcuContaining(ciudad);}
+    public List<Ejemplar> filtrarPorProveedor(String proveedor){return repositorio.findByProveedorNombreContaining(proveedor);}
 
 
 }

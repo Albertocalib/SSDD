@@ -74,6 +74,7 @@
     <script src="/js/plugins/bootstrap-notify.js"></script>
     <script src="/js/material.js"></script>
     <script src="/js/Inicio.js"></script>
+    <script src="/js/filtros.js"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="/js/material-dashboard.min.js?v=2.1.1" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -81,9 +82,10 @@
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/albery.css" type="text/css">
     <style>
-        .content{
-            margin-top: 0!important;
+        .content {
+            margin-top: 0 !important;
         }
+
         h1 {
             text-align: center;
         }
@@ -95,11 +97,20 @@
         .card-description {
             color: black;
         }
-        .ejemplarImagenTexto{
-            margin-left: auto!important;
-            margin-right: auto!important;
-            display: block!important;
+
+        .ejemplarImagenTexto {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            display: block !important;
         }
+
+        .masInfo {
+            margin-right: 0;
+            margin-left: auto;
+            color: #c27400 !important;
+
+        }
+
         #botonCrear {
             position: relative;
             text-align: center;
@@ -119,6 +130,18 @@
         .form-check .form-check-input:checked ~ .circle {
 
             border-color: #a1887f;
+        }
+
+        .card-color {
+            background-color: #c27400 !important;
+            margin: 0 !important;
+            border-radius: 0;
+
+        }
+
+        .card-title-modal {
+            color: white;
+            font-weight: bold;
         }
 
         .img {
@@ -184,7 +207,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item">
                         <a class="nav-link"
                            style="background: #a1887f;color: black; margin-bottom: -6%;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
                             <p>Ordenar por:</p>
@@ -193,15 +216,24 @@
                                    style="position: absolute;color: black; margin-left: 39%;margin-top: -1%">
                                     expand_more </i>
                                 <select id="ordenarPorId" name="ordenarPor" style="width:150px">
-                                    <option selected value="0"> Elige una opción</option>
-                                    <option value="VF">Valor facial</option>
-                                    <option value="UM">Unidad Monetaria</option>
-                                    <option value="D">Diametro</option>
-                                    <option value="P">Peso</option>
                                 </select>
                             </label>
                         </a>
-
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           style="background: #a1887f;color: black; margin-bottom: -6%;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
+                            <p>Filtrar por:</p>
+                            <label>
+                                <i class="material-icons"
+                                   style="position: absolute;color: black; margin-left: 39%;margin-top: -1%">
+                                    expand_more </i>
+                                <select id="filtrarPorId" name="filtrarPor" style="width:150px">
+                                </select>
+                            </label>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="margin: 10%" id="filtro">
                     </li>
                 </ul>
             </div>
@@ -283,9 +315,9 @@
         <form action="/Inicio/crearProveedor" method="post" enctype='multipart/form-data'>>
             <div class="modal-dialog " role="document">
                 <div class="modal-content">
-                    <div class="card card-plain">
-                        <div class="modal-header card-header card-header-primary">
-                            <h4 class="card-title">Introduzca nuevo com.example.demo.proveedor</h4>
+                    <div class="card card-plain card-color">
+                        <div class="modal-header card-header">
+                            <h4 class="card-title card-title-modal">Introduzca nuevo com.example.demo.proveedor</h4>
                         </div>
                     </div>
                     <div class="modal-body" align="left">
@@ -332,7 +364,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <input type="submit" id="submit3" value="Aceptar" class="btn btn-primary"/>
+                        <input type="submit" id="submit3" value="Aceptar" class="btn btn-color"/>
                     </div>
                 </div>
             </div>
@@ -343,9 +375,9 @@
         <form action="/Inicio/crearModelo" method="post" enctype='multipart/form-data'>>
             <div class="modal-dialog " role="document">
                 <div class="modal-content">
-                    <div class="card card-plain">
-                        <div class="modal-header card-header card-header-primary">
-                            <h4 class="card-title">Introduzca nuevo modelo</h4>
+                    <div class="card card-plain card-color">
+                        <div class="modal-header card-header">
+                            <h4 class="card-title card-title-modal">Introduzca nuevo modelo</h4>
                         </div>
                     </div>
                     <div class="modal-body" align="left">
@@ -404,7 +436,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <input type="submit" id="submit2" value="Aceptar" class="btn btn-primary"/>
+                        <input type="submit" id="submit2" value="Aceptar" class="btn btn-color"/>
                     </div>
                 </div>
             </div>
@@ -415,9 +447,9 @@
         <form action="/Inicio/crearEjemplar" method="post" enctype='multipart/form-data'>>
             <div class="modal-dialog " role="document">
                 <div class="modal-content">
-                    <div class="card card-plain">
-                        <div class="modal-header card-header card-header-primary">
-                            <h4 class="card-title">Introduzca nuevo Ejemplar</h4>
+                    <div class="card card-plain card-color">
+                        <div class="modal-header card-header ">
+                            <h4 class="card-title card-title-modal">Introduzca nuevo Ejemplar</h4>
                         </div>
                     </div>
                     <div class="modal-body" align="left">
@@ -481,7 +513,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <input type="submit" id="submit" value="Aceptar" class="btn btn-primary"/>
+                        <input type="submit" id="submit" value="Aceptar" class="btn btn-color"/>
                     </div>
                 </div>
             </div>

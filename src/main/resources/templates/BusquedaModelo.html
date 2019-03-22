@@ -26,10 +26,10 @@
                 <img class="img" th:src="${modelo.getImagenCodificada()}" alt="">
             </div>
             <div class="card-footer">
-                <div class="stats" style="margin-left: 90%;">
-                    <a th:href="'#masInfo' + ${modelo.id}" data-toggle="modal"
+                <div class="stats masInfo">
+                    <a class = "masInfo" th:href="'#masInfo' + ${modelo.id}" data-toggle="modal"
                        th:name="'#masInfo' + ${modelo.id}">
-                        <i class="material-icons" style="float: right">add</i> info
+                        <i class="material-icons">add</i> info
                     </a>
                 </div>
             </div>
@@ -40,9 +40,9 @@
             <form action="#" th:action="@{'/Inicio/borrarModelo' + ${modelo.id}}" method="post">
                 <div class="modal-dialog " role="document">
                     <div class="modal-content">
-                        <div class="card card-plain">
-                            <div class="modal-header card-header card-header-primary">
-                                <h4 class="card-title">Confirmar eliminación</h4>
+                        <div class="card card-plain card-color">
+                            <div class="modal-header card-header">
+                                <h4 class="card-title card-title-modal">Confirmar eliminación</h4>
                             </div>
                         </div>
                         <div class="modal-body" align="left">
@@ -62,9 +62,9 @@
             <form action="/Inicio/modificarModelo" method="post" enctype='multipart/form-data'>>
                 <div class="modal-dialog " role="document">
                     <div class="modal-content">
-                        <div class="card card-plain">
-                            <div class="modal-header card-header card-header-primary">
-                                <h4 class="card-title">Modificar modelo</h4>
+                        <div class="card card-plain card-color">
+                            <div class="modal-header card-header">
+                                <h4 class="card-title card-title-modal">Modificar modelo</h4>
                             </div>
                         </div>
                         <div class="modal-body" align="left">
@@ -127,7 +127,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <input type="submit" id="submit" value="Aceptar" class="btn btn-primary"/>
+                            <input type="submit" id="submit" value="Aceptar" class="btn btn-color"/>
                         </div>
                     </div>
                 </div>
@@ -138,9 +138,9 @@
              aria-hidden="true" align="center">
             <div class="modal-dialog " role="document">
                 <div class="modal-content">
-                    <div class="card card-plain">
-                        <div class="modal-header card-header card-header-primary">
-                            <h4 class="card-title">Información del modelo: <span
+                    <div class="card card-plain card-color">
+                        <div class="modal-header card-header ">
+                            <h4 class="card-title card-title-modal">Información del modelo: <span
                                     th:text="' ' + ${modelo.getValorFacial()}+ ' ' + ${modelo.getUnidadMonetaria()}"></span>
                             </h4>
                         </div>
@@ -174,7 +174,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary" data-dismiss="modal" id = "botonMasEjemplares"  th:data1 ='${modelo.getValorFacial()}' th:data2 ='${modelo.getUnidadMonetaria()}' onclick="buscarEjemplaresModelos(this.getAttribute('data1'), this.getAttribute('data2'))"> Ver Ejemplares </button>
+                        <button class="btn btn-color" data-dismiss="modal" id = "botonMasEjemplares"  th:data1 ='${modelo.getValorFacial()}' th:data2 ='${modelo.getUnidadMonetaria()}' onclick="buscarEjemplaresModelos(this.getAttribute('data1'), this.getAttribute('data2'))"> Ver Ejemplares </button>
                     </div>
                 </div>
             </div>

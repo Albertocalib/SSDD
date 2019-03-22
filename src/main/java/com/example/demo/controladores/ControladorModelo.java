@@ -88,4 +88,45 @@ public class ControladorModelo {
         model.addAttribute("listaModelos", lista);
         return "BusquedaModelo";
     }
+    @RequestMapping (value= "/Inicio/modificarModelo{id}",method = RequestMethod.POST)
+    public String modificarModelo(Model model, @PathVariable int id ,@RequestParam MultipartFile file, @RequestParam int valorFacial, @RequestParam double peso, @RequestParam double diametro, @RequestParam String metales,@RequestParam String descripcion, @RequestParam String unidadMonetaria) throws IOException {
+        Modelo m=modeloServicio.buscarPorId(id);
+        LinkedHashSet<String> metalesA=  new LinkedHashSet<>(Arrays.asList(metales.split(",")));
+        m.setMetales(metalesA);
+        m.setDiametro(diametro);
+        m.setDescripcion(descripcion);
+        m.setPeso(peso);
+        m.setValorFacial(valorFacial);
+        m.setUnidadMonetaria(unidadMonetaria);
+        if (file!=null){
+            m.setImagenCodificada("data:image/png;base64,"+ Base64.getEncoder().encodeToString(file.getBytes()));
+        }
+        model.addAttribute("elementoTipo", 1);//Cuando sea un modelo le pasamos al javascript un 1
+        return "Inicio";
+    }
+
+    @GetMapping(path = "/Inicio/filtroUnidadMonetaria/{name}")
+    public String filtrarUnidadMonetaria(Model model,@PathVariable String name){
+        List<Modelo> lista = modeloServicio.filtrarPorUnidadMonetaria(name);
+        model.addAttribute("listaModelos",lista);
+        return "BusquedaModelo";
+    }
+    @GetMapping(path = "/Inicio/filtroValorFacial/{min}/{max}")
+    public String filtrarValorFacial(Model model,@PathVariable int min, @PathVariable int max){
+        List<Modelo> lista = modeloServicio.filtrarPorValorFacial(min,max);
+        model.addAttribute("listaModelos",lista);
+        return "BusquedaModelo";
+    }
+    @GetMapping(path = "/Inicio/filtroPeso/{min}/{max}")
+    public String filtrarPeso(Model model,@PathVariable double min, @PathVariable double max){
+        List<Modelo> lista = modeloServicio.filtraPorPeso(min,max);
+        model.addAttribute("listaModelos",lista);
+        return "BusquedaModelo";
+    }
+    @GetMapping(path = "/Inicio/filtroDiametro/{min}/{max}")
+    public String filtrarDiametro(Model model,@PathVariable double min, @PathVariable double max){
+        List<Modelo> lista = modeloServicio.filtratPorDiametro(min,max);
+        model.addAttribute("listaModelos",lista);
+        return "BusquedaModelo";
+    }
 }
