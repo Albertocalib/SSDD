@@ -33,11 +33,11 @@ public class ControladorEjemplar {
 
         Modelo modelo = modeloServicio.buscarPorValorFacialyUnidadMonetaria(valorFacial,unidadMonetaria);
         if(modelo == null){
-            return "Inicio"; //Aqui hay que mostrar un error: El com.example.demo.modelo no existe.
+            return "Inicio"; //Aqui hay que mostrar un error: El modelo no existe.
         }
         Proveedor proveedor = proveedorServicio.buscarPorCodigoIdFiscal(codigoIdFiscal);
         if(proveedor == null){
-             return "InicIo"; //Aqui hay que mostrar un error: El com.example.demo.proveedor no existe.
+             return "Inicio"; //Aqui hay que mostrar un error: El proveedor no existe.
         }
 
         Ejemplar ejemplar = new Ejemplar(fechaAdquisicion, ciudadAcunyacion, anyo, estado, modelo, proveedor);
@@ -64,6 +64,13 @@ public class ControladorEjemplar {
     @GetMapping(path = "/Inicio/EjemplaresModelos/{valorFacial}/{unidadMonetaria}")
     public String buscarEjemplaresModelo(Model model, @PathVariable int valorFacial,@PathVariable String unidadMonetaria){
         List<Ejemplar> lista = ejemplarServicio.buscarPorModelos(valorFacial,unidadMonetaria);
+        model.addAttribute("listaEjemplares", lista);
+        return "BusquedaEjemplares";
+    }
+
+    @GetMapping(path = "/Inicio/EjemplaresProveedor/{codigoIdFiscal}")
+    public String buscarEjemplaresProveedor(Model model, @PathVariable String codigoIdFiscal){
+        List<Ejemplar> lista = ejemplarServicio.buscarPorProveedor(codigoIdFiscal);
         model.addAttribute("listaEjemplares", lista);
         return "BusquedaEjemplares";
     }

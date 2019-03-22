@@ -21,4 +21,6 @@ public interface EjemplarRepositorio extends JpaRepository<Ejemplar,Integer>  {
     List<Ejemplar> findByProveedorNombreContaining(String name);
     List<Ejemplar> findByCiudadAcuContaining(String ciudad);
 
+    List<Ejemplar> findByProveedor_CodigoIdFiscal(String codigoIdFiscal);
+
 }

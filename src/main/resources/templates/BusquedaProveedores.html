@@ -1,0 +1,87 @@
+<div id="listaElementos" class="row">
+    <div class="col-md-4" th:each="proveedor: ${listaProveedores}">
+        <div class="card card-chart">
+            <div class="card-header card-plain card-color"
+                 style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
+                <div class="row">
+                    <div class="col-md-9">
+                        <span class="card-title-modal" th:text="'Proveedor: ' + ${proveedor.getNombre()} "></span>
+                    </div>
+                    <div class="col-md-1">
+                        <a th:href="'#eliminarProveedor' + ${proveedor.id}" data-toggle="modal"
+                           th:name="'#eliminarProveedor' + ${proveedor.id}">
+                            <i class="material-icons" style="color: white">delete</i>
+                        </a>
+                    </div>
+                    <div class="col-md-1">
+                        <a th:href="'#modificarProveedor' + ${proveedor.id}" data-toggle="modal"
+                           th:name="'#modificarProveedor' + ${proveedor.id}">
+                            <i class="material-icons" style="color: white">edit</i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="class-title"><b>Identificador Fiscal:   </b><span th:text="' '+ ${proveedor.getCodigoIdFiscal()}"></span>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="class-title"><b>Nombre:   </b><span th:text="' '+ ${proveedor.getNombre()}"></span>
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="class-title"><b>Dirección Postal:   </b><span th:text="' '+ ${proveedor.getDirPostal()}"></span></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="class-title"><b>Email:   </b><span
+                                th:text="' '+ ${proveedor.getEmail()}"></span></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="class-title"><b>Teléfono:   </b><span
+                                th:text="' '+ ${proveedor.getTelefono()}"></span></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+
+                <div class="stats masInfo">
+                    <button class="btn btn-color" data-dismiss="modal" id = "ejemplaresDeProveedor"  th:data1 ='${proveedor.getCodigoIdFiscal()}' onclick="buscarEjemplaresProveedor(this.getAttribute('data1'))">Ver Ejemplares donados</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" th:id="'eliminarProveedor' + ${proveedor.id}" tabindex="-1" role="dialog"
+             th:aria-labelledby="'eliminarProveedor' + ${proveedor.id}"
+             aria-hidden="true" align="center" data-backdrop="static" data-keyboard="true">
+            <form action="#" th:action="@{'/Inicio/borrarProveedor' + ${proveedor.id}}" method="post">
+                <div class="modal-dialog " role="document">
+                    <div class="modal-content">
+                        <div class="card card-plain">
+                            <div class="modal-header card-header card-header-primary" >
+                                <h4 class="card-title">Confirmar eliminación</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body" align="left">
+                            <p> ¿Está seguro de eliminar el proveedor?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" id="submit1" value="Aceptar" class="btn btn-primary:"/>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

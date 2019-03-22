@@ -39,5 +39,7 @@ public class EjemplarServicio {
     public List<Ejemplar> filtrarPorCiudad(String ciudad){return repositorio.findByCiudadAcuContaining(ciudad);}
     public List<Ejemplar> filtrarPorProveedor(String proveedor){return repositorio.findByProveedorNombreContaining(proveedor);}
 
+    public List<Ejemplar> buscarPorProveedor(String codigoIdFiscal){return repositorio.findByProveedor_CodigoIdFiscal(codigoIdFiscal);}
+
 
 }

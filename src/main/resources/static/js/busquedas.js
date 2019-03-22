@@ -93,20 +93,16 @@ function busquedaEjemplares() {
         document.getElementById("exampleRadios3").checked = false;
 
         document.getElementById("ordenarPorId").innerText = "";
-
         var node = document.createElement("option");
         node.selected = true;
         var textnode = document.createTextNode("Elige una opción");
         node.appendChild(textnode);
-
         var node2 = document.createElement("option");
         node2.addEventListener('click',function (ev) {ordenarEjemplaresFechasAdquisicion()},false);
         node2.value = node2.text = "Fecha de adquisición";
-
         var node5 = document.createElement("option");
         node5.addEventListener('click',function (ev) {ordenarEjemplaresFechasAdquisicionDes()},false);
         node5.value = node5.text = "Fechas de adquisicion descendentes";
-
         var node3 = document.createElement("option");
         node3.addEventListener('click',function (ev) {ordenarEjemplaresCiudadAcunacion()},false);
         node3.value = node3.text = "Ciudad de acuñación";
@@ -184,24 +180,43 @@ function busquedaProveedores() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
-        document.getElementById("exampleRadios1").checked = false;
-        document.getElementById("exampleRadios2").checked = false;
-        document.getElementById("exampleRadios3").checked = true;
         document.getElementById("ordenarPorId").innerText = "";
         var node = document.createElement("option");
         node.selected = true;
         var textnode = document.createTextNode("Elige una opción");
         node.appendChild(textnode);
         var node2 = document.createElement("option");
-        node2.value = node2.text = "Código fiscal";
+        node2.addEventListener('click',function (ev) {ordenarProveedoresCodigoIdFiscal()},false);
+        node2.value = node2.text = "Codigo Identificacion Fiscal";
+
         var node3 = document.createElement("option");
-        node3.value = node3.text = "Nombre";
+        node3.addEventListener('click',function (ev) {ordenarProveedoresCodigoIdFiscalDes()},false);
+        node3.value = node3.text = "Codigo Identificacion Fiscal descendente";
+
         var node4 = document.createElement("option");
-        node4.value = node4.text = "Dirección postal";
+        node4.addEventListener('click',function (ev) {ordenarProveedoresNombre()},false);
+        node4.value = node4.text = "Nombre";
+
+        var node5 = document.createElement("option");
+        node5.addEventListener('click',function (ev) {ordenarProveedoresNombreDes()},false);
+        node5.value = node5.text = "Nombre descendente";
+
+        var node6 = document.createElement("option");
+        node6.addEventListener('click',function (ev) {ordenarProveedoresDirPostal()},false);
+        node6.value = node6.text = "Direccion Postal";
+
+        var node7 = document.createElement("option");
+        node7.addEventListener('click',function (ev) {ordenarProveedoresDirPostalDes()},false);
+        node7.value = node7.text = "Direccion Postal descendente";
+
         document.getElementById("ordenarPorId").appendChild(node);
         document.getElementById("ordenarPorId").appendChild(node2);
         document.getElementById("ordenarPorId").appendChild(node3);
         document.getElementById("ordenarPorId").appendChild(node4);
+        document.getElementById("ordenarPorId").appendChild(node5);
+        document.getElementById("ordenarPorId").appendChild(node6);
+        document.getElementById("ordenarPorId").appendChild(node7);
+
 
         document.getElementById("filtrarPorId").innerText = "";
         var nodeF = document.createElement("option");
@@ -224,7 +239,7 @@ function busquedaProveedores() {
 
         $("#botonCrear").replaceWith("<button id = \"botonCrear\" class=\"btn btn-fab btn-round btn-color\"\n" +
             "                data-toggle=\"modal\"\n" +
-            "                data-target=\"#crearProveeOrdenardor\"\n" +
+            "                data-target=\"#crearProveedor\"\n" +
             "        ><i class=\"material-icons\">add</i>\n" +
             "            </button>");
     })
@@ -244,6 +259,74 @@ function buscarEjemplaresModelos(valorFacial,unidadMonetaria){
         document.getElementById("exampleRadios3").checked = false;
     })
 }
+
+function buscarEjemplaresProveedor(codigoIdFiscal){
+
+    var urlPage = "/Inicio/EjemplaresProveedor/"+codigoIdFiscal;
+    console.log(urlPage);
+    $.ajax({
+        url: urlPage
+    }).done(function (data) {
+        $("#listaElementos").replaceWith(data);
+    })
+}
+
+
+function ordenarProveedoresCodigoIdFiscal(){
+    var urlPage = "/Inicio/Proveedores/CodigoFiscal";
+    console.log(urlPage);
+    $.ajax({
+        url: urlPage
+    }).done(function (data) {
+        $("#listaElementos").replaceWith(data);
+    })
+}
+function ordenarProveedoresCodigoIdFiscalDes(){
+    var urlPage = "/Inicio/Proveedores/CodigoFiscalDes";
+    console.log(urlPage);
+    $.ajax({
+        url: urlPage
+    }).done(function (data) {
+        $("#listaElementos").replaceWith(data);
+    })
+}
+function ordenarProveedoresNombre(){
+    var urlPage = "/Inicio/Proveedores/Nombres";
+    console.log(urlPage);
+    $.ajax({
+        url: urlPage
+    }).done(function (data) {
+        $("#listaElementos").replaceWith(data);
+    })
+}
+function ordenarProveedoresNombreDes(){
+    var urlPage = "/Inicio/Proveedores/NombresDes";
+    console.log(urlPage);
+    $.ajax({
+        url: urlPage
+    }).done(function (data) {
+        $("#listaElementos").replaceWith(data);
+    })
+}
+function ordenarProveedoresDirPostal(){
+    var urlPage = "/Inicio/Proveedores/DireccionPostal";
+    console.log(urlPage);
+    $.ajax({
+        url: urlPage
+    }).done(function (data) {
+        $("#listaElementos").replaceWith(data);
+    })
+}
+function ordenarProveedoresDirPostalDes(){
+    var urlPage = "/Inicio/Proveedores/DireccionPostalDes";
+    console.log(urlPage);
+    $.ajax({
+        url: urlPage
+    }).done(function (data) {
+        $("#listaElementos").replaceWith(data);
+    })
+}
+
 
 function ordenarEjemplaresFechasAdquisicion(){
     var urlPage = "/Inicio/Ejemplares/FechaAdquisicion";
