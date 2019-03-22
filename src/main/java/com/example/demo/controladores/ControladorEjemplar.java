@@ -308,7 +308,7 @@ public class ControladorEjemplar {
     @RequestMapping (path= "/Inicio/modificarEjemplar{id}",method = RequestMethod.POST)
     public String modificarEjemplar (Model model, @PathVariable int id,@RequestParam MultipartFile file,@RequestParam int valorFacial, @RequestParam String unidadMonetaria, @RequestParam String codigoIdFiscal, @RequestParam Date fechaAdquisicion, @RequestParam String ciudadAcunyacion, @RequestParam int anyo, @RequestParam String estado) throws IOException {
         Ejemplar e=ejemplarServicio.buscarPorId(id);
-        if (file!=null){
+        if (!file.isEmpty()){
             e.addImagen("data:image/png;base64,"+ Base64.getEncoder().encodeToString(file.getBytes()));
         }
         Proveedor proveedor = proveedorServicio.buscarPorCodigoIdFiscal(codigoIdFiscal);
@@ -323,7 +323,7 @@ public class ControladorEjemplar {
         e.setCiudadAcu(ciudadAcunyacion);
         e.setEstado(estado);
         e.setFechaAdquisicion(fechaAdquisicion);
-
+        ejemplarServicio.guardar(e);
         model.addAttribute("elementoTipo", 2);//Cuando sea un ejemplar le pasamos al javascript un 2
         return "Inicio";
     }

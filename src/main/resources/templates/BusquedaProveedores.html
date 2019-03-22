@@ -61,10 +61,10 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" th:id="'eliminarProveedor' + ${proveedor.id}" tabindex="-1" role="dialog"
-             th:aria-labelledby="'eliminarProveedor' + ${proveedor.id}"
+        <div class="modal fade" th:id="'eliminarProveedor' + ${proveedor.getId()}" tabindex="-1" role="dialog"
+             th:aria-labelledby="'eliminarProveedor' + ${proveedor.getId()}"
              aria-hidden="true" align="center" data-backdrop="static" data-keyboard="true">
-            <form action="#" th:action="@{'/Inicio/borrarProveedor' + ${proveedor.id}}" method="post">
+            <form action="#" th:action="@{'/Inicio/borrarProveedor' + ${proveedor.getId()}}" method="post">
                 <div class="modal-dialog " role="document">
                     <div class="modal-content">
                         <div class="card card-plain">
@@ -81,6 +81,65 @@
                     </div>
                 </div>
 
+            </form>
+        </div>
+        <div class="modal fade" th:id="'modificarProveedor' + ${proveedor.getId()}" tabindex="-1" role="dialog" th:aria-labelledby="'modificarProveedor' + ${proveedor.getId()}" aria-hidden="true" align="center">
+            <form action="#" th:action="@{'/Inicio/modificarProveedor' + ${proveedor.getId()}}" method="post" >>
+                <div class="modal-dialog " role="document">
+                    <div class="modal-content">
+                        <div class="card card-plain card-color">
+                            <div class="modal-header card-header">
+                                <h4 class="card-title card-title-modal">Introduzca nuevo proveedor</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body" align="left">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group bmd-form-group">
+                                        <label>Inserte el codigo de identificacion fiscal del
+                                            proveedor</label>
+                                        <input name="codigoIdFiscal" required type="text" class="form-control" th:value="${proveedor.getCodigoIdFiscal()}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group bmd-form-group">
+                                        <label>Inserte el nombre del proveedor</label>
+                                        <input name="nombreProveedor" required type="text" class="form-control" th:value="${proveedor.getNombre()}" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group bmd-form-group">
+                                        <label>Inserte la direccion postal del proveedor</label>
+                                        <input name="dirPostal" required type="text"  class="form-control" th:value="${proveedor.getDirPostal()}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group bmd-form-group">
+                                        <label>Inserte email del proveedor</label>
+                                        <input name="email" required type="email"  class="form-control" th:value="${proveedor.getEmail()}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group bmd-form-group">
+                                        <label>Inserte telefono del proveedor</label>
+                                        <input name="telefono" required type="number" min="600000000" class="form-control" th:value="${proveedor.getTelefono()}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" id="submit3" value="Aceptar" class="btn btn-color"/>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
