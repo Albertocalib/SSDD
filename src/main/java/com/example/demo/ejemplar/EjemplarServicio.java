@@ -59,23 +59,23 @@ public class EjemplarServicio {
     public List<Ejemplar> buscarPorAnyoOrdenadoPorProveedorNombreAsc(int ini,int fin){return this.repositorio.findByAnyoBetweenOrderByProveedorNombreAsc(ini,fin);}
     public List<Ejemplar> buscarPorAnyoOrdenadoPorProveedorNombreDesc(int ini,int fin){return this.repositorio.findByAnyoBetweenOrderByProveedorNombreDesc(ini,fin);}
 
-    public List<Ejemplar> buscarPorCiudadAcuPorFechaAdquisicionAsc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByFechaAdquisicionAsc(ciudad);}
-    public List<Ejemplar> buscarPorCiudadAcuPorFechaAdquisicionDesc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByFechaAdquisicionDesc(ciudad);}
-    public List<Ejemplar> buscarPorCiudadAcuPorCiudadAcuAsc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByCiudadAcuAsc(ciudad);}
-    public List<Ejemplar> buscarPorCiudadAcuPorCiudadAcuDesc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByCiudadAcuDesc(ciudad);}
-    public List<Ejemplar> buscarPorCiudadAcuPorAnyoAsc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByAnyoAsc(ciudad);}
-    public List<Ejemplar> buscarPorCiudadAcuPorAnyoDesc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByAnyoDesc(ciudad);}
-    public List<Ejemplar> buscarPorCiudadAcuPorProveedorNombreAsc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByProveedorNombreAsc(ciudad);}
-    public List<Ejemplar> buscarPorCiudadAcuPorProveedorNombreDesc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByProveedorNombreDesc(ciudad);}
+    public List<Ejemplar> buscarPorCiudadAcuOrdenadoPorFechaAdquisicionAsc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByFechaAdquisicionAsc(ciudad);}
+    public List<Ejemplar> buscarPorCiudadAcuOrdenadoPorFechaAdquisicionDesc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByFechaAdquisicionDesc(ciudad);}
+    public List<Ejemplar> buscarPorCiudadAcuOrdenadoPorCiudadAcuAsc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByCiudadAcuAsc(ciudad);}
+    public List<Ejemplar> buscarPorCiudadAcuOrdenadoPorCiudadAcuDesc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByCiudadAcuDesc(ciudad);}
+    public List<Ejemplar> buscarPorCiudadAcuOrdenadoPorAnyoAsc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByAnyoAsc(ciudad);}
+    public List<Ejemplar> buscarPorCiudadAcuOrdenadoPorAnyoDesc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByAnyoDesc(ciudad);}
+    public List<Ejemplar> buscarPorCiudadAcuOrdenadoPorProveedorNombreAsc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByProveedorNombreAsc(ciudad);}
+    public List<Ejemplar> buscarPorCiudadAcuOrdenadoPorProveedorNombreDesc(String ciudad){return this.repositorio.findByCiudadAcuContainingOrderByProveedorNombreDesc(ciudad);}
 
-    public List<Ejemplar> buscarPorProveedorNombrePorFechaAdquisicionAsc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByFechaAdquisicionAsc(nombre);}
-    public List<Ejemplar> buscarPorProveedorNombrePorFechaAdquisicionDesc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByFechaAdquisicionDesc(nombre);}
-    public List<Ejemplar> buscarPorProveedorNombreCiudadAcuAsc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByCiudadAcuAsc(nombre);}
-    public List<Ejemplar> buscarPorProveedorNombrePorCiudadAcuDesc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByCiudadAcuDesc(nombre);}
-    public List<Ejemplar> buscarPorProveedorNombrePorAnyoAsc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByAnyoAsc(nombre);}
-    public List<Ejemplar> buscarPorProveedorNombrePorAnyoDesc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByAnyoDesc(nombre);}
-    public List<Ejemplar> buscarPorProveedorNombrePorProveedorNombreAsc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByProveedorNombreAsc(nombre);}
-    public List<Ejemplar> buscarPorProveedorNombrePorProveedorNombreDesc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByProveedorNombreDesc(nombre);}
+    public List<Ejemplar> buscarPorProveedorNombreOrdenadoPorFechaAdquisicionAsc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByFechaAdquisicionAsc(nombre);}
+    public List<Ejemplar> buscarPorProveedorNombreOrdenadoPorFechaAdquisicionDesc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByFechaAdquisicionDesc(nombre);}
+    public List<Ejemplar> buscarPorProveedorNombreOrdenadoPorCiudadAcuAsc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByCiudadAcuAsc(nombre);}
+    public List<Ejemplar> buscarPorProveedorNombreOrdenadoPorCiudadAcuDesc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByCiudadAcuDesc(nombre);}
+    public List<Ejemplar> buscarPorProveedorNombreOrdenadoPorAnyoAsc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByAnyoAsc(nombre);}
+    public List<Ejemplar> buscarPorProveedorNombreOrdenadoPorAnyoDesc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByAnyoDesc(nombre);}
+    public List<Ejemplar> buscarPorProveedorNombreOrdenadoPorProveedorNombreAsc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByProveedorNombreAsc(nombre);}
+    public List<Ejemplar> buscarPorProveedorNombreOrdenadoPorProveedorNombreDesc(String nombre){return this.repositorio.findByProveedorNombreContainingOrderByProveedorNombreDesc(nombre);}
     
 
 }

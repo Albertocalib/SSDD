@@ -64,6 +64,7 @@ public class ControladorEjemplar {
     }
     @GetMapping(path = "/Inicio/Ejemplares")
     public String mostrarEjemplares(Model model){
+        tipoFiltro = "NU";
         List<Ejemplar> lista = ejemplarServicio.buscarTodos();
         model.addAttribute("listaEjemplares",lista);
         return "BusquedaEjemplares";
@@ -94,26 +95,25 @@ public class ControladorEjemplar {
         switch (tipoFiltro){
             case "NU":
                 lista = ejemplarServicio.buscarTodosOrdenadosFechasAdquisicion();
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "FA":
                 lista = ejemplarServicio.buscarPorFechaAdquisicionOrdenadoPorFechaAdquisicionAsc(fechaAquisicion1,fechaAquisicion2);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "CE":
                 lista = ejemplarServicio.buscarPorCiudadAcuOrdenadoPorFechaAdquisicionAsc(ciudadAcu);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "AA":
                 lista = ejemplarServicio.buscarPorAnyoOrdenadoPorFechaAdquisicionAsc(ano1,ano2);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "PN":
                 lista = ejemplarServicio.buscarPorProveedorNombreOrdenadoPorFechaAdquisicionAsc(proveedorNombre);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
         }
-        model.addAttribute("listaEjemplares", lista);
         return "BusquedaEjemplares";
     }
     @GetMapping(path = "/Inicio/Ejemplares/FechaAdquisicionDes")
@@ -122,23 +122,23 @@ public class ControladorEjemplar {
         switch (tipoFiltro){
             case "NU":
                 lista = ejemplarServicio.buscarTodosOrdenadosFechasAdquisicionDes();
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "FA":
-                lista = ejemplarServicio.buscarPorFechaAdquisicionOrdenadoPorFechaAdquisicionDes(fechaAquisicion1,fechaAquisicion2);
-                model.addAttribute("listaProveedores", lista);
+                lista = ejemplarServicio.buscarPorFechaAdquisicionOrdenadoPorFechaAdquisicionDesc(fechaAquisicion1,fechaAquisicion2);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "CE":
-                lista = ejemplarServicio.buscarPorCiudadAcuOrdenadoPorFechaAdquisicionDes(ciudadAcu);
-                model.addAttribute("listaProveedores", lista);
+                lista = ejemplarServicio.buscarPorCiudadAcuOrdenadoPorFechaAdquisicionDesc(ciudadAcu);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "AA":
-                lista = ejemplarServicio.buscarPorAnyoOrdenadoPorFechaAdquisicionDes(ano1,ano2);
-                model.addAttribute("listaProveedores", lista);
+                lista = ejemplarServicio.buscarPorAnyoOrdenadoPorFechaAdquisicionDesc(ano1,ano2);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "PN":
-                lista = ejemplarServicio.buscarPorProveedorNombreOrdenadoPorFechaAdquisicionDes(proveedorNombre);
-                model.addAttribute("listaProveedores", lista);
+                lista = ejemplarServicio.buscarPorProveedorNombreOrdenadoPorFechaAdquisicionDesc(proveedorNombre);
+                model.addAttribute("listaEjemplares", lista);
                 break;
         }
         return "BusquedaEjemplares";
@@ -149,23 +149,23 @@ public class ControladorEjemplar {
         switch (tipoFiltro){
             case "NU":
                 lista = ejemplarServicio.buscarTodosOrdenadosCiudadAcunacion();
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "FA":
-                lista = ejemplarServicio.buscarPorFechaAdquisicionOrdenadoPorCiudadAcunacionAsc(fechaAquisicion1,fechaAquisicion2);
-                model.addAttribute("listaProveedores", lista);
+                lista = ejemplarServicio.buscarPorFechaAdquisicionOrdenadoPorCiudadAcuAsc(fechaAquisicion1,fechaAquisicion2);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "CE":
-                lista = ejemplarServicio.buscarPorCiudadAcuOrdenadoPorCiudadAcunacionAsc(ciudadAcu);
-                model.addAttribute("listaProveedores", lista);
+                lista = ejemplarServicio.buscarPorCiudadAcuOrdenadoPorCiudadAcuAsc(ciudadAcu);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "AA":
-                lista = ejemplarServicio.buscarPorAnyoOrdenadoPorCiudadAcunacionAsc(ano1,ano2);
-                model.addAttribute("listaProveedores", lista);
+                lista = ejemplarServicio.buscarPorAnyoOrdenadoPorCiudadAcuAsc(ano1,ano2);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "PN":
-                lista = ejemplarServicio.buscarPorProveedorNombreOrdenadoPorCiudadAcunacionAsc(proveedorNombre);
-                model.addAttribute("listaProveedores", lista);
+                lista = ejemplarServicio.buscarPorProveedorNombreOrdenadoPorCiudadAcuAsc(proveedorNombre);
+                model.addAttribute("listaEjemplares", lista);
                 break;
         }
         return "BusquedaEjemplares";
@@ -176,23 +176,23 @@ public class ControladorEjemplar {
         switch (tipoFiltro){
             case "NU":
                 lista = ejemplarServicio.buscarTodosOrdenadosAnoAcunacion();
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "FA":
                 lista = ejemplarServicio.buscarPorFechaAdquisicionOrdenadoPorAnyoAsc(fechaAquisicion1,fechaAquisicion2);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "CE":
                 lista = ejemplarServicio.buscarPorCiudadAcuOrdenadoPorAnyoAsc(ciudadAcu);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "AA":
                 lista = ejemplarServicio.buscarPorAnyoOrdenadoPorAnyoAsc(ano1,ano2);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "PN":
                 lista = ejemplarServicio.buscarPorProveedorNombreOrdenadoPorAnyoAsc(proveedorNombre);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
         }
         return "BusquedaEjemplares";
@@ -203,23 +203,23 @@ public class ControladorEjemplar {
         switch (tipoFiltro){
             case "NU":
                 lista = ejemplarServicio.buscarTodosOrdenadosAnoAcunacionDes();
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "FA":
                 lista = ejemplarServicio.buscarPorFechaAdquisicionOrdenadoPorAnyoDesc(fechaAquisicion1,fechaAquisicion2);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "CE":
                 lista = ejemplarServicio.buscarPorCiudadAcuOrdenadoPorAnyoDesc(ciudadAcu);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "AA":
                 lista = ejemplarServicio.buscarPorAnyoOrdenadoPorAnyoDesc(ano1,ano2);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "PN":
                 lista = ejemplarServicio.buscarPorProveedorNombreOrdenadoPorAnyoDesc(proveedorNombre);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
         }
         return "BusquedaEjemplares";
@@ -230,23 +230,23 @@ public class ControladorEjemplar {
         switch (tipoFiltro){
             case "NU":
                 lista = ejemplarServicio.buscarTodosOrdenadosCiudadAcunacionDes();
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "FA":
-                lista = ejemplarServicio.buscarPorFechaAdquisicionOrdenadoPorCiudadAcunacionDesc(fechaAquisicion1,fechaAquisicion2);
-                model.addAttribute("listaProveedores", lista);
+                lista = ejemplarServicio.buscarPorFechaAdquisicionOrdenadoPorCiudadAcuDesc(fechaAquisicion1,fechaAquisicion2);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "CE":
-                lista = ejemplarServicio.buscarPorCiudadAcuOrdenadoPorCiudadAcunacionDesc(ciudadAcu);
-                model.addAttribute("listaProveedores", lista);
+                lista = ejemplarServicio.buscarPorCiudadAcuOrdenadoPorCiudadAcuDesc(ciudadAcu);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "AA":
-                lista = ejemplarServicio.buscarPorAnyoOrdenadoPorCiudadAcunacionDesc(ano1,ano2);
-                model.addAttribute("listaProveedores", lista);
+                lista = ejemplarServicio.buscarPorAnyoOrdenadoPorCiudadAcuDesc(ano1,ano2);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "PN":
-                lista = ejemplarServicio.buscarPorProveedorNombreOrdenadoPorCiudadAcunacionDesc(proveedorNombre);
-                model.addAttribute("listaProveedores", lista);
+                lista = ejemplarServicio.buscarPorProveedorNombreOrdenadoPorCiudadAcuDesc(proveedorNombre);
+                model.addAttribute("listaEjemplares", lista);
                 break;
         }
         return "BusquedaEjemplares";
@@ -257,23 +257,23 @@ public class ControladorEjemplar {
         switch (tipoFiltro){
             case "NU":
                 lista = ejemplarServicio.buscarTodosOrdenadosNombreProveedor();
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "FA":
                 lista = ejemplarServicio.buscarPorFechaAdquisicionOrdenadoPorProveedorNombreAsc(fechaAquisicion1,fechaAquisicion2);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "CE":
                 lista = ejemplarServicio.buscarPorCiudadAcuOrdenadoPorProveedorNombreAsc(ciudadAcu);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "AA":
                 lista = ejemplarServicio.buscarPorAnyoOrdenadoPorProveedorNombreAsc(ano1,ano2);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "PN":
                 lista = ejemplarServicio.buscarPorProveedorNombreOrdenadoPorProveedorNombreAsc(proveedorNombre);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
         }
         return "BusquedaEjemplares";
@@ -284,23 +284,23 @@ public class ControladorEjemplar {
         switch (tipoFiltro){
             case "NU":
                 lista = ejemplarServicio.buscarTodosOrdenadosNombreProveedorDes();
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "FA":
                 lista = ejemplarServicio.buscarPorFechaAdquisicionOrdenadoPorProveedorNombreDesc(fechaAquisicion1,fechaAquisicion2);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "CE":
                 lista = ejemplarServicio.buscarPorCiudadAcuOrdenadoPorProveedorNombreDesc(ciudadAcu);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "AA":
                 lista = ejemplarServicio.buscarPorAnyoOrdenadoPorProveedorNombreDesc(ano1,ano2);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
             case "PN":
                 lista = ejemplarServicio.buscarPorProveedorNombreOrdenadoPorProveedorNombreDesc(proveedorNombre);
-                model.addAttribute("listaProveedores", lista);
+                model.addAttribute("listaEjemplares", lista);
                 break;
         }
         return "BusquedaEjemplares";
