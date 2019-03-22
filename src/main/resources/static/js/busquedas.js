@@ -224,13 +224,13 @@ function busquedaProveedores() {
         var textnodeF = document.createTextNode("Elige una opción");
         nodeF.appendChild(textnodeF);
         var node2F = document.createElement("option");
-        node2F.addEventListener('click',function (ev) {ordenarEjemplaresFechasAdquisicion()},false);
+        node2F.addEventListener('click',function (ev) {addFiltroCodigoFiscal()},false);
         node2F.value = node2F.text = "Código fiscal";
         var node3F = document.createElement("option");
-        node3F.addEventListener('click',function (ev) {ordenarEjemplaresCiudadAcunacion()},false);
+        node3F.addEventListener('click',function (ev) {addFiltroNombreProveedorPropio()},false);
         node3F.value = node3F.text = "Nombre";
         var node4F = document.createElement("option");
-        node4F.addEventListener('click',function (ev) {ordenarEjemplaresAnoAcunacion()},false);
+        node4F.addEventListener('click',function (ev) {addFiltroDireccion()},false);
         node4F.value = node4F.text = "Dirección";
         document.getElementById("filtrarPorId").appendChild(nodeF);
         document.getElementById("filtrarPorId").appendChild(node2F);
@@ -568,6 +568,43 @@ function addFiltroPeso() {
         "                            </div>\n" +
         "                        </div>\n" +
         "                        <button type=\"button\" class=\"btn\" onclick=\"filtroPeso()\">Enviar</button>\n" +
+        "                    </li>");
+}
+
+function addFiltroCodigoFiscal() {
+    $("#filtro").replaceWith("<li class=\"nav-item\" style=\"margin: 10%\" id=\"filtro\">\n" +
+        "                        <div class=\"row\">\n" +
+        "                            <div class=\"form-group no-border\">\n" +
+        "                                <input id=\"codigoFiscalInput\" type=\"text\" class=\"form-control\" placeholder=\"Buscar código fiscal\">\n" +
+        "                            </div>\n" +
+        "                            <button type=\"submit\" class=\"btn btn-just-icon btn-round btn-color\" onclick=\"filtroCodigoFiscal()\">\n" +
+        "                                <i class=\"material-icons\" style=\"color:#8d6e63\">search</i>\n" +
+        "                            </button>\n" +
+        "                        </div>\n" +
+        "                    </li>");
+}
+function addFiltroNombreProveedorPropio() {
+    $("#filtro").replaceWith("<li class=\"nav-item\" style=\"margin: 10%\" id=\"filtro\">\n" +
+        "                        <div class=\"row\">\n" +
+        "                            <div class=\"form-group no-border\">\n" +
+        "                                <input id=\"nombreProveedorPropioInput\" type=\"text\" class=\"form-control\" placeholder=\"Buscar nombre proveedor\">\n" +
+        "                            </div>\n" +
+        "                            <button type=\"submit\" class=\"btn btn-just-icon btn-round btn-color\" onclick=\"filtroNombreProveedorPropio()\">\n" +
+        "                                <i class=\"material-icons\" style=\"color:#8d6e63\">search</i>\n" +
+        "                            </button>\n" +
+        "                        </div>\n" +
+        "                    </li>");
+}
+function addFiltroDireccion() {
+    $("#filtro").replaceWith("<li class=\"nav-item\" style=\"margin: 10%\" id=\"filtro\">\n" +
+        "                        <div class=\"row\">\n" +
+        "                            <div class=\"form-group no-border\">\n" +
+        "                                <input id=\"DireccionInput\" type=\"text\" class=\"form-control\" placeholder=\"Buscar dirección\">\n" +
+        "                            </div>\n" +
+        "                            <button type=\"submit\" class=\"btn btn-just-icon btn-round btn-color\" onclick=\"filtroDireccion()\">\n" +
+        "                                <i class=\"material-icons\" style=\"color:#8d6e63\">search</i>\n" +
+        "                            </button>\n" +
+        "                        </div>\n" +
         "                    </li>");
 }
 
