@@ -4,9 +4,13 @@ function busquedaModelos() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        $("#filtro").replaceWith("<li class=\"nav-item\" style=\"margin: 10%\" id=\"filtro\">\n" +
+            "                    </li>");
         document.getElementById("exampleRadios1").checked = true;
         document.getElementById("exampleRadios2").checked = false;
         document.getElementById("exampleRadios3").checked = false;
+        document.getElementById("quitarBusqueda").disabled = false;
+        $("#quitarBusqueda").show();
         document.getElementById("ordenarPorId").innerText = "";
         var node = document.createElement('option');
         node.selected = true;
@@ -87,11 +91,13 @@ function busquedaEjemplares() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
-
+        $("#filtro").replaceWith("<li class=\"nav-item\" style=\"margin: 10%\" id=\"filtro\">\n" +
+            "                    </li>");
         document.getElementById("exampleRadios1").checked = false;
         document.getElementById("exampleRadios2").checked = true;
         document.getElementById("exampleRadios3").checked = false;
-
+        document.getElementById("quitarBusqueda").disabled = false;
+        $("#quitarBusqueda").show();
         document.getElementById("ordenarPorId").innerText = "";
         var node = document.createElement("option");
         node.selected = true;
@@ -180,6 +186,12 @@ function busquedaProveedores() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        $("#filtro").replaceWith("<li class=\"nav-item\" style=\"margin: 10%\" id=\"filtro\">\n" +
+            "                    </li>");
+        document.getElementById("exampleRadios1").checked = false;
+        document.getElementById("exampleRadios2").checked = false;
+        document.getElementById("exampleRadios3").checked = true;
+        $("#quitarBusqueda").show();
         document.getElementById("ordenarPorId").innerText = "";
         var node = document.createElement("option");
         node.selected = true;
@@ -254,9 +266,12 @@ function buscarEjemplaresModelos(valorFacial,unidadMonetaria){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        $("#quitarBusqueda").hide();
         document.getElementById("exampleRadios1").checked = false;
         document.getElementById("exampleRadios2").checked = true;
         document.getElementById("exampleRadios3").checked = false;
+        $("#filtro").replaceWith("<li class=\"nav-item\" style=\"margin: 10%\" id=\"filtro\">\n" +
+            "                    </li>");
     })
 }
 
@@ -268,6 +283,12 @@ function buscarEjemplaresProveedor(codigoIdFiscal){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        $("#quitarBusqueda").hide();
+        document.getElementById("exampleRadios1").checked = false;
+        document.getElementById("exampleRadios2").checked = true;
+        document.getElementById("exampleRadios3").checked = false;
+        $("#filtro").replaceWith("<li class=\"nav-item\" style=\"margin: 10%\" id=\"filtro\">\n" +
+            "                    </li>");
     })
 }
 
@@ -599,7 +620,7 @@ function addFiltroDireccion() {
     $("#filtro").replaceWith("<li class=\"nav-item\" style=\"margin: 10%\" id=\"filtro\">\n" +
         "                        <div class=\"row\">\n" +
         "                            <div class=\"form-group no-border\">\n" +
-        "                                <input id=\"DireccionInput\" type=\"text\" class=\"form-control\" placeholder=\"Buscar dirección\">\n" +
+        "                                <input id=\"direccionInput\" type=\"text\" class=\"form-control\" placeholder=\"Buscar dirección\">\n" +
         "                            </div>\n" +
         "                            <button type=\"submit\" class=\"btn btn-just-icon btn-round btn-color\" onclick=\"filtroDireccion()\">\n" +
         "                                <i class=\"material-icons\" style=\"color:#8d6e63\">search</i>\n" +
