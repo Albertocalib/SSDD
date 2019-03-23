@@ -40,6 +40,7 @@ public class ControladorProveedor {
     @RequestMapping (value= "/Inicio/borrarProveedor{id}",method = RequestMethod.POST)
     public String eliminarProveedor(Model model, @PathVariable int id) {
         proveedorServicio.borrar(id);
+        model.addAttribute("elementoTipo", 3);
         return "Inicio";
     }
 
@@ -209,5 +210,17 @@ public class ControladorProveedor {
         List<Proveedor> lista = proveedorServicio.filtrarPorDirPostal(direccion);
         model.addAttribute("listaProveedores",lista);
         return "BusquedaProveedores";
+    }
+    @RequestMapping (value= "/Inicio/modificarProveedor{id}",method = RequestMethod.POST)
+    public String modificarModelo(Model model, @PathVariable int id , @RequestParam String codigoIdFiscal, @RequestParam String nombreProveedor, @RequestParam String dirPostal, @RequestParam String email, @RequestParam int telefono) {
+        Proveedor p=proveedorServicio.buscarPorId(id);
+        p.setCodigoIdFiscal(codigoIdFiscal);
+        p.setDirPostal(dirPostal);
+        p.setEmail(email);
+        p.setNombre(nombreProveedor);
+        p.setTelefono(telefono);
+        proveedorServicio.guardar(p);
+        model.addAttribute("elementoTipo", 3);//Cuando sea un proovedor le pasamos al javascript un 3
+        return "Inicio";
     }
 }

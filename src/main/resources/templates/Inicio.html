@@ -155,14 +155,50 @@
     <script src="/js/busquedas.js"></script>
 </head>
 <body style="overflow-x:hidden" th:onload="'cargarPagina(' + ${elementoTipo} + ')'">
-<div class="wrapper-full-page">
+<div class="wrapper-full-page" id="wrapper-full-page">
     <div class="wrapper">
-        <div class="sidebar" data-color="#8d6e63" data-background-color="white" data-image="/img/sidebar-1.jpg">
+        <header class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row bd-navbar"
+                style="background: #8d6e63!important;box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 5px rgba(0, 0, 0, 0)!important; border-radius: 0!important;">
+
+            <a class="navbar-brand mr-0 mr-md-2" href="#" target="_blank">
+                <img src="/img/logoPractica.png" style="max-width: 75px;margin-top: -12%;">
+            </a>
+            <a  id="buttonCollapse" type="button"  data-target="#navLateral" onclick="cambiarExpandir()">
+                <span class="navbar-toggler-icon"></span>
+
+            </a>
+
+            <div class="navbar-nav-scroll ml-md-auto ">
+                <ul class="navbar-nav bd-navbar-nav flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i
+                                class="material-icons">today</i>NEXT EVENT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i
+                                class="material-icons">search</i>SEARCH</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" target="_blank"
+                           rel="noopener"><i class="material-icons">help_outline</i>help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="_blank" rel="noopener"></a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+        </header>
+        <div class="collapse sidebar" id="navLateral" data-color="#8d6e63" data-background-color="white" data-image="/img/sidebar-1.jpg">
+
             <div class="logo" style="background-color: #8d6e63">
                 <a class="simple-text logo-normal" style="color: white">
                     BÚSQUEDA
                 </a>
             </div>
+
             <div class="sidebar-wrapper">
                 <ul class="nav">
                     <li class="nav-item active  ">
@@ -240,37 +276,10 @@
                 </ul>
             </div>
             <div class="sidebar-background" style="background-image: url(/img/sidebar-1.jpg) "></div>
+
         </div>
-        <div class="main-panel">
-            <header class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row bd-navbar"
-                    style="background: #8d6e63!important;box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 5px rgba(0, 0, 0, 0)!important; border-radius: 0!important;">
-                <a class="navbar-brand mr-0 mr-md-2" href="#" target="_blank">
-                    <img src="/img/logoPractica.png" style="max-width: 75px;margin-top: -12%;">
-                </a>
+        <div>
 
-                <div class="navbar-nav-scroll ml-md-auto ">
-                    <ul class="navbar-nav bd-navbar-nav flex-row">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"> <i
-                                    class="material-icons">today</i>NEXT EVENT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i
-                                    class="material-icons">search</i>SEARCH</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank"
-                               rel="noopener"><i class="material-icons">help_outline</i>help</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="_blank" rel="noopener"></a>
-                        </li>
-
-
-                    </ul>
-                </div>
-
-            </header>
             <div class="content">
                 <div class="container-fluid">
                     <div id="listaElementos" class="row">

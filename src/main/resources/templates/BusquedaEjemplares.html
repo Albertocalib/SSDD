@@ -1,5 +1,5 @@
 <div id="listaElementos" class="row" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div class="col-md-4" th:each="ejemplar,ind : ${listaEjemplares}">
+    <div class="col-md-4" id="elemC" th:each="ejemplar,ind : ${listaEjemplares}">
         <div class="card card-profile" style="border: 2px solid #c27400">
             <div class="container">
                 <a th:href="'#img' + ${ind.count} + '1'">
@@ -25,7 +25,7 @@
                             <a th:href="@{#img} + ${ind.count} + @{(${second})}"> <i class="material-icons iconoCarrusel" >arrow_forward_ios</i></a>
 
                         </div>
-                        <a data-dismiss="modal" href="#" onclick="busquedaEjemplares()"> <i class="material-icons iconoCarrusel cerrar" >cancel</i> </a>
+                        <a data-dismiss="modal" href="#" > <i class="material-icons iconoCarrusel cerrar" >cancel</i> </a>
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@
         <div class="modal fade" th:id="'modificarEjemplar' + ${ejemplar.id}" tabindex="-1" role="dialog"
              aria-labelledby="modificarEjemplar"
              aria-hidden="true" align="center">
-            <form action="/Inicio/modificarEjemplar" method="post" enctype='multipart/form-data'>>
+            <form action="#" th:action="@{'/Inicio/modificarEjemplar' + ${ejemplar.getId()}}" method="post" enctype='multipart/form-data'>>
                 <div class="modal-dialog " role="document">
                     <div class="modal-content">
                         <div class="card card-plain card-color">
@@ -101,7 +101,7 @@
                         </div>
                         <div class="modal-body" align="left">
                             <p>
-                                <label>Image file:</label><input type="file" required name="file"/>
+                                <label>Image file:</label><input type="file" name="file"/>
                             </p>
                             <div class="row">
                                 <div class="col-md-6">
@@ -160,7 +160,7 @@
                                     <div class="form-group bmd-form-group">
                                         <label>Inserte el codigo de identificacion fiscal del
                                             proveedor</label>
-                                        <input name="codigoIdFiscal" required type="text" class="form-control">
+                                        <input name="codigoIdFiscal" th:value="${ejemplar.getProveedor().getCodigoIdFiscal()}" required type="text" class="form-control">
                                     </div>
                                 </div>
                             </div>

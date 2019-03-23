@@ -193,7 +193,7 @@ public class ControladorModelo {
         List<Modelo> lista;
         switch (tipoFiltro){
             case "NU":
-                lista = modeloServicio.buscarTodosOrdenadosPorUnidadMonetariaAsc();
+                lista = modeloServicio.buscarTodosOrdenadosPorUnidadMonetariaDesc();
                 model.addAttribute("listaModelos", lista);
                 break;
             case "UM":
@@ -279,10 +279,12 @@ public class ControladorModelo {
         m.setPeso(peso);
         m.setValorFacial(valorFacial);
         m.setUnidadMonetaria(unidadMonetaria);
-        if (file!=null){
+
+        if (!file.isEmpty()){
             m.setImagenCodificada("data:image/png;base64,"+ Base64.getEncoder().encodeToString(file.getBytes()));
         }
         model.addAttribute("elementoTipo", 1);//Cuando sea un modelo le pasamos al javascript un 1
+        modeloServicio.guardar(m);
         return "Inicio";
     }
 
