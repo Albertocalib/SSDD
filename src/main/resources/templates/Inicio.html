@@ -98,6 +98,9 @@
             color: black;
         }
 
+        .contenedorPagina{
+            height: 100%;
+        }
         .ejemplarImagenTexto {
             margin-left: auto !important;
             margin-right: auto !important;
@@ -278,47 +281,46 @@
             <div class="sidebar-background" style="background-image: url(/img/sidebar-1.jpg) "></div>
 
         </div>
-        <div>
-
+        <div class = "contenedorPagina">
             <div class="content">
                 <div class="container-fluid">
                     <div id="listaElementos" class="row">
                     </div>
                 </div>
             </div>
-            <button id="botonCrear" class="btn btn-fab btn-round btn-color" data-toggle="modal"
-                    data-target="#crearModelo">
-                <i class="material-icons">add</i>
-            </button>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="float-left">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    Contacta con nosotros
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Avisos legales
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Acerca de nosotros
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="copyright float-right">
-                        ©MuseoDeLaMoneda
-                    </div>
-                </div>
-
-
-            </footer>
         </div>
+        <button id="botonCrear" class="btn btn-fab btn-round btn-color" data-toggle="modal"
+                data-target="#crearModelo">
+            <i class="material-icons">add</i>
+        </button>
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="float-left">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Contacta con nosotros
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Avisos legales
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Acerca de nosotros
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright float-right">
+                    ©MuseoDeLaMoneda
+                </div>
+            </div>
+
+
+        </footer>
     </div>
 
     <div class="modal fade" id="crearProveedor" tabindex="-1" role="dialog" aria-labelledby="crearProveedor "
