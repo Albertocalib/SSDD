@@ -1,9 +1,31 @@
+var primeracarga=true;
+
 function busquedaModelos() {
     var urlPage = "/Inicio/Modelos";
     $.ajax({
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
         $("#filtro").replaceWith("<li class=\"nav-item\" style=\"margin: 10%\" id=\"filtro\">\n" +
             "                    </li>");
         document.getElementById("exampleRadios1").checked = true;
@@ -80,6 +102,8 @@ function busquedaModelos() {
             "                data-target=\"#crearModelo\"\n" +
             "        ><i class=\"material-icons\">add</i>\n" +
             "            </button>");
+
+
 
     })
 
@@ -177,7 +201,30 @@ function busquedaEjemplares() {
             "                data-target=\"#crearEjemplar\"\n" +
             "        ><i class=\"material-icons\">add</i>\n" +
             "            </button>");
+
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
     })
+
+
 }
 
 function busquedaProveedores() {
@@ -254,7 +301,29 @@ function busquedaProveedores() {
             "                data-target=\"#crearProveedor\"\n" +
             "        ><i class=\"material-icons\">add</i>\n" +
             "            </button>");
+
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
     })
+
 
 }
 
@@ -272,6 +341,27 @@ function buscarEjemplaresModelos(valorFacial,unidadMonetaria){
         document.getElementById("exampleRadios3").checked = false;
         $("#filtro").replaceWith("<li class=\"nav-item\" style=\"margin: 10%\" id=\"filtro\">\n" +
             "                    </li>");
+
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
     })
 }
 
@@ -281,7 +371,7 @@ function buscarEjemplaresProveedor(codigoIdFiscal){
     console.log(urlPage);
     $.ajax({
         url: urlPage
-    }).done(function (data) {
+    }).done(function (data){
         $("#listaElementos").replaceWith(data);
         $("#quitarBusqueda").hide();
         document.getElementById("exampleRadios1").checked = false;
@@ -289,6 +379,27 @@ function buscarEjemplaresProveedor(codigoIdFiscal){
         document.getElementById("exampleRadios3").checked = false;
         $("#filtro").replaceWith("<li class=\"nav-item\" style=\"margin: 10%\" id=\"filtro\">\n" +
             "                    </li>");
+
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
     })
 }
 
@@ -300,6 +411,26 @@ function ordenarProveedoresCodigoIdFiscal(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
     })
 }
 function ordenarProveedoresCodigoIdFiscalDes(){
@@ -309,6 +440,26 @@ function ordenarProveedoresCodigoIdFiscalDes(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
     })
 }
 function ordenarProveedoresNombre(){
@@ -318,6 +469,27 @@ function ordenarProveedoresNombre(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarProveedoresNombreDes(){
@@ -327,6 +499,27 @@ function ordenarProveedoresNombreDes(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarProveedoresDirPostal(){
@@ -336,6 +529,27 @@ function ordenarProveedoresDirPostal(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarProveedoresDirPostalDes(){
@@ -345,6 +559,27 @@ function ordenarProveedoresDirPostalDes(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 
@@ -356,6 +591,27 @@ function ordenarEjemplaresFechasAdquisicion(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarEjemplaresFechasAdquisicionDes() {
@@ -365,6 +621,27 @@ function ordenarEjemplaresFechasAdquisicionDes() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarEjemplaresCiudadAcunacion() {
@@ -374,6 +651,27 @@ function ordenarEjemplaresCiudadAcunacion() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarEjemplaresCiudadAcunacionDes() {
@@ -383,6 +681,27 @@ function ordenarEjemplaresCiudadAcunacionDes() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarEjemplaresAnoAcunacion() {
@@ -392,6 +711,27 @@ function ordenarEjemplaresAnoAcunacion() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarEjemplaresAnoAcunacionDes() {
@@ -401,6 +741,27 @@ function ordenarEjemplaresAnoAcunacionDes() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarEjemplaresNombreProveedor() {
@@ -410,6 +771,27 @@ function ordenarEjemplaresNombreProveedor() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarEjemplaresNombreProveedorDes() {
@@ -419,6 +801,27 @@ function ordenarEjemplaresNombreProveedorDes() {
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarModelosValorFacialAsc(){
@@ -428,6 +831,27 @@ function ordenarModelosValorFacialAsc(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarModelosValorFacialDes(){
@@ -437,6 +861,27 @@ function ordenarModelosValorFacialDes(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarModelosUnidadMonetariaAsc(){
@@ -446,6 +891,27 @@ function ordenarModelosUnidadMonetariaAsc(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarModelosUnidadMonetariaDes(){
@@ -455,6 +921,27 @@ function ordenarModelosUnidadMonetariaDes(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarModelosDiametroAsc(){
@@ -463,6 +950,27 @@ function ordenarModelosDiametroAsc(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarModelosDiametroDes(){
@@ -471,6 +979,27 @@ function ordenarModelosDiametroDes(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarModelosPesoAsc(){
@@ -479,6 +1008,27 @@ function ordenarModelosPesoAsc(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 function ordenarModelosPesoDes(){
@@ -487,6 +1037,27 @@ function ordenarModelosPesoDes(){
         url: urlPage
     }).done(function (data) {
         $("#listaElementos").replaceWith(data);
+        var menuEscon=$("#navLateral").is(":hidden");
+        if (menuEscon){
+            var el = document.getElementsByClassName("col-md-4");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-3");
+            }
+            var el2 = document.getElementsByClassName("col-md-3");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-4");
+            }
+        }else{
+            var el = document.getElementsByClassName("col-md-3");
+            for (var i = 0; i < el.length; i++) {
+                el[i].classList.add("col-md-4");
+            }
+            var el2 = document.getElementsByClassName("col-md-4");
+            for (var j = 0; j < el2.length; j++) {
+                el2[j].classList.remove("col-md-3");
+            }
+        }
+
     })
 }
 
