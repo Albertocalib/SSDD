@@ -46,6 +46,7 @@ function cambiarColapsar() {
         "                </a>");
     $("#navLateral").hide();
 
+
     document.getElementById("wrapper-full-page").style.marginLeft = "0px";
 }
 
