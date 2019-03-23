@@ -1,5 +1,5 @@
 <div id="listaElementos" class="row" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div class="col-md-4" th:each="ejemplar,ind : ${listaEjemplares}">
+    <div class="col-md-4" id="elemC" th:each="ejemplar,ind : ${listaEjemplares}">
         <div class="card card-profile" style="border: 2px solid #c27400">
             <div class="container">
                 <a th:href="'#img' + ${ind.count} + '1'">
