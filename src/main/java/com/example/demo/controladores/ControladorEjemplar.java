@@ -46,11 +46,11 @@ public class ControladorEjemplar {
 
         Modelo modelo = modeloServicio.buscarPorValorFacialyUnidadMonetaria(valorFacial,unidadMonetaria);
         if(modelo == null){
-            return "Inicio"; //Aqui hay que mostrar un error: El modelo no existe.
+            return "redirect:/error"; //Aqui hay que mostrar un error: El modelo no existe.
         }
         Proveedor proveedor = proveedorServicio.buscarPorCodigoIdFiscal(codigoIdFiscal);
         if(proveedor == null){
-             return "Inicio"; //Aqui hay que mostrar un error: El proveedor no existe.
+             return "redirect:/error"; //Aqui hay que mostrar un error: El proveedor no existe.
         }
 
         Ejemplar ejemplar = new Ejemplar(fechaAdquisicion, ciudadAcunyacion, anyo, estado, modelo, proveedor);
