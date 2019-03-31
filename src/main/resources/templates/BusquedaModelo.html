@@ -1,8 +1,7 @@
 <div id="listaElementos" class="row">
     <div class="col-md-4" id="elemC" th:each="modelo: ${listaModelos}">
         <div class="card card-chart">
-            <div class="card-header card-header-success"
-                 style="width: 100%; margin-left: 0;opacity:0.9;background: #c27400!important;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
+            <div class="card-header card-header-success cabeceraModelo">
                 <div class="row">
                     <div class="col-md-9">
                         <span th:text="${modelo.getValorFacial()}+ ' ' + ${modelo.getUnidadMonetaria()} "></span>
@@ -10,13 +9,13 @@
                     <div class="col-md-1">
                         <a th:href="'#eliminarModelo' + ${modelo.id}" data-toggle="modal"
                            th:name="'#eliminarModelo' + ${modelo.id}">
-                            <i class="material-icons" style="color: white">delete</i>
+                            <i class="material-icons colorLetrasBlancas">delete</i>
                         </a>
                     </div>
                     <div class="col-md-1">
                         <a th:href="'#modificarModelo' + ${modelo.id}" data-toggle="modal"
                            th:name="'#modificarModelo' + ${modelo.id}">
-                            <i class="material-icons" style="color: white">edit</i>
+                            <i class="material-icons colorLetrasBlancas">edit</i>
                         </a>
                     </div>
                 </div>
@@ -147,7 +146,7 @@
                     </div>
                     <div class="modal-body" align="left">
                         <div class="card-body">
-                            <img class = "img" th:src="${modelo.getImagenCodificada()}" alt="" style="margin-left: 12%;margin-top: -7%;">
+                            <img class = "img   " th:src="${modelo.getImagenCodificada()}" alt="">
                         </div>
                         <div class="row">
                             <div class="col-md-12">

@@ -1,10 +1,9 @@
 <div id="listaElementos" class="row" xmlns:th="http://www.w3.org/1999/xhtml">
     <div class="col-md-4" id="elemC" th:each="ejemplar,ind : ${listaEjemplares}">
-        <div class="card card-profile" style="border: 2px solid #c27400">
+        <div class="card card-profile bordeEjemplares">
             <div class="container">
                 <a th:href="'#img' + ${ind.count} + '1'">
-                    <img class="img" th:src="${ejemplar.getFirstImage()}" alt=""
-                         style="align-content: center;align-self: center;align-items: center;">
+                    <img class="img centrado" th:src="${ejemplar.getFirstImage()}" alt="">
                 </a>
                 <div class="card-footer ejemplarImagenTexto" >
                     Pulsa la imagen para ver mas
@@ -19,8 +18,7 @@
 
                             <a th:href="@{#img} + ${ind.count} + @{(${first})}"> <i class="material-icons iconoCarrusel">arrow_back_ios</i> </a>
 
-                            <img class="img" th:src="${imagen}" alt=""
-                                 style="align-content: center;align-self: center;align-items: center;">
+                            <img class="img centrado" th:src="${imagen}" alt="">
 
                             <a th:href="@{#img} + ${ind.count} + @{(${second})}"> <i class="material-icons iconoCarrusel" >arrow_forward_ios</i></a>
 
@@ -29,43 +27,43 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body" style="background-color: #c27400">
+            <div class="card-body colorFondoEjemplares">
                 <h3 class="card-title"><b>Modelo:</b> <span
                         th:text="' ' + ${ejemplar.getModelo().getValorFacial()}+ ' ' +${ejemplar.getModelo().getUnidadMonetaria()}"></span>
                 </h3>
-                <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Fechas
+                <br><br><h4 class="card-description textoEjemplares"><b>Fechas
                 adquisición:</b><span th:text="' ' + ${ejemplar.getFechaAdquisicion()}"></span></h4>
-                <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Ciudad de
+                <br><br><h4 class="card-description textoEjemplares"><b>Ciudad de
                 acuñación:</b><span th:text="' ' + ${ejemplar.getCiudadAcu()}"></span></h4>
-                <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Fechas acuñacion:</b> <span
+                <br><br><h4 class="card-description textoEjemplares"><b>Fechas acuñacion:</b> <span
                     th:text="' ' + ${ejemplar.getAnyo()}"></span></h4>
-                <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Nombre proveedor:</b> <span
+                <br><br><h4 class="card-description textoEjemplares"><b>Nombre proveedor:</b> <span
                     th:text="' ' + ${ejemplar.getProveedor().getNombre()}"></span></h4>
-                <br><br><h4 class="card-description" style="float: left;text-align: left"><b>Estado:</b><span
+                <br><br><h4 class="card-description textoEjemplares"><b>Estado:</b><span
                     th:text="' ' + ${ejemplar.getEstado()}"></span></h4>
-                <div class="row" style="float: right">
+                <div class="row alineadoDerecha">
                     <div class="col-1">
                         <a th:href="'#eliminarEjemplar' + ${ejemplar.id}" data-toggle="modal"
                            th:name="'#eliminarEjemplar' + ${ejemplar.id}">
-                            <i class="material-icons" style="color: white">delete</i>
+                            <i class="material-icons colorLetrasBlancas">delete</i>
                         </a>
                     </div>
                     <div class="col-1">
                         <a th:href="'#modificarEjemplar' + ${ejemplar.id}" data-toggle="modal"
                            th:name="'#modificarEjemplar' + ${ejemplar.id}">
-                            <i class="material-icons" style="color: white">edit</i>
+                            <i class="material-icons colorLetrasBlancas">edit</i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="/js/albery.js"></script>
+        <!--<script src="/js/albery.js"></script>
         <script>
             $(".albery-container").albery({
                 speed: 500,
                 imgWidth: 600,
             });
-        </script>
+        </script>-->
         <div class="modal fade" th:id="'eliminarEjemplar' + ${ejemplar.id}" tabindex="-1" role="dialog"
              th:aria-labelledby="'eliminarEjemplar' + ${ejemplar.id}"
              aria-hidden="true" align="center" data-backdrop="static" data-keyboard="true">

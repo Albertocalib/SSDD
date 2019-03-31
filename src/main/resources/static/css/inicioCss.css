@@ -1,0 +1,138 @@
+body {
+    overflow-x: hidden;
+}
+.content {
+    margin-top: 0 !important;
+}
+h1 {
+    text-align: center;
+}
+.albery-item img {
+    width: 43%;
+}
+
+.card-description {
+    color: black;
+}
+.contenedorPagina{
+    height: 100%;
+}
+.ejemplarImagenTexto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+}
+.masInfo {
+    margin-right: 0;
+    margin-left: auto;
+    color: #c27400 !important;
+
+}
+
+.wrapper{
+    height: 100%!important;
+}
+#botonCrear {
+    position: relative;
+    text-align: center;
+    left: 50%;
+}
+.btn-color {
+    background-color: #c27400;
+}
+.form-check .form-check-input:checked ~ .circle .check {
+    background-color: #a1887f;
+}
+.form-check .form-check-input:checked ~ .circle {
+    border-color: #a1887f;
+}
+.card-color {
+    background-color: #c27400 !important;
+    margin: 0 !important;
+    border-radius: 0;
+}
+.card-title-modal {
+    color: white;
+    font-weight: bold;
+}
+
+.img {
+    width: 280px !important;
+    height: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.navbarEstilo {
+    background: #8d6e63 !important;
+    box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 5px rgba(0, 0, 0, 0) !important;
+    border-radius: 0 !important;
+}
+.navLinkEstilo {
+    background: #a1887f !important;
+    color: black !important;
+    margin-bottom: -6% !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0) !important;
+}
+.ImagenNavbar{
+    max-width: 75px;
+    margin-top: -12%;
+}
+.colorFondoBusqueda {
+    background-color: #8d6e63;
+}
+.colorLetrasBlancas {
+    color: white;
+}
+.margenOpciones {
+    margin: 10%
+}
+.opcionesDeOrden {
+    position: absolute;
+    color: black !important;
+    margin-left: 39%;
+    margin-top: -1%;
+}
+.anchura {
+    width:150px;
+}
+.imagenFondo {
+    background-image: url(/img/sidebar-1.jpg)
+}
+.footer{
+    margin-top: 55px;
+}
+
+.centrado {
+    align-content: center;
+    align-self: center;
+    align-items: center;
+}
+.colorFondoEjemplares {
+    background-color: #c27400;
+}
+.textoEjemplares {
+    float: left;
+    text-align: left;
+}
+.alineadoDerecha {
+    float: right;
+}
+.bordeEjemplares {
+    border: 2px solid #c27400;
+}
+.margenesImagenModelo {
+    margin-left: 12%;
+    margin-top: -7%;
+}
+.cabeceraModelo {
+    width: 100%;
+    margin-left: 0 !important;
+    /*opacity:0.9;*/
+    background: #c27400 !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0) !important;
+}
+.cabeceraProveedores {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0) !important;
+}

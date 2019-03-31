@@ -1,8 +1,7 @@
 <div id="listaElementos" class="row">
     <div class="col-md-4" id="elemC" th:each="proveedor: ${listaProveedores}">
         <div class="card card-chart">
-            <div class="card-header card-plain card-color"
-                 style="box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
+            <div class="card-header card-plain card-color cabeceraProveedores">
                 <div class="row">
                     <div class="col-md-9">
                         <span class="card-title-modal" th:text="'Proveedor: ' + ${proveedor.getNombre()} "></span>
@@ -10,13 +9,13 @@
                     <div class="col-md-1">
                         <a th:href="'#eliminarProveedor' + ${proveedor.id}" data-toggle="modal"
                            th:name="'#eliminarProveedor' + ${proveedor.id}">
-                            <i class="material-icons" style="color: white">delete</i>
+                            <i class="material-icons colorLetrasBlancas">delete</i>
                         </a>
                     </div>
                     <div class="col-md-1">
                         <a th:href="'#modificarProveedor' + ${proveedor.id}" data-toggle="modal"
                            th:name="'#modificarProveedor' + ${proveedor.id}">
-                            <i class="material-icons" style="color: white">edit</i>
+                            <i class="material-icons colorLetrasBlancas">edit</i>
                         </a>
                     </div>
                 </div>

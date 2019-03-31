@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
     <!-- Material Dashboard CSS -->
     <link rel="stylesheet" href="/css/material-dashboard.css">
+
+    <!-- Hojas de Estilos Css propias -->
     <link rel="stylesheet" href="/css/carrusel.css">
+    <link rel="stylesheet" href="/css/inicioCss.css">
 
     <!--   Core JS Files   -->
     <script src="/js/core/jquery.min.js" type="text/javascript"></script>
@@ -81,95 +84,16 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/albery.css" type="text/css">
-    <style>
-        .content {
-            margin-top: 0 !important;
-        }
 
-        h1 {
-            text-align: center;
-        }
-
-        .albery-item img {
-            width: 43%;
-        }
-
-        .card-description {
-            color: black;
-        }
-
-        .contenedorPagina{
-            height: 100%;
-        }
-        .ejemplarImagenTexto {
-            margin-left: auto !important;
-            margin-right: auto !important;
-            display: block !important;
-        }
-
-        .masInfo {
-            margin-right: 0;
-            margin-left: auto;
-            color: #c27400 !important;
-
-        }
-        .wrapper{
-            height: 100%!important;
-        }
-        #botonCrear {
-            position: relative;
-            text-align: center;
-            left: 50%;
-        }
-
-        .btn-color {
-            background-color: #c27400;
-        }
-
-        .form-check .form-check-input:checked ~ .circle .check {
-
-            background-color: #a1887f;
-
-        }
-
-        .form-check .form-check-input:checked ~ .circle {
-
-            border-color: #a1887f;
-        }
-
-        .card-color {
-            background-color: #c27400 !important;
-            margin: 0 !important;
-            border-radius: 0;
-
-        }
-
-        .card-title-modal {
-            color: white;
-            font-weight: bold;
-        }
-
-        .img {
-            width: 280px !important;
-            height: 280px;
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-        }
-        .footer{
-            margin-top: 55px;
-        }
-    </style>
     <script src="/js/busquedas.js"></script>
 </head>
-<body style="overflow-x:hidden" th:onload="'cargarPagina(' + ${elementoTipo} + ')'">
+<body th:onload="'cargarPagina(' + ${elementoTipo} + ')'">
 <div class="wrapper-full-page" id="wrapper-full-page">
     <div class="wrapper">
-        <header class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row bd-navbar"
-                style="background: #8d6e63!important;box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 5px rgba(0, 0, 0, 0)!important; border-radius: 0!important;">
+        <header class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row bd-navbar navbarEstilo">
 
             <a class="navbar-brand mr-0 mr-md-2" href="#" target="_blank">
-                <img src="/img/logoPractica.png" style="max-width: 75px;margin-top: -12%;">
+                <img class="ImagenNavbar" src="/img/logoPractica.png">
             </a>
             <a  id="buttonCollapse" type="button"  data-target="#navLateral" onclick="cambiarExpandir()">
                 <span class="navbar-toggler-icon"></span>
@@ -201,20 +125,21 @@
         </header>
         <div class="collapse sidebar" id="navLateral" data-color="#8d6e63" data-background-color="white" data-image="/img/sidebar-1.jpg">
 
-            <div class="logo" style="background-color: #8d6e63">
-                <a class="simple-text logo-normal" style="color: white">
+            <div class="logo colorFondoBusqueda">
+                <a class="simple-text logo-normal">
+                    <div class="colorLetrasBlancas">
                     BÚSQUEDA
+                    </div>
                 </a>
             </div>
 
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="nav-item active  ">
-                        <a class="nav-link"
-                           style="background: #a1887f;color: black; margin-bottom: -6%;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
+                    <li class="nav-item active">
+                        <a class="nav-link navLinkEstilo">
                             <p>¿Qué desea buscar?</p>
                         </a>
-                        <div style="margin: 10%">
+                        <div class="margenOpciones">
                             <div class="form-check form-check-radio">
                                 <label class="form-check-label">
                                     <input class="form-check-input" type="radio" name="check" id="exampleRadios1"
@@ -253,37 +178,33 @@
                     </li>
                     <div id="quitarBusqueda">
                         <li class="nav-item">
-                            <a class="nav-link"
-                               style="background: #a1887f;color: black; margin-bottom: -6%;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
+                            <a class="nav-link navLinkEstilo">
                                 <p>Ordenar por:</p>
                                 <label>
-                                    <i class="material-icons"
-                                       style="position: absolute;color: black; margin-left: 39%;margin-top: -1%">
+                                    <i class="material-icons opcionesDeOrden">
                                         expand_more </i>
-                                    <select id="ordenarPorId" name="ordenarPor" style="width:150px">
+                                    <select class="anchura" id="ordenarPorId" name="ordenarPor">
                                     </select>
                                 </label>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"
-                               style="background: #a1887f;color: black; margin-bottom: -6%;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 5px rgba(0, 0, 0, 0)!important;">
+                            <a class="nav-link navLinkEstilo">
                                 <p>Filtrar por:</p>
                                 <label>
-                                    <i class="material-icons"
-                                       style="position: absolute;color: black; margin-left: 39%;margin-top: -1%">
+                                    <i class="material-icons opcionesDeOrden">
                                         expand_more </i>
-                                    <select id="filtrarPorId" name="filtrarPor" style="width:150px">
+                                    <select class="anchura" id="filtrarPorId" name="filtrarPor">
                                     </select>
                                 </label>
                             </a>
                         </li>
                     </div>
-                    <li class="nav-item" style="margin: 10%" id="filtro">
+                    <li class="nav-item margenOpciones" id="filtro">
                     </li>
                 </ul>
             </div>
-            <div class="sidebar-background" style="background-image: url(/img/sidebar-1.jpg) "></div>
+            <div class="sidebar-background imagenFondo"></div>
 
         </div>
         <div class = "wrapper">
