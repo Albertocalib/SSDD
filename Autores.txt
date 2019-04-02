@@ -1,0 +1,42 @@
+Alberto Cañal Liberal,   dni: 50231019P
+Samuel  Serrano Gonzalez,   dni: 12343208M
+Haritz Gamarra Urkia,   dni: 51498379E
+
+Participación:
+
+Alberto: 
+	1· Participación en la creación  e implementación de de todos los controladores 
+	2· Realización de la clase "Modelo", "ModeloRepositorio" y "ModeloServicio". 
+	3· Participación paquete de proveedor (Proveedor,  ProveedorRepositorio y  ProveedorServicio)
+	4· Participación en "InicializadorBBDD"
+	5· Desarrollo de los estilos de la página (CSS)
+	6· Realización de los metodos de filtrado y ordenado (y filtrado-ordenado conjuntamente) en "busquedas.js": Por todos los atributos de cada elemento
+	7· Realización BusquedaModelos y sus metodos en "busquedas.js"
+	8· Realización de "Inicio.js"
+	9· Realización de "BusquedaModelos.html" y "inicio.html"
+	10· Pagina "Error.html"
+	11· Realización de "pom.xml"
+
+Samuel: 
+	1· Participación en la creación e implementación de todos los controladores.
+	2· Realización de la clase ejemplar,"EjemplarRepositorio" y "EjemplarServicio". 
+	3· Participación paquete de proveedor (Proveedor,  ProveedorRepositorio y  ProveedorServicio)
+	4· Participación en "InicializadorBBDD"
+	5· Desarrollo de los estilos de la página (CSS)
+	6· Realización de los metodos de filtrado y ordenado (y filtrado-ordenado conjuntamente) en "busquedas.js": Por todos los atributos de cada elemento
+	7· Realización BusquedaEjemplares y sus metodos en "busquedas.js"
+	8· Realización de "Inicio.js"
+	9· Realización de "BusquedaEjemplares.html" y "inicio.html"
+	10· Realización de "pom.xml"
+
+
+Haritz: 
+	1· Participación paquete de proveedor (Proveedor,  ProveedorRepositorio y  ProveedorServicio)
+	2· Modal de añadir Ejemplar y modal  de añadir Proveedor de Inicio.html
+	3· Participacion controlador de Ejemplar, controlador de Modelo (sin los metodos de filtrar y ordenar resultados) y controlador de Proveedor (sin metodos de filtrar resultados)
+	4· BusquedaProveedores y sus metodos en el javaScript busquedas.js 
+	5· Separar el estilo en hojas css independientes (errorCss.css e inicioCss.css) y participación en "InicializadorBBDD".
+	6· Realización de "BusquedaProveedores.html"
+	7· Realización de "pom.xml"
+
+
