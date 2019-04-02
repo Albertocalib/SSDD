@@ -1065,7 +1065,7 @@ function addFiltroFechaAd() {
     $("#filtro").replaceWith("<li class=\"nav-item\" style=\"margin: 10%\" id=\"filtro\">\n" +
         "                        <label class=\"label-control\">Fecha inicial</label>\n" +
         "                        <input id=\"fechaini\" type=\"date\" class=\"form-control\"><br>\n" +
-        "                        <label class=\"label-control\">Fecha inicial</label>\n" +
+        "                        <label class=\"label-control\">Fecha final</label>\n" +
         "                        <input id=\"fechafin\" type=\"date\" class=\"form-control\"><br>\n" +
         "                        <button type=\"submit\" class=\"btn\" onclick=\"fechasAdq()\">Enviar</button>\n" +
         "                    </li>");
