@@ -32,7 +32,7 @@ public class InicializadorBBDD {
 		Proveedor proveedor = new Proveedor("B0000000A", "Calderilla", "Madrid", "cald@gmail.com", 677899034);
 		Proveedor proveedor2 = new Proveedor("B0000000H","Samuel","Madrid","sss@gmail.com",685270766);
 
-		Date date = new Date(106, 02, 02);
+		Date date = new Date(100, 01, 01);
 		Date date2 = new Date(98,02,25);
 
 		Ejemplar ejemplar = new Ejemplar(date, "Valladolid", 1634, "Bien conservado");
